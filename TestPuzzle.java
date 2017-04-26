@@ -135,7 +135,7 @@ public class TestPuzzle extends JFrame
 		BufferedImage bimg = null;
 		try
 		{
-			bimg = ImageIO.read(new File("Icons74/"+filename));
+			bimg = ImageIO.read(new File("icons74/"+filename));
 		}
 		catch (IOException e)
 		{
