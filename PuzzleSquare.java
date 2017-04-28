@@ -97,7 +97,7 @@ public class PuzzleSquare extends JLabel
 		}
 		catch (IOException e)
 		{
-			Logger.getLogger(PuzzleInstance.class.getName()).log(Level.SEVERE, null, e);
+			Logger.getLogger(PuzzleSquare.class.getName()).log(Level.SEVERE, null, e);
 		}
 		return bimg;
 	}
