@@ -35,12 +35,12 @@ public class PuzzleInstance extends JFrame
 	
 	private void initializeGame()
 	{
-		labels = new ArrayList<PuzzleSquare>();
 		manLabel = new PuzzleSquare(PuzzleSquare.Type.MANDOWN);
+		labels = initializeLabels();
 		
-		add(initializeGamePanel(ROWS, COLUMNS), BorderLayout.CENTER);
-		initializeLabels();
-		updateDisplay();
+		JPanel panel = initializeGamePanel(ROWS, COLUMNS);
+		add(panel, BorderLayout.CENTER);
+		updatePanelLabels();		
 				
 		pack();
 		setTitle("Puzzle");
@@ -49,7 +49,7 @@ public class PuzzleInstance extends JFrame
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		addKeyListener(new KeyAction());
 	}
-	
+		
 	private JPanel initializeGamePanel(int rows, int columns)
 	{
 		panel = new JPanel();
@@ -58,59 +58,70 @@ public class PuzzleInstance extends JFrame
 		return panel;
 	}
 
-	private void initializeLabels()
+	private ArrayList<PuzzleSquare> initializeLabels()
 	{
+		labels = new ArrayList<PuzzleSquare>();
+		
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.EMPTY));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.EMPTY));
+		
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.EMPTY));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.EMPTY));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.EMPTY));
-		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
+		
+		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));		
 		labels.add(manLabel);
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BOX));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.EMPTY));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.EMPTY));
+		
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BOX));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.EMPTY));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
+		
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.EMPTY));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BOX));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.EMPTY));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
+		
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.CROSS));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BOX));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.EMPTY));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.EMPTY));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
+		
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.CROSS));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.CROSS));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.GREENBOX));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.CROSS));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
+		
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
 		labels.add(new PuzzleSquare(PuzzleSquare.Type.BRICK));
+		
+		return labels;
 	}
 	
-	private void updateDisplay()
+	private void updatePanelLabels()
 	{
 		panel.removeAll();
 		for(PuzzleSquare lbl : labels)
@@ -144,7 +155,7 @@ public class PuzzleInstance extends JFrame
 			{
 				labels.clear();
 				initializeLabels();
-				updateDisplay();
+				updatePanelLabels();
 				return;
 			}
 			
@@ -154,7 +165,7 @@ public class PuzzleInstance extends JFrame
 			if(swapIndex != -1)
 			{
 				handleSwapObjectBehaviour(e, manIndex, swapIndex);
-				updateDisplay();
+				updatePanelLabels();
 			}
 			
 			if(puzzleSolved())
