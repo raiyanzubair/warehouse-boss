@@ -126,27 +126,25 @@ public class PuzzleGridGenerator
 	 */
 	public PuzzleGrid generatePuzzleGrid()
 	{
-		Type[] typeGrid = getDefaultMap();
-		return new PuzzleGrid(8, 6, typeGrid);
+		return getDefaultMap();
 	}
-
+	
 	/**
 	 * @return: A default map layout
 	 */
-	public Type[] getDefaultMap()
+	public PuzzleGrid getDefaultMap()
 	{
-		Type[] grid =
+		return new PuzzleGrid(8, 6, new Type[]
 		{
 			Type.EMPTY, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY,
 			Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.EMPTY,
-			Type.BRICK, 	Type.MANDOWN,	Type.BOX, 		Type.EMPTY, 	Type.BRICK, 	Type.EMPTY,
-			Type.BRICK, 	Type.BRICK, 	Type.BOX, 		Type.EMPTY, 	Type.BRICK, 	Type.BRICK,
-			Type.BRICK, 	Type.BRICK, 	Type.EMPTY,	 	Type.BOX, 		Type.EMPTY, 	Type.BRICK,
-			Type.BRICK, 	Type.CROSS, 	Type.BOX, 		Type.EMPTY, 	Type.EMPTY, 	Type.BRICK,
+			Type.BRICK, 	Type.MANDOWN,	Type.BOX, 	Type.EMPTY, 	Type.BRICK, 	Type.EMPTY,
+			Type.BRICK, 	Type.BRICK, 	Type.BOX, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK,
+			Type.BRICK, 	Type.BRICK, 	Type.EMPTY,	Type.BOX, 	Type.EMPTY, 	Type.BRICK,
+			Type.BRICK, 	Type.CROSS, 	Type.BOX, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK,
 			Type.BRICK, 	Type.CROSS, 	Type.CROSS, 	Type.GREENBOX, 	Type.CROSS, 	Type.BRICK,
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,
-		};
-		return grid;
+		});
 	}
 
 }
