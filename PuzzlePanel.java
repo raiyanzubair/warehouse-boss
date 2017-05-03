@@ -29,6 +29,7 @@ public class PuzzlePanel extends JPanel
 	private static final long serialVersionUID = 1L;
 	private final int ROWS;
 	private final int COLUMNS;
+	private PuzzleGrid grid;
 	
 	private ArrayList<PuzzleLabel> labels;
 	private PuzzleLabel playerPiece;
@@ -43,6 +44,7 @@ public class PuzzlePanel extends JPanel
 	{		
 		this.ROWS = grid.getRows();
 		this.COLUMNS = grid.getColumns();
+		this.grid = grid;
 
 		this.playerPiece = grid.getPlayer();
 		this.labels = grid.getStartingLabels();
@@ -67,6 +69,10 @@ public class PuzzlePanel extends JPanel
 		this.validate();
 	}
 	
+	private void resetGame() {
+		this.labels = grid.getStartingLabels();
+		reloadPanelLabels();
+	}
 	/**
 	 * Checks the location of the player piece and if the destination piece is valid (within the 
 	 * grid), then the event is passed to the method to check whether the piece that the player
@@ -75,6 +81,9 @@ public class PuzzlePanel extends JPanel
 	 */
 	public void handleKeyPress(KeyEvent e)
 	{	
+		if (e.getKeyCode() == KeyEvent.VK_R) {
+			resetGame();
+		}
 		int manIndex = labels.indexOf(playerPiece);
 		int swapIndex = validateKeyArrowDirection(e, manIndex);
 		
