@@ -1,11 +1,9 @@
 package Game;
 
 import java.awt.BorderLayout;
-import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import javax.swing.JComponent;
 import javax.swing.JFrame;
 
 /**
