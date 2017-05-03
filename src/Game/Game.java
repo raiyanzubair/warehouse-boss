@@ -1,9 +1,11 @@
 package Game;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 
 /**
@@ -13,19 +15,9 @@ import javax.swing.JFrame;
  * @field panel: The single game panel being added
  * @field psg: The puzzle generator object for making puzzles
  */
-public class GameFrame extends JFrame
+public class Game
 {
-	private static final long serialVersionUID = 1L;
-	private PuzzlePanel panel;
-	private PuzzleGridGenerator psg;
-	
-	public GameFrame()
-	{
-		psg = new PuzzleGridGenerator();
-		panel = new PuzzlePanel(psg.generatePuzzleGrid());
-		add(panel, BorderLayout.CENTER);
-		addKeyListener(new KeyAction());
-	}
+	private static PuzzleGridGenerator psg = new PuzzleGridGenerator();
 	
 	/**
 	 * The main method which just creates a GameFrame frame window and sets its
@@ -34,13 +26,37 @@ public class GameFrame extends JFrame
 	 */
 	public static void main(String[] args)
 	{
-		GameFrame puzzle = new GameFrame();
-		puzzle.pack();
-		puzzle.setTitle("Puzzle");
-		puzzle.setResizable(false);
-		puzzle.setLocationRelativeTo(null);
-		puzzle.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
-		puzzle.setVisible(true);
+		Game g = new Game();
+		g.showGameScreen();
+	}
+	
+	/**
+	 * This method initializes a JFrame with just the puzzle in a panel and 
+	 * displays it to the user with a key event listener for the controls
+	 */
+	private void showGameScreen()
+	{
+		JFrame gameFrame = new JFrame();
+		
+		PuzzlePanel panel = new PuzzlePanel(psg.generatePuzzleGrid());
+		gameFrame.add(panel, BorderLayout.CENTER);
+		
+		gameFrame.pack();
+		gameFrame.setTitle("Puzzle");
+		gameFrame.setResizable(false);
+		gameFrame.setLocationRelativeTo(null);
+		gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
+		gameFrame.addKeyListener(new KeyAction()
+		{
+			@Override
+			public void keyPressed(KeyEvent e)
+			{
+				panel.handleKeyPress(e);
+			}
+
+		});
+
+		gameFrame.setVisible(true);
 	}
 	
 	/**
@@ -58,15 +74,12 @@ public class GameFrame extends JFrame
 		@Override
 		public void keyPressed(KeyEvent e)
 		{
-			panel.handleKeyPress(e);
 		}
 
 		@Override
 		public void keyReleased(KeyEvent e)
 		{
-		}
-
-		
+		}	
 	}
 	
 }
