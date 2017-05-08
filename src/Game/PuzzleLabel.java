@@ -14,12 +14,18 @@ import Game.PuzzleGridGenerator.Type;
 public class PuzzleLabel extends JLabel
 {
 	private static final long serialVersionUID = 1L;
-	private ImageIcon icon;
-	Type type;
+	private Type image;
+	private Type type;
 
 	public PuzzleLabel(Type type)
-	{		
+	{	
 		setTypeAndImage(type);
+	}
+	
+	public PuzzleLabel(Type type, Type img)
+	{		
+		setType(type);
+		setImage(img);
 	}
 	
 	/**
@@ -33,25 +39,30 @@ public class PuzzleLabel extends JLabel
 	}
 	
 	/**
-	 * Sets only the image to the ImageIcon corresponding to the type passed
-	 * @param type: The type passed
-	 */
-	public void setImage(Type type)
-	{
-		if(type != null)
-		{
-			this.icon = PuzzleGridGenerator.icons[type.ordinal()];
-			this.setIcon(icon);
-		}
-	}
-	
-	/**
 	 * Sets only the type of this label to the type passed
 	 * @param type: The type passed
 	 */
 	public void setType(Type type)
 	{
 		this.type = (type != null) ? type : Type.EMPTY;
+	}
+	
+	public void setImage(Type type)
+	{
+		this.image = type;
+	}
+
+	/**
+	 * Sets only the image to the ImageIcon corresponding to the type passed
+	 * @param type: The type passed
+	 */
+	public void setImageIcon()
+	{
+		if(image != null)
+		{
+			ImageIcon icon = PuzzleGridGenerator.icons[image.ordinal()];
+			this.setIcon(icon);
+		}
 	}
 	
 	/**
@@ -62,5 +73,10 @@ public class PuzzleLabel extends JLabel
 	public boolean isType(Type type)
 	{
 		return this.type == type;
+	}
+	
+	public PuzzleLabel Clone()
+	{
+		return new PuzzleLabel(this.type, this.image);
 	}
 }
