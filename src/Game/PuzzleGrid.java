@@ -18,14 +18,38 @@ public class PuzzleGrid
 	private int rows;
 	private int columns;
 	private PuzzleLabel playerLabel;
-	private Type[] startingLabelTypes;
+	private ArrayList<PuzzleLabel> labelSequence;
 	
 	public PuzzleGrid(int rows, int columns, Type[] startingLabelTypes)
 	{
 		this.rows = rows;
 		this.columns = columns;
 		this.playerLabel = new PuzzleLabel(Type.MANDOWN);
-		this.startingLabelTypes = startingLabelTypes;
+		this.labelSequence = initializeStartingLabels(startingLabelTypes);
+	}
+	
+	public PuzzleGrid(int rows, int columns, ArrayList<PuzzleLabel> labelSequence, PuzzleLabel playerLabel)
+	{
+		this.rows = rows;
+		this.columns = columns;
+		this.playerLabel = playerLabel;
+		this.labelSequence = labelSequence;
+	}
+	
+	private ArrayList<PuzzleLabel> initializeStartingLabels(Type[] startingLabelTypes)
+	{
+		ArrayList<PuzzleLabel> labels = new ArrayList<PuzzleLabel>();
+		
+		for(Type type : startingLabelTypes)
+		{
+			switch(type) 
+			{
+				case MANDOWN:	labels.add(playerLabel);			break;
+				default:		labels.add(new PuzzleLabel(type));	break;
+			}
+		}
+		
+		return labels;
 	}
 	
 	/**
@@ -59,20 +83,9 @@ public class PuzzleGrid
 	 * it reaches the bottom
 	 * @return labels: The array list with the ordered puzzle squares
 	 */
-	public ArrayList<PuzzleLabel> getStartingLabels()
+	public ArrayList<PuzzleLabel> getLabelSequence()
 	{
-		ArrayList<PuzzleLabel> labels = new ArrayList<PuzzleLabel>();
-		
-		for(Type type : startingLabelTypes)
-		{
-			switch(type) 
-			{
-				case MANDOWN:	labels.add(playerLabel);					break;
-				default:		labels.add(new PuzzleLabel(type));	break;
-			}
-		}
-		
-		return labels;
+		return labelSequence;
 	}
 
 }
