@@ -5,6 +5,7 @@ import java.awt.GridLayout;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Stack;
 
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
@@ -29,11 +30,11 @@ public class PuzzlePanel extends JPanel
 	private static final long serialVersionUID = 1L;
 	private final int ROWS;
 	private final int COLUMNS;
-	private PuzzleGrid grid;
-
-	private ArrayList<PuzzleLabel> labels;
+	
+	private ArrayList<PuzzleLabel> currentLabelSequence;
+	private Stack<PuzzleGrid> previousStates;
 	private PuzzleLabel playerPiece;
-
+	
 	/**
 	 * Creates a JPanel object with an empty grid structure with the specified rows and columns
 	 * @param rows: The number of rows
@@ -44,17 +45,18 @@ public class PuzzlePanel extends JPanel
 	{
 		this.ROWS = grid.getRows();
 		this.COLUMNS = grid.getColumns();
-		this.grid = grid;
 
 		this.playerPiece = grid.getPlayer();
-		this.labels = grid.getStartingLabels();
-
+		this.currentLabelSequence = grid.getLabelSequence();
+		
+		this.previousStates = new Stack<PuzzleGrid>();
+		
 		this.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.setLayout(new GridLayout(ROWS, COLUMNS, 0, 0));
 
-		this.reloadPanelLabels();
+		this.reloadPanelLabels();		
 	}
-
+	
 	/**
 	 * Reloads the puzzle squares from the labels array so that the ordering of the labels in the
 	 * panel matches the new order of puzzle squares in the labels array list.
@@ -62,33 +64,90 @@ public class PuzzlePanel extends JPanel
 	private void reloadPanelLabels()
 	{
 		this.removeAll();
-		for(PuzzleLabel lbl : labels)
+		for(PuzzleLabel lbl : currentLabelSequence)
 		{
+			lbl.setImageIcon();
 			this.add(lbl);
 		}
 		this.validate();
+		this.updateUI();
 	}
-
-	private void resetGame()
+	
+	private void saveLabelsState()
 	{
-		this.labels = grid.getStartingLabels();
+		PuzzleLabel savedPlayer = playerPiece.Clone();
+		ArrayList<PuzzleLabel> savedState = new ArrayList<PuzzleLabel>();
+		for(PuzzleLabel pl : currentLabelSequence)
+		{
+			if(pl.equals(playerPiece))
+			{
+				savedState.add(savedPlayer);
+			}
+			else
+			{
+				savedState.add(pl.Clone());
+			}
+		}
+		previousStates.push(new PuzzleGrid(ROWS, COLUMNS, currentLabelSequence, playerPiece));
+		
+		currentLabelSequence = savedState;
+		playerPiece = savedPlayer;
+		
 		reloadPanelLabels();
 	}
-
+	
+	private void reloadLastLabelState()
+	{
+		if(previousStates.size() > 0)
+		{
+			PuzzleGrid savedState = previousStates.pop();
+			
+			currentLabelSequence = savedState.getLabelSequence();
+			playerPiece = savedState.getPlayer();
+			
+			reloadPanelLabels();
+		}
+	}
+	
+	private void resetGame()
+	{
+		PuzzleGrid start = previousStates.get(0);
+		currentLabelSequence = start.getLabelSequence();
+		playerPiece = start.getPlayer();
+		previousStates.clear();
+		reloadPanelLabels();
+	}
+	
 	/**
-	 * Checks the location of the player piece and if the destination piece is valid (within the
+	 * Checks the location of the player piece and if the destination piece is valid (within the 
 	 * grid), then the event is passed to the method to check whether the piece that the player
 	 * piece is being moved to can be moved (box) or moved to (empty space, cross)
 	 * @param e: The event from a key press
 	 */
 	public void handleKeyPress(KeyEvent e)
-	{
+	{	
 		if (e.getKeyCode() == KeyEvent.VK_R)
 		{
 			resetGame();
 		}
 		
-		int manIndex = labels.indexOf(playerPiece);
+		if(e.getKeyCode() == KeyEvent.VK_U)
+		{
+			reloadLastLabelState();
+		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_UP || e.getKeyCode() == KeyEvent.VK_DOWN || e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode() == KeyEvent.VK_RIGHT)
+		{
+			registerMove(e);
+			validatePuzzleSolved();
+		}		
+	}
+	
+	public void registerMove(KeyEvent e)
+	{
+		saveLabelsState();
+		
+		int manIndex = currentLabelSequence.indexOf(playerPiece);
 		int swapIndex = validateKeyArrowDirection(e, manIndex);
 
 		if(swapIndex != -1)
@@ -96,7 +155,10 @@ public class PuzzlePanel extends JPanel
 			handleSwapObjectBehaviour(e, manIndex, swapIndex);
 			reloadPanelLabels();
 		}
+	}
 
+	public void validatePuzzleSolved()
+	{
 		if(puzzleSolved())
 		{
 			JOptionPane.showMessageDialog(this, "Finished", "Congratulation", JOptionPane.INFORMATION_MESSAGE);
@@ -106,7 +168,7 @@ public class PuzzlePanel extends JPanel
 
 	/**
 	 * Updates the direction of the player to face in the direction of the arrow key pressed
-	 * and then verifies if the destination cell is valid, then calculates the index of the
+	 * and then verifies if the destination cell is valid, then calculates the index of the 
 	 * puzzle label that corresponds to the destination
 	 * @param e: The key event passed
 	 * @param playerIndex: The index in the labels array of the player piece
@@ -123,7 +185,7 @@ public class PuzzlePanel extends JPanel
 		}
 		return swapIndex;
 	}
-
+	
 	/**
 	 * Sets the image of the player piece to the one corresponding to the direction of the
 	 * arrow key pressed in the key event
@@ -131,13 +193,13 @@ public class PuzzlePanel extends JPanel
 	 */
 	private void setPlayerFacingDirection(KeyEvent e)
 	{
-		int keyCode = e.getKeyCode();
+		int keyCode = e.getKeyCode();	
 		switch(keyCode)
 		{
-			case KeyEvent.VK_UP: 	playerPiece.setImage(PuzzleGridGenerator.Type.MANUP); 		break;
-			case KeyEvent.VK_DOWN: 	playerPiece.setImage(PuzzleGridGenerator.Type.MANDOWN); 	break;
-			case KeyEvent.VK_LEFT: 	playerPiece.setImage(PuzzleGridGenerator.Type.MANLEFT); 	break;
-			case KeyEvent.VK_RIGHT: playerPiece.setImage(PuzzleGridGenerator.Type.MANRIGHT); 	break;
+			case KeyEvent.VK_UP: 	playerPiece.setImage(Type.MANUP); 		break;
+			case KeyEvent.VK_DOWN: 	playerPiece.setImage(Type.MANDOWN); 	break;
+			case KeyEvent.VK_LEFT: 	playerPiece.setImage(Type.MANLEFT); 	break;
+			case KeyEvent.VK_RIGHT: playerPiece.setImage(Type.MANRIGHT); 	break;
 		}
 	}
 
@@ -179,23 +241,24 @@ public class PuzzlePanel extends JPanel
 		}
 		return 0;
 	}
-
+	
 	/**
 	 * Assumes that the move from the player index to the destination index is valid and checks
-	 * what object is at the destination index and either checks if it can move it in the same
+	 * what object is at the destination index and either checks if it can move it in the same 
 	 * direction if it is a box, or simply swaps it with the player if it can be moved over like
 	 * an empty square or a cross
 	 * @param e: The key event
 	 * @param playerIndex: The index of the player piece
 	 * @param destinationIndex: The index of the  destination piece
+	 * @return 
 	 * @precondition: player to destination is a valid move
 	 */
-	private void handleSwapObjectBehaviour(KeyEvent e, int playerIndex, int destinationIndex)
+	private boolean handleSwapObjectBehaviour(KeyEvent e, int playerIndex, int destinationIndex)
 	{
-		PuzzleLabel toSwap = labels.get(destinationIndex);
+		PuzzleLabel toSwap = currentLabelSequence.get(destinationIndex);
 		if(toSwap.isType(Type.BRICK))
 		{
-			return;
+			return false;
 		}
 		else if(toSwap.isType(Type.EMPTY))
 		{
@@ -216,7 +279,7 @@ public class PuzzlePanel extends JPanel
 		else if(toSwap.isType(Type.BOX) || toSwap.isType(Type.GREENBOX))
 		{
 			int toSwapSwapIndex = validateKeyArrowDirection(e, destinationIndex);
-			PuzzleLabel toSwapWithToSwap = labels.get(toSwapSwapIndex);
+			PuzzleLabel toSwapWithToSwap = currentLabelSequence.get(toSwapSwapIndex);
 			if(toSwapWithToSwap.isType(Type.EMPTY))
 			{
 				if(playerPiece.isType(Type.CROSS))
@@ -246,17 +309,19 @@ public class PuzzlePanel extends JPanel
 				{
 					toSwap.setTypeAndImage(Type.GREENBOX);
 					playerPiece.setType(Type.MANDOWN);
-				}
+				}			
 			}
 			else
 			{
-				return;
+				return false;
 			}
 
-			Collections.swap(labels, destinationIndex, toSwapSwapIndex);
+			Collections.swap(currentLabelSequence, destinationIndex, toSwapSwapIndex);
 		}
 
-		Collections.swap(labels, playerIndex, destinationIndex);
+		Collections.swap(currentLabelSequence, playerIndex, destinationIndex);
+
+		return true;
 	}
 
 	/**
@@ -268,7 +333,7 @@ public class PuzzlePanel extends JPanel
 	private boolean puzzleSolved()
 	{
 		boolean solved = true;
-		for(PuzzleLabel ps : labels)
+		for(PuzzleLabel ps : currentLabelSequence)
 		{
 			if(ps.isType(PuzzleGridGenerator.Type.BOX))
 			{
@@ -278,5 +343,4 @@ public class PuzzlePanel extends JPanel
 		}
 		return solved;
 	}
-
 }
