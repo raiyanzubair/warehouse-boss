@@ -4,15 +4,60 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class ButtonPanel extends JPanel {
 	
-	public ButtonPanel() {
+	public ButtonPanel(PuzzlePanel puzzle) {
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
+		
+		JButton LeftButton = new JButton("Left");
+		gbc.gridx = 1;
+		gbc.gridy = 1;
+		this.add(LeftButton, gbc);
+		LeftButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				KeyEvent ke = new KeyEvent(puzzle, 1, 0, 0, KeyEvent.VK_LEFT, '\0');
+				puzzle.handleKeyPress(ke);
+			}
+		});
+		
+		JButton RightButton = new JButton("Right");
+		gbc.gridx = 3;
+		gbc.gridy = 1;
+		this.add(RightButton, gbc);
+		RightButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				KeyEvent ke = new KeyEvent(puzzle, 1, 0, 0, KeyEvent.VK_RIGHT, '\0');
+				puzzle.handleKeyPress(ke);
+			}
+		});
+		
+		JButton UpButton = new JButton("Up");
+		gbc.gridx = 2;
+		gbc.gridy = 0;
+		this.add(UpButton, gbc);
+		UpButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				KeyEvent ke = new KeyEvent(puzzle, 1, 0, 0, KeyEvent.VK_UP, '\0');
+				puzzle.handleKeyPress(ke);
+			}
+		});
+		
+		JButton DownButton = new JButton("Down");
+		gbc.gridx = 2;
+		gbc.gridy = 2;
+		this.add(DownButton, gbc);
+		DownButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				KeyEvent ke = new KeyEvent(puzzle, 1, 0, 0, KeyEvent.VK_DOWN, '\0');
+				puzzle.handleKeyPress(ke);
+			}
+		});
 		
 		JButton UndoButton = new JButton("Undo (U)");
 		gbc.gridx = 0;
@@ -20,7 +65,7 @@ public class ButtonPanel extends JPanel {
 		this.add(UndoButton, gbc);
 		UndoButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				puzzle.reloadLastLabelState();
 			}
 		});
 
@@ -30,7 +75,7 @@ public class ButtonPanel extends JPanel {
 		this.add(ResetButton, gbc);
 		ResetButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				puzzle.resetGame();
 			}
 		});
 		
@@ -40,8 +85,9 @@ public class ButtonPanel extends JPanel {
 		this.add(ExitButton, gbc);
 		ExitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				System.exit(0);
 			}
 		});
+		
 	}
 }
