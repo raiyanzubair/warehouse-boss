@@ -36,9 +36,10 @@ public class Game
 	{
 		JFrame gameFrame = new JFrame();
 		
+//		ButtonPanel buttons = new ButtonPanel();
+//		gameFrame.add(buttons, BorderLayout.WEST);
 		PuzzlePanel panel = new PuzzlePanel(psg.generatePuzzleGrid());
 		gameFrame.add(panel, BorderLayout.CENTER);
-		
 		gameFrame.pack();
 		gameFrame.setTitle("Puzzle");
 		gameFrame.setResizable(false);
@@ -53,7 +54,6 @@ public class Game
 			}
 
 		});
-
 		gameFrame.setVisible(true);
 	}
 	
