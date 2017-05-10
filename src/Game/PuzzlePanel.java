@@ -3,6 +3,7 @@ package Game;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Stack;
@@ -53,15 +54,24 @@ public class PuzzlePanel extends JPanel
 		
 		this.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.setLayout(new GridLayout(ROWS, COLUMNS, 0, 0));
+		
+		this.reloadPanelLabels();
+		addKeyListener(new KeyAction()
+		{
+			@Override
+			public void keyPressed(KeyEvent e)
+			{
+				panel.handleKeyPress(e);
+			}
 
-		this.reloadPanelLabels();		
+		});
 	}
 	
 	/**
 	 * Reloads the puzzle squares from the labels array so that the ordering of the labels in the
 	 * panel matches the new order of puzzle squares in the labels array list.
 	 */
-	private void reloadPanelLabels()
+	public void reloadPanelLabels()
 	{
 		this.removeAll();
 		for(PuzzleLabel lbl : currentLabelSequence)
@@ -73,7 +83,7 @@ public class PuzzlePanel extends JPanel
 		this.updateUI();
 	}
 	
-	private void saveLabelsState()
+	public void saveLabelsState()
 	{
 		PuzzleLabel savedPlayer = playerPiece.Clone();
 		ArrayList<PuzzleLabel> savedState = new ArrayList<PuzzleLabel>();
@@ -96,7 +106,7 @@ public class PuzzlePanel extends JPanel
 		reloadPanelLabels();
 	}
 	
-	private void reloadLastLabelState()
+	public void reloadLastLabelState()
 	{
 		if(previousStates.size() > 0)
 		{
@@ -109,7 +119,7 @@ public class PuzzlePanel extends JPanel
 		}
 	}
 	
-	private void resetGame()
+	public void resetGame()
 	{
 		PuzzleGrid start = previousStates.get(0);
 		currentLabelSequence = start.getLabelSequence();
@@ -174,7 +184,7 @@ public class PuzzlePanel extends JPanel
 	 * @param playerIndex: The index in the labels array of the player piece
 	 * @return swapIndex: The index of the piece at the destination
 	 */
-	private int validateKeyArrowDirection(KeyEvent e, int playerIndex)
+	public int validateKeyArrowDirection(KeyEvent e, int playerIndex)
 	{
 		int swapIndex = -1;
 
@@ -191,7 +201,7 @@ public class PuzzlePanel extends JPanel
 	 * arrow key pressed in the key event
 	 * @param e: The key event passed
 	 */
-	private void setPlayerFacingDirection(KeyEvent e)
+	public void setPlayerFacingDirection(KeyEvent e)
 	{
 		int keyCode = e.getKeyCode();	
 		switch(keyCode)

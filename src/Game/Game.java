@@ -1,8 +1,6 @@
 package Game;
 
 import java.awt.BorderLayout;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 import javax.swing.JFrame;
 
@@ -35,25 +33,16 @@ public class Game
 	private void showGameScreen()
 	{
 		JFrame gameFrame = new JFrame();
-		
-//		ButtonPanel buttons = new ButtonPanel();
-//		gameFrame.add(buttons, BorderLayout.WEST);
 		PuzzlePanel panel = new PuzzlePanel(psg.generatePuzzleGrid());
+		ButtonPanel buttons = new ButtonPanel(panel);
+		buttons.setFocusable(false);
+		gameFrame.add(buttons, BorderLayout.WEST);
 		gameFrame.add(panel, BorderLayout.CENTER);
 		gameFrame.pack();
 		gameFrame.setTitle("Puzzle");
 		gameFrame.setResizable(false);
 		gameFrame.setLocationRelativeTo(null);
-		gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
-		gameFrame.addKeyListener(new KeyAction()
-		{
-			@Override
-			public void keyPressed(KeyEvent e)
-			{
-				panel.handleKeyPress(e);
-			}
-
-		});
+		gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		gameFrame.setVisible(true);
 	}
 	
