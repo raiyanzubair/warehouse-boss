@@ -217,8 +217,8 @@ public class PuzzlePanel extends JPanel
 		{
 			case KeyEvent.VK_UP: 	return playerIndex >= COLUMNS;
 			case KeyEvent.VK_DOWN: 	return playerIndex <= COLUMNS*(ROWS-1);
-			case KeyEvent.VK_LEFT: 	return playerIndex % COLUMNS != 0;
-			case KeyEvent.VK_RIGHT: return playerIndex % COLUMNS != ROWS-1;
+			case KeyEvent.VK_LEFT: 	return playerIndex % COLUMNS > 0;
+			case KeyEvent.VK_RIGHT: return playerIndex % COLUMNS < COLUMNS-1;
 		}
 		return false;
 	}
