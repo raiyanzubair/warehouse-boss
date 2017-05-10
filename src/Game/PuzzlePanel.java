@@ -26,7 +26,7 @@ import Game.PuzzleGridGenerator.Type;
  * @field: playerPiece: The reference to the player square that is to be moved around
  * when any arrow keys are pressed.
  */
-public class PuzzlePanel extends JPanel
+public class PuzzlePanel extends JPanel implements KeyListener
 {
 	private static final long serialVersionUID = 1L;
 	private final int ROWS;
@@ -55,17 +55,22 @@ public class PuzzlePanel extends JPanel
 		this.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.setLayout(new GridLayout(ROWS, COLUMNS, 0, 0));
 		
+		//Added KeyListener into the PuzzlePanel class to clean things up in Game
+		this.addKeyListener(this);
+		this.setFocusable(true);
+		
 		this.reloadPanelLabels();
-		addKeyListener(new KeyAction()
-		{
-			@Override
-			public void keyPressed(KeyEvent e)
-			{
-				panel.handleKeyPress(e);
-			}
-
-		});
 	}
+	
+	@Override
+	public void keyPressed(KeyEvent e)
+	{
+		this.handleKeyPress(e);
+	}
+	@Override
+	public void keyTyped(KeyEvent e) {};
+	@Override
+	public void keyReleased(KeyEvent e) {};
 	
 	/**
 	 * Reloads the puzzle squares from the labels array so that the ordering of the labels in the

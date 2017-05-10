@@ -16,6 +16,7 @@ public class ButtonPanel extends JPanel {
 		GridBagConstraints gbc = new GridBagConstraints();
 		
 		JButton LeftButton = new JButton("Left");
+		LeftButton.setFocusable(false);
 		gbc.gridx = 1;
 		gbc.gridy = 1;
 		this.add(LeftButton, gbc);
@@ -27,6 +28,7 @@ public class ButtonPanel extends JPanel {
 		});
 		
 		JButton RightButton = new JButton("Right");
+		RightButton.setFocusable(false);
 		gbc.gridx = 3;
 		gbc.gridy = 1;
 		this.add(RightButton, gbc);
@@ -38,6 +40,7 @@ public class ButtonPanel extends JPanel {
 		});
 		
 		JButton UpButton = new JButton("Up");
+		UpButton.setFocusable(false);
 		gbc.gridx = 2;
 		gbc.gridy = 0;
 		this.add(UpButton, gbc);
@@ -49,6 +52,7 @@ public class ButtonPanel extends JPanel {
 		});
 		
 		JButton DownButton = new JButton("Down");
+		DownButton.setFocusable(false);
 		gbc.gridx = 2;
 		gbc.gridy = 2;
 		this.add(DownButton, gbc);
@@ -60,6 +64,7 @@ public class ButtonPanel extends JPanel {
 		});
 		
 		JButton UndoButton = new JButton("Undo (U)");
+		UndoButton.setFocusable(false);
 		gbc.gridx = 0;
 		gbc.gridy = 0;
 		this.add(UndoButton, gbc);
@@ -70,6 +75,7 @@ public class ButtonPanel extends JPanel {
 		});
 
 		JButton ResetButton = new JButton("Reset (R)");
+		ResetButton.setFocusable(false);
 		gbc.gridx = 0;
 		gbc.gridy = 1;
 		this.add(ResetButton, gbc);
@@ -80,6 +86,7 @@ public class ButtonPanel extends JPanel {
 		});
 		
 		JButton ExitButton = new JButton("Exit");
+		ExitButton.setFocusable(false);
 		gbc.gridx = 0;
 		gbc.gridy = 2;
 		this.add(ExitButton, gbc);
