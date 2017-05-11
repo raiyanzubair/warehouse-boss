@@ -21,6 +21,7 @@ import Game.PuzzleGridGenerator.Type;
  * panel as well
  * @field ROWS: the number of rows of puzzle labels to add to the panel
  * @field COLUMNS: The number of columns of puzzle labels
+ * @field nMoves
  * @field labels: The ordered list of puzzle labels to add to the panel from the top row
  * and wrapping to the next rows until the last column of the last row
  * @field: playerPiece: The reference to the player square that is to be moved around
@@ -31,22 +32,23 @@ public class PuzzlePanel extends JPanel implements KeyListener
 	private static final long serialVersionUID = 1L;
 	private final int ROWS;
 	private final int COLUMNS;
-	
+	private int nMoves;
+
 	private ArrayList<PuzzleLabel> currentLabelSequence;
 	private Stack<PuzzleGrid> previousStates;
 	private PuzzleLabel playerPiece;
 	
 	/**
 	 * Creates a JPanel object with an empty grid structure with the specified rows and columns
-	 * @param rows: The number of rows
-	 * @param columns: The number of columns
+	 * @param grid: PuzzleGrid object that holds information on rows and columns in the puzzle
 	 * @return panel: The JPanel with the grid
 	 */
 	public PuzzlePanel(PuzzleGrid grid)
 	{
 		this.ROWS = grid.getRows();
 		this.COLUMNS = grid.getColumns();
-
+		this.nMoves = 0;
+		
 		this.playerPiece = grid.getPlayer();
 		this.currentLabelSequence = grid.getLabelSequence();
 		
@@ -62,6 +64,14 @@ public class PuzzlePanel extends JPanel implements KeyListener
 		this.reloadPanelLabels();
 	}
 	
+	public int getnMoves() {
+		return nMoves;
+	}
+
+	public void setnMoves(int nMoves) {
+		this.nMoves = nMoves;
+	}
+
 	@Override
 	public void keyPressed(KeyEvent e)
 	{
@@ -164,7 +174,6 @@ public class PuzzlePanel extends JPanel implements KeyListener
 		
 		int manIndex = currentLabelSequence.indexOf(playerPiece);
 		int swapIndex = validateKeyArrowDirection(e, manIndex);
-
 		if(swapIndex != -1)
 		{
 			handleSwapObjectBehaviour(e, manIndex, swapIndex);

@@ -126,7 +126,7 @@ public class PuzzleGridGenerator
 	 */
 	public PuzzleGrid generatePuzzleGrid()
 	{
-		return getLevelThree();
+		return getLevelTwo();
 	}
 	
 	/**

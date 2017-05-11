@@ -7,13 +7,21 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class ButtonPanel extends JPanel {
 	
+	
+	
 	public ButtonPanel(PuzzlePanel puzzle) {
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
+		
+		JLabel MoveCounter = new JLabel("Moves: " + Integer.toString(puzzle.getnMoves()));
+		gbc.gridx = 0;
+		gbc.gridy = 4;
+		this.add(MoveCounter, gbc);
 		
 		JButton LeftButton = new JButton("Left");
 		LeftButton.setFocusable(false);
