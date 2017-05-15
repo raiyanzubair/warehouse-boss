@@ -25,7 +25,22 @@ public class Game
 	public static void main(String[] args)
 	{
 		Game g = new Game();
+		//g.showMenuScreen();
 		g.showGameScreen();
+	}
+	
+	private void showMenuScreen() {
+		JFrame menuFrame = new JFrame();
+		MenuPanel menuPanel = new MenuPanel(psg);
+		
+		
+		menuFrame.add(menuPanel, BorderLayout.CENTER);
+		menuFrame.pack();
+		menuFrame.setTitle("Menu");
+		menuFrame.setResizable(false);
+		menuFrame.setLocationRelativeTo(null);
+		menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		menuFrame.setVisible(true);
 	}
 	
 	/**
@@ -37,6 +52,7 @@ public class Game
 		JFrame gameFrame = new JFrame();
 		PuzzlePanel panel = new PuzzlePanel(psg.generatePuzzleGrid());
 		ButtonPanel buttons = new ButtonPanel(panel);
+		panel.requestFocus();
 		gameFrame.add(buttons, BorderLayout.WEST);
 		gameFrame.add(panel, BorderLayout.CENTER);
 		gameFrame.pack();
@@ -44,7 +60,6 @@ public class Game
 		gameFrame.setResizable(false);
 		gameFrame.setLocationRelativeTo(null);
 		gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		panel.requestFocus();
 		gameFrame.setVisible(true);
 	}
 	
