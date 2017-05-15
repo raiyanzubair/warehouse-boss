@@ -8,50 +8,59 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-public class MenuPanel extends JPanel {
+public class MenuPanel extends JPanel 
+{
+	private PuzzleGrid selectedLevel;
 	
-	public PuzzleGrid selectedLevel;
-	
-	public MenuPanel (PuzzleGridGenerator psg) {
+	public MenuPanel(Game g, PuzzleGridGenerator psg)
+	{
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
-		
+
 		JButton levelOne = new JButton("Level One");
 		gbc.gridx = 0;
 		gbc.gridy = 0;
-		this.add(levelOne,gbc);
-		levelOne.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				selectedLevel = psg.generatePuzzleGrid();
+		this.add(levelOne, gbc);
+		levelOne.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				g.showGameScreen(psg.getDefaultMap());
 			}
 		});
-		
+
 		JButton levelTwo = new JButton("Level Two");
 		gbc.gridx = 0;
 		gbc.gridy = 1;
-		this.add(levelTwo,gbc);
-		levelTwo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				selectedLevel = psg.generatePuzzleGrid();
+		this.add(levelTwo, gbc);
+		levelTwo.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				g.showGameScreen(psg.getLevelTwo());
 			}
 		});
-		
+
 		JButton levelThree = new JButton("Level Three");
 		gbc.gridx = 0;
 		gbc.gridy = 2;
-		this.add(levelThree,gbc);
-		levelThree.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				selectedLevel = psg.generatePuzzleGrid();
+		this.add(levelThree, gbc);
+		levelThree.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				g.showGameScreen(psg.getLevelThree());
 			}
 		});
 	}
 
-	public PuzzleGrid getSelectedLevel() {
+	public PuzzleGrid getSelectedLevel()
+	{
 		return selectedLevel;
 	}
 
-	public void setSelectedLevel(PuzzleGrid selectedLevel) {
+	public void setSelectedLevel(PuzzleGrid selectedLevel)
+	{
 		this.selectedLevel = selectedLevel;
 	}
 	
