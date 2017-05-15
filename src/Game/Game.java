@@ -16,6 +16,14 @@ import javax.swing.JFrame;
 public class Game
 {
 	private static PuzzleGridGenerator psg = new PuzzleGridGenerator();
+	private JFrame gameFrame;
+	private JFrame menuFrame;
+	
+	public Game()
+	{
+		gameFrame = new JFrame();
+		menuFrame = new JFrame();
+	}
 	
 	/**
 	 * The main method which just creates a GameFrame frame window and sets its
@@ -25,15 +33,13 @@ public class Game
 	public static void main(String[] args)
 	{
 		Game g = new Game();
-		//g.showMenuScreen();
-		g.showGameScreen();
+		g.showMenuScreen();
 	}
 	
-	private void showMenuScreen() {
-		JFrame menuFrame = new JFrame();
-		MenuPanel menuPanel = new MenuPanel(psg);
-		
-		
+	private void showMenuScreen() 
+	{
+		MenuPanel menuPanel = new MenuPanel(this, psg);
+			
 		menuFrame.add(menuPanel, BorderLayout.CENTER);
 		menuFrame.pack();
 		menuFrame.setTitle("Menu");
@@ -47,21 +53,34 @@ public class Game
 	 * This method initializes a JFrame with just the puzzle in a panel and 
 	 * displays it to the user with a key event listener for the controls
 	 */
-	private void showGameScreen()
+	public void showGameScreen(PuzzleGrid grid)
 	{
-		JFrame gameFrame = new JFrame();
-		PuzzlePanel panel = new PuzzlePanel(psg.generatePuzzleGrid());
-		ButtonPanel buttons = new ButtonPanel(panel);
-		panel.requestFocus();
-		gameFrame.add(buttons, BorderLayout.WEST);
+		gameFrame.dispose();
+		gameFrame = new JFrame();
+		PuzzlePanel panel = new PuzzlePanel(grid);
+		//ButtonPanel buttons = new ButtonPanel(panel);
+
+		
+		//gameFrame.add(buttons, BorderLayout.WEST);
 		gameFrame.add(panel, BorderLayout.CENTER);
 		gameFrame.pack();
 		gameFrame.setTitle("Puzzle");
 		gameFrame.setResizable(false);
 		gameFrame.setLocationRelativeTo(null);
-		gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
+		gameFrame.addKeyListener(new KeyAction()
+		{
+			@Override
+			public void keyPressed(KeyEvent e)
+			{
+				panel.handleKeyPress(e);
+			}
+
+		});
 		gameFrame.setVisible(true);
+		gameFrame.validate();
 	}
+	
 	
 	/**
 	 * This class handles the incoming key events from the GameFram object and
