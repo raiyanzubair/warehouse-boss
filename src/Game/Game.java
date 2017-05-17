@@ -36,9 +36,9 @@ public class Game
 		g.showMenuScreen();
 	}
 	
-	private void showMenuScreen() 
+	public void showMenuScreen() 
 	{
-		MenuPanel menuPanel = new MenuPanel(this, psg);
+		MenuPanel menuPanel = new MenuPanel(this, this.menuFrame, psg);
 			
 		menuFrame.add(menuPanel, BorderLayout.CENTER);
 		menuFrame.pack();
@@ -58,10 +58,10 @@ public class Game
 		gameFrame.dispose();
 		gameFrame = new JFrame();
 		PuzzlePanel panel = new PuzzlePanel(grid);
-		//ButtonPanel buttons = new ButtonPanel(panel);
+		ButtonPanel buttons = new ButtonPanel(panel, gameFrame, this);
 
 		
-		//gameFrame.add(buttons, BorderLayout.WEST);
+		gameFrame.add(buttons, BorderLayout.WEST);
 		gameFrame.add(panel, BorderLayout.CENTER);
 		gameFrame.pack();
 		gameFrame.setTitle("Puzzle");

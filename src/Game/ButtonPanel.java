@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -14,7 +15,7 @@ public class ButtonPanel extends JPanel {
 	
 	
 	
-	public ButtonPanel(PuzzlePanel puzzle) {
+	public ButtonPanel(PuzzlePanel puzzle, JFrame gameFrame, Game g) {
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
 		
@@ -100,9 +101,9 @@ public class ButtonPanel extends JPanel {
 		this.add(ExitButton, gbc);
 		ExitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
+				gameFrame.setVisible(false);
+				g.showMenuScreen();
 			}
 		});
-		
 	}
 }

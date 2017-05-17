@@ -6,13 +6,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class MenuPanel extends JPanel 
-{
-	private PuzzleGrid selectedLevel;
-	
-	public MenuPanel(Game g, PuzzleGridGenerator psg)
+{	
+	public MenuPanel(Game g, JFrame menuFrame, PuzzleGridGenerator psg)
 	{
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
@@ -25,6 +24,7 @@ public class MenuPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent e)
 			{
+				menuFrame.setVisible(false);
 				g.showGameScreen(psg.getDefaultMap());
 			}
 		});
@@ -37,6 +37,7 @@ public class MenuPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent e)
 			{
+				menuFrame.setVisible(false);
 				g.showGameScreen(psg.getLevelTwo());
 			}
 		});
@@ -49,20 +50,9 @@ public class MenuPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent e)
 			{
+				menuFrame.setVisible(false);
 				g.showGameScreen(psg.getLevelThree());
 			}
 		});
 	}
-
-	public PuzzleGrid getSelectedLevel()
-	{
-		return selectedLevel;
-	}
-
-	public void setSelectedLevel(PuzzleGrid selectedLevel)
-	{
-		this.selectedLevel = selectedLevel;
-	}
-	
-	
 }
