@@ -12,10 +12,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class ButtonPanel extends JPanel {
-	
-	
-	
+
 	public ButtonPanel(PuzzlePanel puzzle, JFrame gameFrame, Game g) {
+		Color customOrange = new Color(255, 165, 96);
+		this.setBackground(customOrange);
+		
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
 		
