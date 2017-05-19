@@ -1,10 +1,16 @@
 package Game;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  * This is an example of a single GUI window that just has a panel with the puzzle
@@ -38,11 +44,46 @@ public class Game
 	
 	public void showMenuScreen() 
 	{
+		JPanel wholePanel = new JPanel();
+		wholePanel.setLayout(new BoxLayout(wholePanel, BoxLayout.Y_AXIS));
+		Color customOrange = new Color(255, 165, 96);
+		wholePanel.setBackground(customOrange);
+		wholePanel.setVisible(true);
+		
+		JPanel topWall = new JPanel(new BorderLayout());
+		ImageIcon topWallImage = new ImageIcon("src/menu/try2.jpg");
+		JLabel label = new JLabel("", topWallImage, JLabel.CENTER);
+		topWall.setBackground(customOrange);
+		topWall.add(label);
+		topWall.setVisible(true);
+		
+		JPanel titlePanel = new JPanel();
+		titlePanel.setBackground(customOrange);
+		JLabel title = new JLabel("WAREHOUSE BOSS");
+		title.setFont(new Font("Tahoma", Font.BOLD, 32));
+		title.setForeground(Color.WHITE);
+		titlePanel.add(title);
+		titlePanel.setVisible(true);
+		
 		MenuPanel menuPanel = new MenuPanel(this, this.menuFrame, psg);
-			
-		menuFrame.add(menuPanel, BorderLayout.CENTER);
+		
+		JPanel bottomWall = new JPanel(new BorderLayout());
+		ImageIcon bottomWallImage = new ImageIcon("src/menu/bottomwall.jpg");
+		JLabel bottomLabel = new JLabel("", bottomWallImage, JLabel.CENTER);
+		bottomWall.setBackground(customOrange);
+		bottomWall.add(bottomLabel);
+		bottomWall.setVisible(true);
+		
+		wholePanel.add(topWall,BorderLayout.CENTER);
+		wholePanel.add(titlePanel, BorderLayout.CENTER);
+		wholePanel.add(menuPanel, BorderLayout.CENTER);
+		wholePanel.add(bottomWall, BorderLayout.CENTER);
+		
+		menuFrame.add(wholePanel, BorderLayout.CENTER);
+	
 		menuFrame.pack();
-		menuFrame.setTitle("Menu");
+		menuFrame.setTitle("Warehouse Boss");
+		menuFrame.setSize(400, 560);
 		menuFrame.setResizable(false);
 		menuFrame.setLocationRelativeTo(null);
 		menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
