@@ -51,7 +51,7 @@ public class Game
 		wholePanel.setVisible(true);
 		
 		JPanel topWall = new JPanel(new BorderLayout());
-		ImageIcon topWallImage = new ImageIcon("src/menu/try2.jpg");
+		ImageIcon topWallImage = new ImageIcon("src/menu/topwall.jpg");
 		JLabel label = new JLabel("", topWallImage, JLabel.CENTER);
 		topWall.setBackground(customOrange);
 		topWall.add(label);
