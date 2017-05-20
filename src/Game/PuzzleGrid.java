@@ -16,6 +16,7 @@ import Game.PuzzleGridGenerator.Type;
  */
 public class PuzzleGrid
 {
+	private int levelID;
 	private int rows;
 	private int columns;
 	private PuzzleLabel playerLabel;
@@ -23,8 +24,9 @@ public class PuzzleGrid
 	private Stack<PuzzleGrid> previousStates;
 
 	
-	public PuzzleGrid(int rows, int columns, Type[] startingLabelTypes)
+	public PuzzleGrid(int ID, int rows, int columns, Type[] startingLabelTypes)
 	{
+		this.levelID = ID;
 		this.rows = rows;
 		this.columns = columns;
 		this.playerLabel = new PuzzleLabel(Type.MANDOWN);
@@ -55,6 +57,10 @@ public class PuzzleGrid
 		return labels;
 	}
 	
+	public int getLevelID() {
+		return levelID;
+	}
+
 	/**
 	 * @return: The number of rows for this grid
 	 */

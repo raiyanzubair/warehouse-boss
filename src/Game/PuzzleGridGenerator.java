@@ -3,6 +3,7 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -46,12 +47,15 @@ public class PuzzleGridGenerator
 		"ManRight.png"
 	};
 	public static ImageIcon[] icons = new ImageIcon[images.length];
+	private ArrayList<PuzzleGrid> levels;
 
 	public PuzzleGridGenerator()
 	{
 		loadImages();
+		this.levels = new ArrayList<PuzzleGrid>();
+		this.populateLevels();
 	}
-
+	
 	/**
 	 * Initializes the images array with the ImageIcons from the filenames
 	 */
@@ -124,17 +128,19 @@ public class PuzzleGridGenerator
 	 * rows x columns.
 	 * @return: The puzzle grid with the puzzle starting state properties
 	 */
-	public PuzzleGrid generatePuzzleGrid()
+	public PuzzleGrid generatePuzzleGrid(int ID)
 	{
-		return getLevelTwo();
+		PuzzleGrid level = levels.stream().filter(l -> l.getLevelID() == ID).findFirst().orElse(null);
+		return level;
 	}
 	
 	/**
 	 * @return: A default map layout
 	 */
-	public PuzzleGrid getDefaultMap()
+	public void populateLevels()
 	{
-		return new PuzzleGrid(8, 6, new Type[]
+		int numLevels = 0;
+		levels.add(numLevels++, new PuzzleGrid(0, 8, 6, new Type[]
 		{
 			Type.EMPTY, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY,
 			Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.EMPTY,
@@ -144,15 +150,9 @@ public class PuzzleGridGenerator
 			Type.BRICK, 	Type.CROSS, 	Type.BOX, 		Type.EMPTY, 	Type.EMPTY, 	Type.BRICK,
 			Type.BRICK, 	Type.CROSS, 	Type.CROSS, 	Type.GREENBOX, 	Type.CROSS, 	Type.BRICK,
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,
-		});
-	}
+		}));
 	
-	/**
-	 * @return: the first level of the game
-	 */
-	public PuzzleGrid getLevelOne()
-	{
-		return new PuzzleGrid(12, 7, new Type[]
+		levels.add(numLevels++, new PuzzleGrid(1, 12, 7, new Type[]
 		{
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.CROSS, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,
 			Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK,
@@ -166,12 +166,9 @@ public class PuzzleGridGenerator
 			Type.BRICK, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.BRICK,
 			Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.MANDOWN, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK,
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,
-		});
-	}
+		}));
 	
-	public PuzzleGrid getLevelTwo()
-	{
-		return new PuzzleGrid(12, 7, new Type[]
+		levels.add(numLevels++, new PuzzleGrid(2, 12, 7, new Type[]
 		{
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,
 			Type.BRICK, 	Type.BRICK, 	Type.CROSS, 	Type.EMPTY, 	Type.CROSS, 	Type.BRICK, 	Type.BRICK,
@@ -185,12 +182,9 @@ public class PuzzleGridGenerator
 			Type.BRICK, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.BRICK,
 			Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.MANDOWN, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK,
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,
-		});
-	}
+		}));
 	
-	public PuzzleGrid getLevelThree()	
-	{
-		return new PuzzleGrid(12, 12, new Type[]
+		levels.add(numLevels++, new PuzzleGrid(3, 12, 12, new Type[]
 		{
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK,
@@ -204,7 +198,7 @@ public class PuzzleGridGenerator
 			Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,
 			Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.MANDOWN, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 
-		});
+		}));
 	}
 
 }

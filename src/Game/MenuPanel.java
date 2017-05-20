@@ -28,7 +28,7 @@ public class MenuPanel extends JPanel
 			public void actionPerformed(ActionEvent e)
 			{
 				menuFrame.setVisible(false);
-				g.showGameScreen(psg.generatePuzzleGrid());
+				g.showGameScreen(psg.generatePuzzleGrid(0));
 			}
 		});
 		
@@ -43,7 +43,7 @@ public class MenuPanel extends JPanel
 			public void actionPerformed(ActionEvent e)
 			{
 				menuFrame.setVisible(false);
-				g.showGameScreen(psg.getDefaultMap());
+				g.showGameScreen(psg.generatePuzzleGrid(1));
 			}
 		});
 
@@ -56,7 +56,7 @@ public class MenuPanel extends JPanel
 			public void actionPerformed(ActionEvent e)
 			{
 				menuFrame.setVisible(false);
-				g.showGameScreen(psg.getLevelTwo());
+				g.showGameScreen(psg.generatePuzzleGrid(2));
 			}
 		});
 
@@ -69,7 +69,7 @@ public class MenuPanel extends JPanel
 			public void actionPerformed(ActionEvent e)
 			{
 				menuFrame.setVisible(false);
-				g.showGameScreen(psg.getLevelThree());
+				g.showGameScreen(psg.generatePuzzleGrid(3));
 			}
 		});
 	}
