@@ -102,9 +102,9 @@ public class Game
 		gameFrame.dispose();
 		gameFrame = new JFrame();
 		
-		PuzzlePanel panel = new PuzzlePanel(grid.getRows(), grid.getColumns());
+		PuzzleDisplayPanel panel = new PuzzleDisplayPanel(grid.getRows(), grid.getColumns());
 		PuzzleManager manager = new PuzzleManager(panel, grid, this);
-		ButtonPanel buttons = new ButtonPanel(manager, this);
+		PuzzleControlPanel buttons = new PuzzleControlPanel(manager, this);
 
 		panel.addKeyListener(new KeyAction()
 		{
@@ -190,5 +190,7 @@ public class Game
 
 		@Override
 		public void keyReleased(KeyEvent e){}	
-	}	
+	}
+	
 }
+
