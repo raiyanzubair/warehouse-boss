@@ -1,5 +1,6 @@
 package Game;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,17 +22,33 @@ public class WinScreen extends JFrame
 		this.setVisible(true);
 
 		JPanel title = new JPanel();
-		JButton menuButton = new JButton("Return to Main Menu");
+		title.setBackground(new Color(255, 165, 96));
+		
+		JButton menuButton = new JButton("Main Menu");
 		title.add(menuButton);
-		menuButton.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent e)
-			{
+		menuButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				g.showMenuScreen();
 				setVisible(false);
 			}
 		});
-
+		
+		JButton retryButton = new JButton("Retry Level");
+		title.add(retryButton);
+		retryButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		
+		JButton nextButton = new JButton("Next Level");
+		title.add(nextButton);
+		nextButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		
 		this.add(title);
 		this.pack();
 	}
