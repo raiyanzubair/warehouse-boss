@@ -3,11 +3,13 @@ package Game;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -24,11 +26,13 @@ public class Game
 	private static PuzzleGridGenerator psg = new PuzzleGridGenerator();
 	private JFrame gameFrame;
 	private JFrame menuFrame;
+	private JFrame winFrame;
 	
 	public Game()
 	{
 		gameFrame = new JFrame();
 		menuFrame = new JFrame();
+		winFrame = new JFrame();
 	}
 	
 	/**
@@ -45,40 +49,37 @@ public class Game
 	public void showMenuScreen() 
 	{
 		gameFrame.setVisible(false);
-		JPanel wholePanel = new JPanel();
-		wholePanel.setLayout(new BoxLayout(wholePanel, BoxLayout.Y_AXIS));
-		Color customOrange = new Color(255, 165, 96);
-		wholePanel.setBackground(customOrange);
-		wholePanel.setVisible(true);
 		
 		JPanel topWall = new JPanel(new BorderLayout());
-		ImageIcon topWallImage = new ImageIcon("src/menu/topwall.jpg");
-		JLabel label = new JLabel("", topWallImage, JLabel.CENTER);
-		topWall.setBackground(customOrange);
-		topWall.add(label);
+		JLabel topWallLabel = new JLabel(ImageFactory.topWall, JLabel.CENTER);
+		topWall.setBackground(ImageFactory.Colors.customOrange);
+		topWall.add(topWallLabel);
 		topWall.setVisible(true);
 		
 		JPanel titlePanel = new JPanel();
-		titlePanel.setBackground(customOrange);
 		JLabel title = new JLabel("WAREHOUSE BOSS");
 		title.setFont(new Font("Tahoma", Font.BOLD, 32));
 		title.setForeground(Color.WHITE);
 		titlePanel.add(title);
+		titlePanel.setBackground(ImageFactory.Colors.customOrange);
 		titlePanel.setVisible(true);
 		
-		MenuPanel menuPanel = new MenuPanel(this, this.menuFrame, psg);
+		MenuPanel menuPanel = new MenuPanel(this, psg);
 		
 		JPanel bottomWall = new JPanel(new BorderLayout());
-		ImageIcon bottomWallImage = new ImageIcon("src/menu/bottomwall.jpg");
-		JLabel bottomLabel = new JLabel("", bottomWallImage, JLabel.CENTER);
-		bottomWall.setBackground(customOrange);
-		bottomWall.add(bottomLabel);
+		JLabel bottomWallLabel = new JLabel("", ImageFactory.bottomWall, JLabel.CENTER);
+		bottomWall.setBackground(ImageFactory.Colors.customOrange);
+		bottomWall.add(bottomWallLabel);
 		bottomWall.setVisible(true);
 		
+		JPanel wholePanel = new JPanel();
+		wholePanel.setLayout(new BoxLayout(wholePanel, BoxLayout.Y_AXIS));
+		wholePanel.setBackground(ImageFactory.Colors.customOrange);
 		wholePanel.add(topWall,BorderLayout.CENTER);
 		wholePanel.add(titlePanel, BorderLayout.CENTER);
 		wholePanel.add(menuPanel, BorderLayout.CENTER);
 		wholePanel.add(bottomWall, BorderLayout.CENTER);
+		wholePanel.setVisible(true);
 		
 		menuFrame.add(wholePanel, BorderLayout.CENTER);
 	
@@ -97,16 +98,26 @@ public class Game
 	 */
 	public void showGameScreen(PuzzleGrid grid)
 	{
+		menuFrame.setVisible(false);
 		gameFrame.dispose();
 		gameFrame = new JFrame();
-		PuzzlePanel panel = new PuzzlePanel(grid, this);
-		ButtonPanel buttons = new ButtonPanel(panel, gameFrame, this);
-		JPanel container = new JPanel();
-		container.add(panel);
-		container.setBackground(new Color(255, 165, 96));
+		
+		PuzzlePanel panel = new PuzzlePanel(grid.getRows(), grid.getColumns());
+		PuzzleManager manager = new PuzzleManager(panel, grid, this);
+		ButtonPanel buttons = new ButtonPanel(manager, this);
+
+		panel.addKeyListener(new KeyAction()
+		{
+			@Override
+			public void keyPressed(KeyEvent e)
+			{
+				manager.handleKeyPress(e);
+				buttons.updateMoves(manager.getnMoves());
+			}
+		});
 
 		gameFrame.add(buttons, BorderLayout.SOUTH);
-		gameFrame.add(container, BorderLayout.CENTER);
+		gameFrame.add(panel, BorderLayout.CENTER);
 		gameFrame.pack();
 		gameFrame.setTitle("Puzzle");
 		gameFrame.setResizable(false);
@@ -116,6 +127,53 @@ public class Game
 		gameFrame.validate();
 	}
 	
+	public void showWinScreen(int level)
+	{
+		winFrame = new JFrame();
+		JPanel container;
+		JButton menuButton;
+		JButton nextLevelButton;
+		
+		//JOptionPane.showMessageDialog(this, "Finished", "Congratulation", JOptionPane.INFORMATION_MESSAGE);
+
+		menuButton = new JButton("Return to Main Menu");
+		menuButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				showMenuScreen();
+				winFrame.setVisible(false);
+			}
+		});
+		
+		nextLevelButton = new JButton("Next Level");
+		nextLevelButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				showGameScreen(psg.generatePuzzleGrid(level+1));
+				winFrame.setVisible(false);
+			}
+		});
+
+		container = new JPanel();
+		container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+		container.setBackground(ImageFactory.Colors.customOrange);
+		container.add(menuButton, BorderLayout.CENTER);
+		if(level+1 < psg.getNumberOfLevels())
+		{
+			container.add(nextLevelButton, BorderLayout.CENTER);
+		}		
+		
+		int levelNumber = level+1;
+		winFrame.setTitle("Level " + levelNumber + " Complete");
+		winFrame.setResizable(false);
+		winFrame.setLocationRelativeTo(null);
+		winFrame.setVisible(true);
+		winFrame.add(container);
+		winFrame.pack();
+	}
+
 	
 	/**
 	 * This class handles the incoming key events from the GameFram object and
@@ -132,6 +190,5 @@ public class Game
 
 		@Override
 		public void keyReleased(KeyEvent e){}	
-	}
-	
+	}	
 }
