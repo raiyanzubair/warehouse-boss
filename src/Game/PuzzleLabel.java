@@ -3,7 +3,7 @@ package Game;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-import Game.PuzzleGridGenerator.Type;
+import Game.ImageFactory.Type;
 
 /**
  * Represents a single puzzle square which shows a single image according to its type (defined
@@ -60,7 +60,7 @@ public class PuzzleLabel extends JLabel
 	{
 		if(image != null)
 		{
-			ImageIcon icon = PuzzleGridGenerator.icons[image.ordinal()];
+			ImageIcon icon = ImageFactory.puzzleIcons[image.ordinal()];
 			this.setIcon(icon);
 		}
 	}
