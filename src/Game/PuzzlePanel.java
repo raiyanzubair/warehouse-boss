@@ -180,6 +180,16 @@ public class PuzzlePanel extends JPanel implements KeyListener
 		{
 			handleSwapObjectBehaviour(e, manIndex, swapIndex);
 			reloadPanelLabels();
+			validateNumMoves(manIndex);
+		}
+	}
+	
+	public void validateNumMoves(int originalManIndex)
+	{
+		int manIndex = currentLabelSequence.indexOf(playerPiece);
+		if(manIndex != originalManIndex)
+		{
+			nMoves++;
 		}
 	}
 
