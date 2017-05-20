@@ -44,6 +44,7 @@ public class Game
 	
 	public void showMenuScreen() 
 	{
+		gameFrame.setVisible(false);
 		JPanel wholePanel = new JPanel();
 		wholePanel.setLayout(new BoxLayout(wholePanel, BoxLayout.Y_AXIS));
 		Color customOrange = new Color(255, 165, 96);
@@ -98,26 +99,19 @@ public class Game
 	{
 		gameFrame.dispose();
 		gameFrame = new JFrame();
-		PuzzlePanel panel = new PuzzlePanel(grid);
+		PuzzlePanel panel = new PuzzlePanel(grid, this);
 		ButtonPanel buttons = new ButtonPanel(panel, gameFrame, this);
+		JPanel container = new JPanel();
+		container.add(panel);
+		container.setBackground(new Color(255, 165, 96));
 
-		
-		gameFrame.add(buttons, BorderLayout.WEST);
-		gameFrame.add(panel, BorderLayout.CENTER);
+		gameFrame.add(buttons, BorderLayout.SOUTH);
+		gameFrame.add(container, BorderLayout.CENTER);
 		gameFrame.pack();
 		gameFrame.setTitle("Puzzle");
 		gameFrame.setResizable(false);
 		gameFrame.setLocationRelativeTo(null);
 		gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
-		gameFrame.addKeyListener(new KeyAction()
-		{
-			@Override
-			public void keyPressed(KeyEvent e)
-			{
-				panel.handleKeyPress(e);
-			}
-
-		});
 		gameFrame.setVisible(true);
 		gameFrame.validate();
 	}
