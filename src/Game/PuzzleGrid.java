@@ -1,6 +1,7 @@
 package Game;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 import Game.PuzzleGridGenerator.Type;
 
@@ -19,6 +20,8 @@ public class PuzzleGrid
 	private int columns;
 	private PuzzleLabel playerLabel;
 	private ArrayList<PuzzleLabel> labelSequence;
+	private Stack<PuzzleGrid> previousStates;
+
 	
 	public PuzzleGrid(int rows, int columns, Type[] startingLabelTypes)
 	{
@@ -88,4 +91,5 @@ public class PuzzleGrid
 		return labelSequence;
 	}
 
+	
 }
