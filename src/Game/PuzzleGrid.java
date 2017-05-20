@@ -1,9 +1,8 @@
 package Game;
 
 import java.util.ArrayList;
-import java.util.Stack;
 
-import Game.PuzzleGridGenerator.Type;
+import Game.ImageFactory.Type;
 
 /**
  * Holds the information for an initial state (including the dimensions and the layout of the
@@ -21,8 +20,6 @@ public class PuzzleGrid
 	private int columns;
 	private PuzzleLabel playerLabel;
 	private ArrayList<PuzzleLabel> labelSequence;
-	private Stack<PuzzleGrid> previousStates;
-
 	
 	public PuzzleGrid(int ID, int rows, int columns, Type[] startingLabelTypes)
 	{
@@ -57,7 +54,8 @@ public class PuzzleGrid
 		return labels;
 	}
 	
-	public int getLevelID() {
+	public int getLevelID() 
+	{
 		return levelID;
 	}
 
@@ -96,6 +94,4 @@ public class PuzzleGrid
 	{
 		return labelSequence;
 	}
-
-	
 }
