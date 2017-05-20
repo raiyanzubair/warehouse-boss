@@ -31,9 +31,9 @@ public class PuzzleManager
 	private ArrayList<PuzzleLabel> currentLabelSequence;
 	private Stack<PuzzleGrid> previousStates;
 	private PuzzleLabel playerPiece;
-	private PuzzlePanel panel;
+	private PuzzleDisplayPanel panel;
 	
-	public PuzzleManager(PuzzlePanel panel, PuzzleGrid grid, Game g)
+	public PuzzleManager(PuzzleDisplayPanel panel, PuzzleGrid grid, Game g)
 	{
 		this.level = grid.getLevelID();
 		this.ROWS = grid.getRows();
