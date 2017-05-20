@@ -33,6 +33,7 @@ public class PuzzlePanel extends JPanel implements KeyListener
 	private final int ROWS;
 	private final int COLUMNS;
 	private int nMoves;
+	private Game g;
 
 	private ArrayList<PuzzleLabel> currentLabelSequence;
 	private Stack<PuzzleGrid> previousStates;
@@ -43,11 +44,12 @@ public class PuzzlePanel extends JPanel implements KeyListener
 	 * @param grid: PuzzleGrid object that holds information on rows and columns in the puzzle
 	 * @return panel: The JPanel with the grid
 	 */
-	public PuzzlePanel(PuzzleGrid grid)
+	public PuzzlePanel(PuzzleGrid grid, Game g)
 	{
 		this.ROWS = grid.getRows();
 		this.COLUMNS = grid.getColumns();
 		this.nMoves = 0;
+		this.g = g;
 		
 		this.playerPiece = grid.getPlayer();
 		this.currentLabelSequence = grid.getLabelSequence();
@@ -185,8 +187,7 @@ public class PuzzlePanel extends JPanel implements KeyListener
 	{
 		if(puzzleSolved())
 		{
-			JOptionPane.showMessageDialog(this, "Finished", "Congratulation", JOptionPane.INFORMATION_MESSAGE);
-			System.exit(0);
+			new WinScreen(g).setVisible(true);
 		}
 	}
 
