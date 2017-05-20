@@ -64,7 +64,7 @@ public class Game
 		titlePanel.setBackground(ImageFactory.Colors.customOrange);
 		titlePanel.setVisible(true);
 		
-		MenuPanel menuPanel = new MenuPanel(this, psg);
+		TitleMenuPanel menuPanel = new TitleMenuPanel(this, psg);
 		
 		JPanel bottomWall = new JPanel(new BorderLayout());
 		JLabel bottomWallLabel = new JLabel("", ImageFactory.bottomWall, JLabel.CENTER);
