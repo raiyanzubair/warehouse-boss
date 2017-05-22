@@ -185,7 +185,6 @@ public class Game
 		scrollPane.setVerticalScrollBarPolicy(scrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(scrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		
-		//tutorialFrame.getContentPane().add(scrollPane);
 		tutorialFrame.add(scrollPane);
 		tutorialFrame.setTitle("Tutorial");
 		tutorialFrame.setResizable(false);
