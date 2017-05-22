@@ -39,9 +39,17 @@ public class ImageFactory
 		"ManRight.png"
 	};
 	public static final ImageIcon[] puzzleIcons = loadImages();
+	
+	//Images for the title menu panel
 	public static final ImageIcon topWall = new ImageIcon("src/menu/topwall.jpg");
 	public static final ImageIcon bottomWall = new ImageIcon("src/menu/bottomwall.jpg");
 
+	//Images for the tutorial panel
+	
+	public static final ImageIcon tutorialGif = new ImageIcon("src/tutorial/tutorial.gif");
+	public static final ImageIcon undoGif = new ImageIcon("src/tutorial/UndoButton.gif");
+	public static final ImageIcon resetGif = new ImageIcon("src/tutorial/ResetButton.gif");
+	
 	static class Colors
 	{
 		public static final Color customOrange = new Color(255, 165, 96);
@@ -116,3 +124,4 @@ public class ImageFactory
 	}
 
 }
+
