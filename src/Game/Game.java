@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 /**
  * This is an example of a single GUI window that just has a panel with the puzzle
@@ -27,12 +28,14 @@ public class Game
 	private JFrame gameFrame;
 	private JFrame menuFrame;
 	private JFrame winFrame;
+	private JFrame tutorialFrame;
 	
 	public Game()
 	{
 		gameFrame = new JFrame();
 		menuFrame = new JFrame();
 		winFrame = new JFrame();
+		tutorialFrame = new JFrame();
 	}
 	
 	/**
@@ -173,6 +176,23 @@ public class Game
 		winFrame.add(container);
 		winFrame.pack();
 	}
+	
+	public void showTutorialScreen(Game g) {
+		tutorialFrame = new JFrame();
+		
+		JPanel tutorialPanel = new TutorialPanel(g);
+		JScrollPane scrollPane = new JScrollPane(tutorialPanel);
+		scrollPane.setVerticalScrollBarPolicy(scrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(scrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		
+		//tutorialFrame.getContentPane().add(scrollPane);
+		tutorialFrame.add(scrollPane);
+		tutorialFrame.setTitle("Tutorial");
+		tutorialFrame.setResizable(false);
+		tutorialFrame.setLocationRelativeTo(null);
+		tutorialFrame.setVisible(true);
+		tutorialFrame.setSize(400, 560);
+	}
 
 	
 	/**
@@ -193,4 +213,6 @@ public class Game
 	}
 	
 }
+
+
 
