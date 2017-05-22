@@ -5,7 +5,10 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -72,12 +75,33 @@ public class TutorialPanel extends JPanel {
 		resetEx.add(resetExample);
 		addGridComponent(resetEx, 0, 8);
 		
+		JButton returnButton = new JButton("Main Menu");
+		returnButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				g.showMenuScreen();
+			}
+		});
+		addGridComponent(returnButton, 0, 9);
+		
+		JButton multiplayerRules = new JButton("Multiplayer Rules");
+		multiplayerRules.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				g.showMenuScreen();
+				//Implement function to show tutorial for multiplayer
+			}
+		});
+		addGridComponent(multiplayerRules, 1, 9);
+		
 		JPanel bottomWall = new JPanel(new BorderLayout());
 		JLabel bottomWallLabel = new JLabel("", ImageFactory.bottomWall, JLabel.CENTER);
 		bottomWall.setBackground(ImageFactory.Colors.customOrange);
 		bottomWall.add(bottomWallLabel);
 		bottomWall.setVisible(true);
-		addGridComponent(bottomWall, 0, 9);
+		addGridComponent(bottomWall, 0, 10);
 	}
 	
 	private JLabel addText (String string) 

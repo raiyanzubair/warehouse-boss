@@ -1,5 +1,6 @@
 package Game;
 
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
@@ -17,6 +18,7 @@ public class TitleMenuPanel extends JPanel
 	JButton levelTwo;
 	JButton levelThree;
 	JButton levelFour;
+	JButton tutorialButton;
 	JButton quitButton;
 	
 	public TitleMenuPanel(Game g, PuzzleGridGenerator psg)
@@ -29,9 +31,8 @@ public class TitleMenuPanel extends JPanel
 	
 	private void populateComponents(Game g, PuzzleGridGenerator psg)
 	{
-		//JButton howToPlay = new JButton("HOW TO PLAY");
-
-		for(int i = 0; i < psg.getNumberOfLevels(); i++)
+		int i = 0;
+		for(i = 0; i < psg.getNumberOfLevels(); i++)
 		{
 			String level = numberToWord(i+1);
 			levelOne = new JButton("LEVEL " + level);
@@ -39,7 +40,17 @@ public class TitleMenuPanel extends JPanel
 			addGridComponent(levelOne, 0, i);
 		}	
 		
+		tutorialButton = new JButton("HOW TO PLAY");
+		tutorialButton.setFont(new Font("Arial", Font.BOLD, 14));
+		tutorialButton.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent e) {
+				g.showTutorialScreen(g);
+			}
+		});
+		addGridComponent(tutorialButton, 0, i+1);
+		
 		quitButton = new JButton("QUIT");
+		quitButton.setFont(new Font("Arial", Font.BOLD, 14));
 		quitButton.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
@@ -47,7 +58,7 @@ public class TitleMenuPanel extends JPanel
 				System.exit(0);
 			}
 		});
-		addGridComponent(quitButton, 0, 4);
+		addGridComponent(quitButton, 0, i+2);
 	}
 	
 	private void registerLevelClickToLoadPuzzle(Game g, JButton button, PuzzleGrid level)

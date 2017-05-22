@@ -51,6 +51,7 @@ public class Game
 	
 	public void showMenuScreen() 
 	{
+		tutorialFrame.setVisible(false);
 		gameFrame.setVisible(false);
 		
 		JPanel topWall = new JPanel(new BorderLayout());
@@ -178,6 +179,7 @@ public class Game
 	}
 	
 	public void showTutorialScreen(Game g) {
+		menuFrame.setVisible(false);
 		tutorialFrame = new JFrame();
 		
 		JPanel tutorialPanel = new TutorialPanel(g);

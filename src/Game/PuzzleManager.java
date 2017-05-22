@@ -80,6 +80,7 @@ public class PuzzleManager
 			
 			currentLabelSequence = savedState.getLabelSequence();
 			playerPiece = savedState.getPlayer();
+			nMoves--;
 			
 			panel.reloadPanelLabels(currentLabelSequence);
 		}
@@ -93,6 +94,7 @@ public class PuzzleManager
 			currentLabelSequence = start.getLabelSequence();
 			playerPiece = start.getPlayer();
 			previousStates.clear();
+			nMoves = 0;
 			panel.reloadPanelLabels(currentLabelSequence);
 		}
 	}
