@@ -15,6 +15,7 @@ public class PuzzleControlPanel extends JPanel
 {
 	private static final long serialVersionUID = 1L;
 	private PuzzleManager manager;
+	private PuzzleGrid grid;
 	
 	JLabel moveCounter;
 	JButton leftButton;
@@ -25,9 +26,10 @@ public class PuzzleControlPanel extends JPanel
 	JButton resetButton;
 	JButton exitButton;
 	
-	public PuzzleControlPanel(PuzzleManager manager, Game g) 
+	public PuzzleControlPanel(PuzzleManager manager, PuzzleGrid grid, Game g) 
 	{	
 		this.manager = manager;
+		this.grid = grid;
 		this.setBackground(ImageFactory.Colors.customOrange);	
 		this.setLayout(new GridBagLayout());
 		
@@ -104,7 +106,7 @@ public class PuzzleControlPanel extends JPanel
 			public void actionPerformed(ActionEvent e) 
 			{
 				KeyEvent ke = new KeyEvent(panel, 0, 0, 0, keyCode, '\0');
-				manager.handleKeyPress(ke);
+				manager.handleKeyPress(ke, grid);
 				updateMoves(manager.getnMoves());
 			}
 		});

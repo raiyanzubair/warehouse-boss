@@ -28,7 +28,7 @@ public class PuzzleManager
 	private final int COLUMNS;
 	private int nMoves;
 	private Game game;
-
+	private PuzzleGrid grid;
 	private ArrayList<PuzzleLabel> currentLabelSequence;
 	private Stack<PuzzleGrid> previousStates;
 	private PuzzleLabel playerOnePiece;
@@ -38,6 +38,7 @@ public class PuzzleManager
 	
 	public PuzzleManager(PuzzleDisplayPanel panel, PuzzleGrid grid, Game g)
 	{	
+		this.grid = grid;
 		this.level = grid.getLevelID();
 		this.ROWS = grid.getRows();
 		this.COLUMNS = grid.getColumns();
@@ -112,7 +113,7 @@ public class PuzzleManager
 	 * piece is being moved to can be moved (box) or moved to (empty space, cross)
 	 * @param e: The event from a key press
 	 */
-	public void handleKeyPress(KeyEvent e)
+	public void handleKeyPress(KeyEvent e, PuzzleGrid grid)
 	{	
 		if (e.getKeyCode() == KeyEvent.VK_R)
 		{
@@ -127,13 +128,13 @@ public class PuzzleManager
 		if(e.getKeyCode() == KeyEvent.VK_UP || e.getKeyCode() == KeyEvent.VK_DOWN || e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode() == KeyEvent.VK_RIGHT)
 		{
 			registerMove(e, playerOnePiece);
-			validatePuzzleSolved();
+			validatePuzzleSolved(grid);
 		}	
 		
 		if(e.getKeyCode() == KeyEvent.VK_W || e.getKeyCode() == KeyEvent.VK_S || e.getKeyCode() == KeyEvent.VK_A || e.getKeyCode() == KeyEvent.VK_D)
 		{
 			registerMove(e, playerTwoPiece);
-			validatePuzzleSolved();
+			validatePuzzleSolved(grid);
 		}	
 	}
 	
@@ -161,10 +162,11 @@ public class PuzzleManager
 		}
 	}
 
-	public void validatePuzzleSolved()
+	public void validatePuzzleSolved(PuzzleGrid grid)
 	{
 		if(puzzleSolved())
 		{
+			grid.setHighScore(nMoves);
 			game.showWinScreen(level);
 		}
 	}

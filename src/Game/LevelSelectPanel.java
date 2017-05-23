@@ -34,11 +34,11 @@ public class LevelSelectPanel extends JPanel
 			registerLevelClickToLoadPuzzle(g, newLevel, psg.generatePuzzleGrid(i));
 			
 			String highScoreValue;
-			if (psg.generatePuzzleGrid(i).getHighScore() >= 0) {
+			//if (psg.generatePuzzleGrid(i).getHighScore() >= 0) {
 				highScoreValue = "High Score: " + Integer.toString(psg.generatePuzzleGrid(i).getHighScore());
-			} else {
-				highScoreValue = "Level not complete";
-			}
+			//} else {
+			//	highScoreValue = "Level not complete";
+			//}
 			JLabel highScore = new JLabel(highScoreValue);
 			addGridComponent(newLevel, 0, i);
 			addGridComponent(highScore, 1, i);

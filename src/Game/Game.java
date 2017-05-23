@@ -82,14 +82,14 @@ public class Game
 		
 		PuzzleDisplayPanel panel = new PuzzleDisplayPanel(grid.getRows(), grid.getColumns());
 		PuzzleManager manager = new PuzzleManager(panel, grid, this);
-		PuzzleControlPanel buttons = new PuzzleControlPanel(manager, this);
+		PuzzleControlPanel buttons = new PuzzleControlPanel(manager, grid, this);
 
 		panel.addKeyListener(new KeyAction()
 		{
 			@Override
 			public void keyPressed(KeyEvent e)
 			{
-				manager.handleKeyPress(e);
+				manager.handleKeyPress(e, grid);
 				buttons.updateMoves(manager.getnMoves());
 			}
 		});
