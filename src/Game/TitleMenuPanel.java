@@ -55,6 +55,15 @@ public class TitleMenuPanel extends JPanel
 		});
 		addGridComponent(levelButton, 0, numComponents++);
 		
+		levelButton = new JButton("TRY THE SHADOW");
+		levelButton.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent e) 
+			{
+				g.showGameScreen(psg.getShadowLevel());			
+			}
+		});
+		addGridComponent(levelButton, 0, numComponents++);
+		
 		quitButton = new JButton("QUIT");
 		quitButton.addActionListener(new ActionListener()
 		{
