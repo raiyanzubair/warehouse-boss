@@ -28,13 +28,7 @@ public class TitleMenuPanel extends JPanel
 	
 	private void populateComponents(Game g, PuzzleGridGenerator psg)
 	{
-		levelButton = new JButton("LEVEL SELECT");
-		levelButton.addActionListener(new ActionListener() {
-			public void actionPerformed (ActionEvent e) {
-				g.showLevelSelect(g, psg);
-			}
-		});
-		addGridComponent(levelButton, 0, 0);
+		numComponents = 0;
 		
 		tutorialButton = new JButton("HOW TO PLAY");
 		tutorialButton.addActionListener(new ActionListener() {
@@ -42,7 +36,24 @@ public class TitleMenuPanel extends JPanel
 				g.showTutorialScreen(g);
 			}
 		});
-		addGridComponent(tutorialButton, 0, 1);
+		addGridComponent(tutorialButton, 0, numComponents++);
+		
+		levelButton = new JButton("LEVEL SELECT");
+		levelButton.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent e) {
+				g.showLevelSelect(g, psg);
+			}
+		});
+		addGridComponent(levelButton, 0, numComponents++);
+		
+		levelButton = new JButton("MULTIPLAYER");
+		levelButton.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent e) 
+			{
+				g.showGameScreen(psg.getDefaultMultiplayerLevel());
+			}
+		});
+		addGridComponent(levelButton, 0, numComponents++);
 		
 		quitButton = new JButton("QUIT");
 		quitButton.addActionListener(new ActionListener()
@@ -52,7 +63,7 @@ public class TitleMenuPanel extends JPanel
 				System.exit(0);
 			}
 		});
-		addGridComponent(quitButton, 0, 2);
+		addGridComponent(quitButton, 0, numComponents++);
 	}
 	
 	private void addGridComponent(JComponent component, int gridX, int gridY)
