@@ -164,7 +164,7 @@ public class Game
 		tutorialFrame.setResizable(false);
 		tutorialFrame.setLocationRelativeTo(null);
 		tutorialFrame.setVisible(true);
-		tutorialFrame.setSize(400, 560);
+		tutorialFrame.setSize(450, 560);
 	}
 	
 	static void setDefaultLayout (JPanel targetPanel, JFrame targetFrame) {
