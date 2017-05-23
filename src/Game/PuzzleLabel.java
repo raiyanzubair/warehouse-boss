@@ -69,6 +69,12 @@ public class PuzzleLabel extends JLabel
 		}
 	}
 	
+	public void setToShadow()
+	{
+		ImageIcon icon = ImageFactory.puzzleIcons[Type.SHADOW.ordinal()];
+		this.setIcon(icon);
+	}
+	
 	public Player getPlayer()
 	{
 		return this.player;
