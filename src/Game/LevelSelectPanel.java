@@ -4,14 +4,17 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 
 import javax.swing.JButton;
 import javax.swing.JComponent;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class LevelSelectPanel extends JPanel 
 {	
 	private static final long serialVersionUID = 1L;
+	private HashMap<PuzzleGrid, Integer> highScores;
 	
 	public LevelSelectPanel (Game g, PuzzleGridGenerator psg)
 	{
@@ -29,7 +32,16 @@ public class LevelSelectPanel extends JPanel
 			String level = numberToWord(i+1);
 			JButton newLevel = new JButton("LEVEL " + level);
 			registerLevelClickToLoadPuzzle(g, newLevel, psg.generatePuzzleGrid(i));
+			
+			String highScoreValue;
+			if (psg.generatePuzzleGrid(i).getHighScore() >= 0) {
+				highScoreValue = "High Score: " + Integer.toString(psg.generatePuzzleGrid(i).getHighScore());
+			} else {
+				highScoreValue = "Level not complete";
+			}
+			JLabel highScore = new JLabel(highScoreValue);
 			addGridComponent(newLevel, 0, i);
+			addGridComponent(highScore, 1, i);
 		}
 		
 		JButton returnButton = new JButton("RETURN");
@@ -41,7 +53,6 @@ public class LevelSelectPanel extends JPanel
 			}
 		});
 		addGridComponent(returnButton, 0, i+1);
-
 	}
 	
 	private void registerLevelClickToLoadPuzzle(Game g, JButton button, PuzzleGrid level)

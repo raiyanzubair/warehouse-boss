@@ -21,6 +21,7 @@ public class PuzzleGrid
 	private PuzzleLabel playerLabel;
 	private ArrayList<PuzzleLabel> labelSequence;
 	
+	private int highScore;
 	private boolean multiplayer;
 	private PuzzleLabel playerTwo;
 	
@@ -31,6 +32,7 @@ public class PuzzleGrid
 		this.columns = columns;
 		this.playerLabel = new PuzzleLabel(Type.MANDOWN);
 		this.labelSequence = initializeStartingLabels(startingLabelTypes);
+		this.highScore = -1;
 	}
 	
 	public PuzzleGrid(int rows, int columns, ArrayList<PuzzleLabel> labelSequence, PuzzleLabel playerLabel)
@@ -97,4 +99,14 @@ public class PuzzleGrid
 	{
 		return labelSequence;
 	}
+
+	public int getHighScore() {
+		return highScore;
+	}
+
+	public void setHighScore(int highScore) {
+		this.highScore = highScore;
+	}
+	
+	
 }
