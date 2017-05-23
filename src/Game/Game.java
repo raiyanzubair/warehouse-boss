@@ -136,10 +136,10 @@ public class Game
 		container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
 		container.setBackground(ImageFactory.Colors.customOrange);
 		container.add(menuButton, BorderLayout.CENTER);
-		if(level+1 < psg.getNumberOfLevels())
+		if(level+1 < psg.getNumberOfSinglePlayerLevels())
 		{
 			container.add(nextLevelButton, BorderLayout.CENTER);
-		}		
+		}			
 		
 		int levelNumber = level+1;
 		winFrame.setTitle("Level " + levelNumber + " Complete");
