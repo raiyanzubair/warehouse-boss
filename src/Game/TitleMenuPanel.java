@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 public class TitleMenuPanel extends JPanel 
 {	
 	private static final long serialVersionUID = 1L;
+	private int numComponents;
 	
 	JButton levelButton;
 	JButton tutorialButton;
