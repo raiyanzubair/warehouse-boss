@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 public class TitleMenuPanel extends JPanel 
 {	
 	private static final long serialVersionUID = 1L;
+	private int numComponents;
 	
 	JButton levelOne;
 	JButton levelTwo;
@@ -31,23 +32,27 @@ public class TitleMenuPanel extends JPanel
 	
 	private void populateComponents(Game g, PuzzleGridGenerator psg)
 	{
-		int i = 0;
-		for(i = 0; i < psg.getNumberOfLevels(); i++)
-		{
-			String level = numberToWord(i+1);
-			levelOne = new JButton("LEVEL " + level);
-			registerLevelClickToLoadPuzzle(g, levelOne, psg.generatePuzzleGrid(i));
-			addGridComponent(levelOne, 0, i);
-		}	
+		this.numComponents = 0;
 		
 		tutorialButton = new JButton("HOW TO PLAY");
 		tutorialButton.setFont(new Font("Arial", Font.BOLD, 14));
-		tutorialButton.addActionListener(new ActionListener() {
-			public void actionPerformed (ActionEvent e) {
+		tutorialButton.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed (ActionEvent e) 
+			{
 				g.showTutorialScreen(g);
 			}
 		});
-		addGridComponent(tutorialButton, 0, i+1);
+		addGridComponent(tutorialButton, 0, numComponents++);
+
+		for(numComponents = 0; numComponents < psg.getNumberOfLevels(); numComponents++)
+		{
+			String level = numberToWord(numComponents+1);
+			levelOne = new JButton("LEVEL " + level);
+			registerLevelClickToLoadPuzzle(g, levelOne, psg.generatePuzzleGrid(numComponents));
+			addGridComponent(levelOne, 0, numComponents);
+		}	
+		
 		
 		quitButton = new JButton("QUIT");
 		quitButton.setFont(new Font("Arial", Font.BOLD, 14));
@@ -58,7 +63,7 @@ public class TitleMenuPanel extends JPanel
 				System.exit(0);
 			}
 		});
-		addGridComponent(quitButton, 0, i+2);
+		addGridComponent(quitButton, 0, numComponents++);
 	}
 	
 	private void registerLevelClickToLoadPuzzle(Game g, JButton button, PuzzleGrid level)
