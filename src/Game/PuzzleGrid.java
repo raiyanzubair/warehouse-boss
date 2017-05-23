@@ -2,6 +2,7 @@ package Game;
 
 import java.util.ArrayList;
 
+import Game.ImageFactory.Player;
 import Game.ImageFactory.Type;
 
 /**
@@ -18,26 +19,27 @@ public class PuzzleGrid
 	private int levelID;
 	private int rows;
 	private int columns;
-	private PuzzleLabel playerLabel;
+	private PuzzleLabel playerOne;
+	private PuzzleLabel playerTwo;
 	private ArrayList<PuzzleLabel> labelSequence;
 	
-	private boolean multiplayer;
-	private PuzzleLabel playerTwo;
 	
-	public PuzzleGrid(int ID, int rows, int columns, Type[] startingLabelTypes)
+	public PuzzleGrid(boolean multiPlayer, int ID, int rows, int columns, Type[] startingLabelTypes)
 	{
 		this.levelID = ID;
 		this.rows = rows;
 		this.columns = columns;
-		this.playerLabel = new PuzzleLabel(Type.MANDOWN);
+		this.playerOne = new PuzzleLabel(Type.MANRIGHT, Player.ONE);
+		this.playerTwo = multiPlayer ? new PuzzleLabel(Type.MANRIGHT, Player.TWO) : null;
 		this.labelSequence = initializeStartingLabels(startingLabelTypes);
 	}
 	
-	public PuzzleGrid(int rows, int columns, ArrayList<PuzzleLabel> labelSequence, PuzzleLabel playerLabel)
+	public PuzzleGrid(int rows, int columns, ArrayList<PuzzleLabel> labelSequence, PuzzleLabel playerOne, PuzzleLabel playerTwo)
 	{
 		this.rows = rows;
 		this.columns = columns;
-		this.playerLabel = playerLabel;
+		this.playerOne = playerOne;
+		this.playerTwo = playerTwo;
 		this.labelSequence = labelSequence;
 	}
 	
@@ -49,12 +51,24 @@ public class PuzzleGrid
 		{
 			switch(type) 
 			{
-				case MANDOWN:	labels.add(playerLabel);			break;
-				default:		labels.add(new PuzzleLabel(type));	break;
+				case MANRIGHT:	addNextPlayer(labels);				break;
+				default:		labels.add(new PuzzleLabel(type, Player.NONE));	break;
 			}
 		}
 		
 		return labels;
+	}
+	
+	private void addNextPlayer(ArrayList<PuzzleLabel> labels)
+	{
+		if(!labels.contains(playerOne))
+		{
+			labels.add(playerOne);
+		}
+		else if(!labels.contains(playerTwo))
+		{
+			labels.add(playerTwo);
+		}
 	}
 	
 	public int getLevelID() 
@@ -81,9 +95,9 @@ public class PuzzleGrid
 	/**
 	 * @return The reference for the player object
 	 */
-	public PuzzleLabel getPlayer()
+	public PuzzleLabel getPlayer(Player playerNumber)
 	{
-		return playerLabel;
+		return playerNumber == Player.ONE ? playerOne : playerNumber == Player.TWO ? playerTwo : null;
 	}
 	
 	/**
