@@ -28,7 +28,6 @@ public class PuzzleManager
 	private final int COLUMNS;
 	private int nMoves;
 	private Game game;
-	private PuzzleGrid grid;
 	private ArrayList<PuzzleLabel> currentLabelSequence;
 	private Stack<PuzzleGrid> previousStates;
 	private PuzzleLabel playerOnePiece;
@@ -38,7 +37,7 @@ public class PuzzleManager
 	
 	public PuzzleManager(PuzzleDisplayPanel panel, PuzzleGrid grid, Game g)
 	{	
-		this.grid = grid;
+	
 		this.level = grid.getLevelID();
 		this.ROWS = grid.getRows();
 		this.COLUMNS = grid.getColumns();
@@ -166,7 +165,8 @@ public class PuzzleManager
 	{
 		if(puzzleSolved())
 		{
-			grid.setHighScore(nMoves);
+			grid.setHighScore(this.nMoves);
+			int hiscore = grid.getHighScore();
 			game.showWinScreen(level);
 		}
 	}

@@ -62,7 +62,7 @@ public class Game
 		
 	}
 	
-	public void showLevelSelect (Game g, PuzzleGridGenerator psg) {
+	public void showLevelSelect (Game g) {
 		menuFrame.setVisible(false);
 		
 		LevelSelectPanel lsp = new LevelSelectPanel(g, psg);
@@ -77,7 +77,6 @@ public class Game
 	{
 		levelFrame.setVisible(false);
 		menuFrame.setVisible(false);
-		gameFrame.dispose();
 		gameFrame = new JFrame();
 		
 		PuzzleDisplayPanel panel = new PuzzleDisplayPanel(grid.getRows(), grid.getColumns());
@@ -127,7 +126,7 @@ public class Game
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				showGameScreen(psg.generatePuzzleGrid(level+1));
+				showGameScreen(psg.getLevel(level+1));
 				winFrame.setVisible(false);
 			}
 		});
@@ -136,7 +135,7 @@ public class Game
 		container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
 		container.setBackground(ImageFactory.Colors.customOrange);
 		container.add(menuButton, BorderLayout.CENTER);
-		if(level+1 < psg.getNumberOfSinglePlayerLevels())
+		if (level+1 < psg.getNumberOfSinglePlayerLevels())
 		{
 			container.add(nextLevelButton, BorderLayout.CENTER);
 		}			

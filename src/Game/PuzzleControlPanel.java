@@ -18,6 +18,7 @@ public class PuzzleControlPanel extends JPanel
 	private PuzzleGrid grid;
 	
 	JLabel moveCounter;
+	JLabel highScore;
 	JButton leftButton;
 	JButton rightButton;
 	JButton upButton;
@@ -41,7 +42,16 @@ public class PuzzleControlPanel extends JPanel
 		moveCounter = new JLabel("Moves: " + Integer.toString(manager.getnMoves()));
 		addGridComponent(moveCounter, 0, 3);
 		
-		leftButton = new JButton("←");
+		String nScore;
+		if (grid.getHighScore() >= 0) {
+			nScore = Integer.toString((grid.getHighScore()));
+		} else {
+			nScore = "Not set yet";
+		}
+		highScore = new JLabel("High Score: " + nScore);
+		addGridComponent(highScore, 1, 3);
+		
+		leftButton = new JButton(Integer.toString(grid.getHighScore()));
 		registerSyntheticKey(leftButton, KeyEvent.VK_LEFT);
 		addGridComponent(leftButton, 1, 1);
 		
@@ -115,8 +125,8 @@ public class PuzzleControlPanel extends JPanel
 	public void updateMoves(int nMoves)
 	{
 		moveCounter.setText("Moves: " + Integer.toString(nMoves));
-		moveCounter.updateUI();
-		this.updateUI();
+		//moveCounter.updateUI();
+		//this.updateUI();
 	}
 }
 

@@ -41,7 +41,7 @@ public class TitleMenuPanel extends JPanel
 		levelButton = new JButton("LEVEL SELECT");
 		levelButton.addActionListener(new ActionListener() {
 			public void actionPerformed (ActionEvent e) {
-				g.showLevelSelect(g, psg);
+				g.showLevelSelect(g);
 			}
 		});
 		addGridComponent(levelButton, 0, numComponents++);

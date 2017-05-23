@@ -31,6 +31,11 @@ public class PuzzleGridGenerator
 		return singlePlayerLevels.size();
 	}
 	
+	public int getNumberOfMultiPlayerLevels()
+	{
+		return multiPlayerLevels.size();
+	}
+	
 	public PuzzleGrid getDefaultMultiplayerLevel()
 	{
 		return multiPlayerLevels.get(0);
@@ -42,9 +47,14 @@ public class PuzzleGridGenerator
 	 * rows x columns.
 	 * @return: The puzzle grid with the puzzle starting state properties
 	 */
-	public PuzzleGrid generatePuzzleGrid(int ID)
+	public PuzzleGrid getLevel(int ID)
 	{
 		PuzzleGrid level = singlePlayerLevels.stream().filter(l -> l.getLevelID() == ID).findFirst().orElse(null);
+		return level;
+	}
+	
+	public PuzzleGrid getMultiLevel(int ID) {
+		PuzzleGrid level = multiPlayerLevels.stream().filter(l -> l.getLevelID() == ID).findFirst().orElse(null);
 		return level;
 	}
 	

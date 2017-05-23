@@ -14,7 +14,6 @@ import javax.swing.JPanel;
 public class LevelSelectPanel extends JPanel 
 {	
 	private static final long serialVersionUID = 1L;
-	private HashMap<PuzzleGrid, Integer> highScores;
 	
 	public LevelSelectPanel (Game g, PuzzleGridGenerator psg)
 	{
@@ -22,23 +21,24 @@ public class LevelSelectPanel extends JPanel
 		this.setLayout(new GridBagLayout());
 		
 		populateComponents(g, psg);
+		
 	}
 	
 	private void populateComponents(Game g, PuzzleGridGenerator psg)
 	{
 		int i =0;
-		for(i = 0; i < psg.getNumberOfLevels(); i++)
+		for(i = 0; i < psg.getNumberOfSinglePlayerLevels(); i++)
 		{
 			String level = numberToWord(i+1);
 			JButton newLevel = new JButton("LEVEL " + level);
-			registerLevelClickToLoadPuzzle(g, newLevel, psg.generatePuzzleGrid(i));
+			registerLevelClickToLoadPuzzle(g, newLevel, psg.getLevel(i));
 			
 			String highScoreValue;
-			//if (psg.generatePuzzleGrid(i).getHighScore() >= 0) {
-				highScoreValue = "High Score: " + Integer.toString(psg.generatePuzzleGrid(i).getHighScore());
-			//} else {
-			//	highScoreValue = "Level not complete";
-			//}
+			if (psg.getLevel(i).getHighScore() >= 0) {
+				highScoreValue = "High Score: " + Integer.toString(psg.getLevel(i).getHighScore());
+			} else {
+				highScoreValue = "Level not complete";
+			}
 			JLabel highScore = new JLabel(highScoreValue);
 			addGridComponent(newLevel, 0, i);
 			addGridComponent(highScore, 1, i);
