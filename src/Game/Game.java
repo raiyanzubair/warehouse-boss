@@ -162,9 +162,9 @@ public class Game
 		tutorialFrame.add(scrollPane);
 		tutorialFrame.setTitle("Tutorial");
 		tutorialFrame.setResizable(false);
-		tutorialFrame.setLocationRelativeTo(null);
 		tutorialFrame.setVisible(true);
 		tutorialFrame.setSize(450, 560);
+		tutorialFrame.setLocationRelativeTo(null);
 	}
 	
 	static void setDefaultLayout (JPanel targetPanel, JFrame targetFrame) {
