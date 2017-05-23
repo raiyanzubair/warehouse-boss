@@ -145,10 +145,10 @@ public class PuzzleGridGenerator
 		}));
 	}
 	
-	public PuzzleGrid getPhantomLevel()
+	public PuzzleGrid getShadowLevel()
 	{
 		PuzzleGrid pg = generatePuzzleGrid(1);
-		pg.setPhantom(true);
+		pg.setShadow(true);
 		return pg;
 	}
 }
