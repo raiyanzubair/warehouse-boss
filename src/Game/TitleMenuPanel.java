@@ -1,6 +1,5 @@
 package Game;
 
-import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
@@ -14,10 +13,7 @@ public class TitleMenuPanel extends JPanel
 {	
 	private static final long serialVersionUID = 1L;
 	
-	JButton levelOne;
-	JButton levelTwo;
-	JButton levelThree;
-	JButton levelFour;
+	JButton levelButton;
 	JButton tutorialButton;
 	JButton quitButton;
 	
@@ -31,26 +27,23 @@ public class TitleMenuPanel extends JPanel
 	
 	private void populateComponents(Game g, PuzzleGridGenerator psg)
 	{
-		int i = 0;
-		for(i = 0; i < psg.getNumberOfLevels(); i++)
-		{
-			String level = numberToWord(i+1);
-			levelOne = new JButton("LEVEL " + level);
-			registerLevelClickToLoadPuzzle(g, levelOne, psg.generatePuzzleGrid(i));
-			addGridComponent(levelOne, 0, i);
-		}	
+		levelButton = new JButton("LEVEL SELECT");
+		levelButton.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent e) {
+				g.showLevelSelect(g, psg);
+			}
+		});
+		addGridComponent(levelButton, 0, 0);
 		
 		tutorialButton = new JButton("HOW TO PLAY");
-		tutorialButton.setFont(new Font("Arial", Font.BOLD, 14));
 		tutorialButton.addActionListener(new ActionListener() {
 			public void actionPerformed (ActionEvent e) {
 				g.showTutorialScreen(g);
 			}
 		});
-		addGridComponent(tutorialButton, 0, i+1);
+		addGridComponent(tutorialButton, 0, 1);
 		
 		quitButton = new JButton("QUIT");
-		quitButton.setFont(new Font("Arial", Font.BOLD, 14));
 		quitButton.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
@@ -58,18 +51,7 @@ public class TitleMenuPanel extends JPanel
 				System.exit(0);
 			}
 		});
-		addGridComponent(quitButton, 0, i+2);
-	}
-	
-	private void registerLevelClickToLoadPuzzle(Game g, JButton button, PuzzleGrid level)
-	{
-		button.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent e)
-			{
-				g.showGameScreen(level);
-			}
-		});
+		addGridComponent(quitButton, 0, 2);
 	}
 	
 	private void addGridComponent(JComponent component, int gridX, int gridY)
@@ -80,11 +62,4 @@ public class TitleMenuPanel extends JPanel
 		gbc.gridy = gridY;
 		this.add(component, gbc);
 	}
-
-	public static String numberToWord(int num) 
-	{
-        String ones[] = {" ", " ONE", " TWO", " THREE", " FOUR", " FIVE", " SIX", " SEVEN", " EIGHT", " NINE", " TEN", " ELEVEN", " TWELVE", " THIRTEEN", " FOURTEEN", " FIFTEEN", " SIXTEEN", " SEVENTEEN", " EIGHTEEN", " NINETEEN"};
-        String tens[] = {" ", " ", " TWENTY", " THIRTY", " FOURTY", " FIFTY", " SIXTY", " SEVENTY", " EIGHTY", " NINETY"};
-        return (num < 20) ? ones[num] : tens[num / 10] + " " + ones[num % 10];
-    }
 }

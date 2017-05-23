@@ -39,19 +39,19 @@ public class PuzzleControlPanel extends JPanel
 		moveCounter = new JLabel("Moves: " + Integer.toString(manager.getnMoves()));
 		addGridComponent(moveCounter, 0, 3);
 		
-		leftButton = new JButton("Left");
+		leftButton = new JButton("←");
 		registerSyntheticKey(leftButton, KeyEvent.VK_LEFT);
 		addGridComponent(leftButton, 1, 1);
 		
-		rightButton = new JButton("Right");
+		rightButton = new JButton("→");
 		registerSyntheticKey(rightButton, KeyEvent.VK_RIGHT);
 		addGridComponent(rightButton, 3, 1);
 		
-		upButton = new JButton("Up");
+		upButton = new JButton("↑");
 		registerSyntheticKey(upButton, KeyEvent.VK_UP);
 		addGridComponent(upButton, 2, 0);
 		
-		downButton = new JButton("Down");
+		downButton = new JButton("↓");
 		registerSyntheticKey(downButton, KeyEvent.VK_DOWN);
 		addGridComponent(downButton, 2, 2);
 		
@@ -71,6 +71,7 @@ public class PuzzleControlPanel extends JPanel
 			public void actionPerformed(ActionEvent e)
 			{
 				manager.resetGame();
+				updateMoves(manager.getnMoves());
 			}
 		});
 		addGridComponent(resetButton, 0, 1);

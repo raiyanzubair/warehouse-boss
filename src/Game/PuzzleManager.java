@@ -33,20 +33,21 @@ public class PuzzleManager
 	private PuzzleLabel playerPiece;
 	private PuzzleDisplayPanel panel;
 	
+	private boolean multiplayerEnabled;
+	private PuzzleLabel playerTwoPiece;
+	
 	public PuzzleManager(PuzzleDisplayPanel panel, PuzzleGrid grid, Game g)
-	{
+	{	
 		this.level = grid.getLevelID();
 		this.ROWS = grid.getRows();
 		this.COLUMNS = grid.getColumns();
 		this.nMoves = 0;
 		this.game = g;
-		
-		this.playerPiece = grid.getPlayer();
 		this.currentLabelSequence = grid.getLabelSequence();
-		
 		this.previousStates = new Stack<PuzzleGrid>();
-
 		this.panel = panel;
+		this.playerPiece = grid.getPlayer();
+		this.multiplayerEnabled = false;
 		this.panel.reloadPanelLabels(currentLabelSequence);
 	}
 	
@@ -80,7 +81,6 @@ public class PuzzleManager
 			
 			currentLabelSequence = savedState.getLabelSequence();
 			playerPiece = savedState.getPlayer();
-			nMoves--;
 			
 			panel.reloadPanelLabels(currentLabelSequence);
 		}

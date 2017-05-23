@@ -21,6 +21,9 @@ public class PuzzleGrid
 	private PuzzleLabel playerLabel;
 	private ArrayList<PuzzleLabel> labelSequence;
 	
+	private boolean multiplayer;
+	private PuzzleLabel playerTwo;
+	
 	public PuzzleGrid(int ID, int rows, int columns, Type[] startingLabelTypes)
 	{
 		this.levelID = ID;

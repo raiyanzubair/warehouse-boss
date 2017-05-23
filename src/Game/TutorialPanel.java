@@ -17,6 +17,7 @@ import javax.swing.border.EtchedBorder;
 
 public class TutorialPanel extends JPanel {
 	
+	private static final long serialVersionUID = 1L;
 	private final String html1 = "<html><body style = 'width: ";
 	private final String html2 = "px'>";
 

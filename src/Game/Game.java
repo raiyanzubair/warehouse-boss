@@ -27,12 +27,14 @@ public class Game
 	private static PuzzleGridGenerator psg = new PuzzleGridGenerator();
 	private JFrame gameFrame;
 	private JFrame menuFrame;
+	private JFrame levelFrame;
 	private JFrame winFrame;
 	private JFrame tutorialFrame;
 	
 	public Game()
 	{
 		gameFrame = new JFrame();
+		levelFrame = new JFrame();
 		menuFrame = new JFrame();
 		winFrame = new JFrame();
 		tutorialFrame = new JFrame();
@@ -52,48 +54,19 @@ public class Game
 	public void showMenuScreen() 
 	{
 		tutorialFrame.setVisible(false);
+		levelFrame.setVisible(false);
 		gameFrame.setVisible(false);
 		
-		JPanel topWall = new JPanel(new BorderLayout());
-		JLabel topWallLabel = new JLabel(ImageFactory.topWall, JLabel.CENTER);
-		topWall.setBackground(ImageFactory.Colors.customOrange);
-		topWall.add(topWallLabel);
-		topWall.setVisible(true);
-		
-		JPanel titlePanel = new JPanel();
-		JLabel title = new JLabel("WAREHOUSE BOSS");
-		title.setFont(new Font("Tahoma", Font.BOLD, 32));
-		title.setForeground(Color.WHITE);
-		titlePanel.add(title);
-		titlePanel.setBackground(ImageFactory.Colors.customOrange);
-		titlePanel.setVisible(true);
-		
 		TitleMenuPanel menuPanel = new TitleMenuPanel(this, psg);
+		setDefaultLayout(menuPanel, menuFrame);
 		
-		JPanel bottomWall = new JPanel(new BorderLayout());
-		JLabel bottomWallLabel = new JLabel("", ImageFactory.bottomWall, JLabel.CENTER);
-		bottomWall.setBackground(ImageFactory.Colors.customOrange);
-		bottomWall.add(bottomWallLabel);
-		bottomWall.setVisible(true);
-		
-		JPanel wholePanel = new JPanel();
-		wholePanel.setLayout(new BoxLayout(wholePanel, BoxLayout.Y_AXIS));
-		wholePanel.setBackground(ImageFactory.Colors.customOrange);
-		wholePanel.add(topWall,BorderLayout.CENTER);
-		wholePanel.add(titlePanel, BorderLayout.CENTER);
-		wholePanel.add(menuPanel, BorderLayout.CENTER);
-		wholePanel.add(bottomWall, BorderLayout.CENTER);
-		wholePanel.setVisible(true);
-		
-		menuFrame.add(wholePanel, BorderLayout.CENTER);
+	}
 	
-		menuFrame.pack();
-		menuFrame.setTitle("Warehouse Boss");
-		menuFrame.setSize(400, 560);
-		menuFrame.setResizable(false);
-		menuFrame.setLocationRelativeTo(null);
-		menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		menuFrame.setVisible(true);
+	public void showLevelSelect (Game g, PuzzleGridGenerator psg) {
+		menuFrame.setVisible(false);
+		
+		LevelSelectPanel lsp = new LevelSelectPanel(g, psg);
+		setDefaultLayout(lsp, levelFrame);
 	}
 	
 	/**
@@ -102,6 +75,7 @@ public class Game
 	 */
 	public void showGameScreen(PuzzleGrid grid)
 	{
+		levelFrame.setVisible(false);
 		menuFrame.setVisible(false);
 		gameFrame.dispose();
 		gameFrame = new JFrame();
@@ -138,8 +112,6 @@ public class Game
 		JButton menuButton;
 		JButton nextLevelButton;
 		
-		//JOptionPane.showMessageDialog(this, "Finished", "Congratulation", JOptionPane.INFORMATION_MESSAGE);
-
 		menuButton = new JButton("Return to Main Menu");
 		menuButton.addActionListener(new ActionListener()
 		{
@@ -194,7 +166,48 @@ public class Game
 		tutorialFrame.setVisible(true);
 		tutorialFrame.setSize(400, 560);
 	}
-
+	
+	static void setDefaultLayout (JPanel targetPanel, JFrame targetFrame) {
+		JPanel topWall = new JPanel(new BorderLayout());
+		JLabel topWallLabel = new JLabel(ImageFactory.topWall, JLabel.CENTER);
+		topWall.setBackground(ImageFactory.Colors.customOrange);
+		topWall.add(topWallLabel);
+		topWall.setVisible(true);
+		
+		JPanel titlePanel = new JPanel();
+		JLabel title = new JLabel("WAREHOUSE BOSS");
+		title.setFont(new Font("Tahoma", Font.BOLD, 32));
+		title.setForeground(Color.WHITE);
+		titlePanel.add(title);
+		titlePanel.setBackground(ImageFactory.Colors.customOrange);
+		titlePanel.setVisible(true);
+		
+		JPanel bottomWall = new JPanel(new BorderLayout());
+		JLabel bottomWallLabel = new JLabel("", ImageFactory.bottomWall, JLabel.CENTER);
+		bottomWall.setBackground(ImageFactory.Colors.customOrange);
+		bottomWall.add(bottomWallLabel);
+		bottomWall.setVisible(true);
+		
+		JPanel wholePanel = new JPanel();
+		wholePanel.setLayout(new BoxLayout(wholePanel, BoxLayout.Y_AXIS));
+		wholePanel.setBackground(ImageFactory.Colors.customOrange);
+		wholePanel.add(topWall,BorderLayout.CENTER);
+		wholePanel.add(titlePanel, BorderLayout.CENTER);
+		wholePanel.add(targetPanel, BorderLayout.CENTER);
+		wholePanel.add(bottomWall, BorderLayout.CENTER);
+		wholePanel.setVisible(true);
+		
+		targetFrame.add(wholePanel, BorderLayout.CENTER);
+	
+		targetFrame.pack();
+		targetFrame.setTitle("Warehouse Boss");
+		targetFrame.setSize(400, 560);
+		targetFrame.setResizable(false);
+		targetFrame.setLocationRelativeTo(null);
+		targetFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		targetFrame.setVisible(true);
+	}
+	
 	
 	/**
 	 * This class handles the incoming key events from the GameFram object and
@@ -212,7 +225,6 @@ public class Game
 		@Override
 		public void keyReleased(KeyEvent e){}	
 	}
-	
 }
 
 
