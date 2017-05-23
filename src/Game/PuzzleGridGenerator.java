@@ -144,5 +144,12 @@ public class PuzzleGridGenerator
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 
 		}));
 	}
+	
+	public PuzzleGrid getPhantomLevel()
+	{
+		PuzzleGrid pg = generatePuzzleGrid(1);
+		pg.setPhantom(true);
+		return pg;
+	}
 }
 
