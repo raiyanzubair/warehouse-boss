@@ -14,6 +14,12 @@ import javax.swing.ImageIcon;
 public class ImageFactory
 {
 	private static final int DESIRED_HEIGHT = 50;
+	public static enum Player
+	{
+		ONE,
+		TWO,
+		NONE
+	}
 	public static enum Type
 	{
 		EMPTY,

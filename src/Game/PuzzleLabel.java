@@ -3,6 +3,7 @@ package Game;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+import Game.ImageFactory.Player;
 import Game.ImageFactory.Type;
 
 /**
@@ -16,14 +17,17 @@ public class PuzzleLabel extends JLabel
 	private static final long serialVersionUID = 1L;
 	private Type image;
 	private Type type;
+	private Player player;
 
-	public PuzzleLabel(Type type)
-	{	
+	public PuzzleLabel(Type type, Player player)
+	{
+		this.player = player;
 		setTypeAndImage(type);
 	}
 	
-	public PuzzleLabel(Type type, Type img)
-	{		
+	public PuzzleLabel(Type type, Type img, Player player)
+	{
+		this.player = player;
 		setType(type);
 		setImage(img);
 	}
@@ -65,18 +69,39 @@ public class PuzzleLabel extends JLabel
 		}
 	}
 	
+	public Player getPlayer()
+	{
+		return this.player;
+	}
+	
 	/**
 	 * Checks whether this label is of the type specified
 	 * @param type: The type to check
 	 * @return: True if it is that type or false otherwise
 	 */
-	public boolean isType(Type type)
+	public boolean isType(Type type, Player player)
 	{
-		return this.type == type;
+		return this.type == type && this.player == player;
+	}
+	
+	public Player otherPlayer()
+	{
+		return this.player == Player.ONE ? Player.TWO : Player.ONE;
+	}
+	
+	@Override
+	public boolean equals(Object o)
+	{
+		if(o == null)
+		{
+			return false;
+		}
+		PuzzleLabel pl = (PuzzleLabel)o;
+		return this.type == pl.type && this.image == pl.image && this.player == pl.player;
 	}
 	
 	public PuzzleLabel Clone()
 	{
-		return new PuzzleLabel(this.type, this.image);
+		return new PuzzleLabel(this.type, this.image, this.player);
 	}
 }
