@@ -136,10 +136,10 @@ public class Game
 		container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
 		container.setBackground(ImageFactory.Colors.customOrange);
 		container.add(menuButton, BorderLayout.CENTER);
-		if(level+1 < psg.getNumberOfLevels())
+		if(level+1 < psg.getNumberOfSinglePlayerLevels())
 		{
 			container.add(nextLevelButton, BorderLayout.CENTER);
-		}		
+		}			
 		
 		int levelNumber = level+1;
 		winFrame.setTitle("Level " + levelNumber + " Complete");
@@ -162,9 +162,9 @@ public class Game
 		tutorialFrame.add(scrollPane);
 		tutorialFrame.setTitle("Tutorial");
 		tutorialFrame.setResizable(false);
-		tutorialFrame.setLocationRelativeTo(null);
 		tutorialFrame.setVisible(true);
-		tutorialFrame.setSize(400, 560);
+		tutorialFrame.setSize(450, 560);
+		tutorialFrame.setLocationRelativeTo(null);
 	}
 	
 	static void setDefaultLayout (JPanel targetPanel, JFrame targetFrame) {

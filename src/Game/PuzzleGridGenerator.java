@@ -15,17 +15,25 @@ import Game.ImageFactory.Type;
  */
 public class PuzzleGridGenerator
 {
-	private ArrayList<PuzzleGrid> levels;
+	private ArrayList<PuzzleGrid> singlePlayerLevels;
+	private ArrayList<PuzzleGrid> multiPlayerLevels;
 
 	public PuzzleGridGenerator()
 	{
-		this.levels = new ArrayList<PuzzleGrid>();
-		this.populateLevels();
+		this.singlePlayerLevels = new ArrayList<PuzzleGrid>();
+		this.multiPlayerLevels = new ArrayList<PuzzleGrid>();
+		this.populateSinglePlayerLevels();
+		this.populateMultiPlayerLevels();
 	}
 	
-	public int getNumberOfLevels()
+	public int getNumberOfSinglePlayerLevels()
 	{
-		return levels.size();
+		return singlePlayerLevels.size();
+	}
+	
+	public PuzzleGrid getDefaultMultiplayerLevel()
+	{
+		return multiPlayerLevels.get(0);
 	}
 	
 	/**
@@ -36,17 +44,17 @@ public class PuzzleGridGenerator
 	 */
 	public PuzzleGrid generatePuzzleGrid(int ID)
 	{
-		PuzzleGrid level = levels.stream().filter(l -> l.getLevelID() == ID).findFirst().orElse(null);
+		PuzzleGrid level = singlePlayerLevels.stream().filter(l -> l.getLevelID() == ID).findFirst().orElse(null);
 		return level;
 	}
 	
 	/**
 	 * @return: A default map layout
 	 */
-	public void populateLevels()
+	public void populateSinglePlayerLevels()
 	{
 		int numLevels = 0;
-		levels.add(numLevels++, new PuzzleGrid(false, 0, 8, 6, new Type[]
+		singlePlayerLevels.add(numLevels++, new PuzzleGrid(false, 0, 8, 6, new Type[]
 		{
 			Type.EMPTY, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY,
 			Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.EMPTY,
@@ -58,7 +66,7 @@ public class PuzzleGridGenerator
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,
 		}));
 	
-		levels.add(numLevels++, new PuzzleGrid(false, 1, 12, 7, new Type[]
+		singlePlayerLevels.add(numLevels++, new PuzzleGrid(false, 1, 12, 7, new Type[]
 		{
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.CROSS, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,
 			Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK,
@@ -74,7 +82,7 @@ public class PuzzleGridGenerator
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,
 		}));
 	
-		levels.add(numLevels++, new PuzzleGrid(false, 2, 12, 7, new Type[]
+		singlePlayerLevels.add(numLevels++, new PuzzleGrid(false, 2, 12, 7, new Type[]
 		{
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,
 			Type.BRICK, 	Type.BRICK, 	Type.CROSS, 	Type.EMPTY, 	Type.CROSS, 	Type.BRICK, 	Type.BRICK,
@@ -90,7 +98,27 @@ public class PuzzleGridGenerator
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,
 		}));
 	
-		levels.add(numLevels++, new PuzzleGrid(true, 3, 12, 12, new Type[]
+		singlePlayerLevels.add(numLevels++, new PuzzleGrid(false, 3, 12, 12, new Type[]
+		{
+			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 
+			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK,
+			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 
+			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK,
+			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.BOX, 		Type.EMPTY, 	Type.BOX, 		Type.EMPTY, 	Type.CROSS, 	Type.BRICK,
+			Type.BRICK, 	Type.BRICK, 	Type.BRICK,		Type.BRICK, 	Type.CROSS, 	Type.BOX, 		Type.CROSS, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK,
+			Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.CROSS, 	Type.EMPTY, 	Type.BOX, 		Type.EMPTY, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK,
+			Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.CROSS, 	Type.EMPTY, 	Type.EMPTY, 	Type.BOX, 		Type.EMPTY, 	Type.CROSS, 	Type.EMPTY, 	Type.BRICK,
+			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BOX, 		Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK,
+			Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,
+			Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.MANRIGHT, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,
+			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 
+		}));
+	}
+	
+	public void populateMultiPlayerLevels()
+	{
+		int numLevels = 0;
+		multiPlayerLevels.add(numLevels++, new PuzzleGrid(true, 3, 12, 12, new Type[]
 		{
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK,
