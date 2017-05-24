@@ -16,6 +16,7 @@ import Game.ImageFactory.Type;
  */
 public class PuzzleGrid
 {
+	private boolean shadowMode;
 	private int levelID;
 	private int rows;
 	private int columns;
@@ -76,6 +77,16 @@ public class PuzzleGrid
 	public int getLevelID() 
 	{
 		return levelID;
+	}
+	
+		public boolean isShadow()
+	{
+		return this.shadowMode;
+	}
+	
+	public void setShadow(boolean mode)
+	{
+		this.shadowMode = mode;
 	}
 
 	/**

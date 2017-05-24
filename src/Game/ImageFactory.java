@@ -30,7 +30,8 @@ public class ImageFactory
 		MANDOWN,
 		MANUP,
 		MANLEFT,
-		MANRIGHT
+		MANRIGHT,
+		SHADOW
 	}
 	private static String[] images =
 	{
@@ -42,7 +43,8 @@ public class ImageFactory
 		"ManDown.png",
 		"ManUp.png",
 		"ManLeft.png",
-		"ManRight.png"
+		"ManRight.png",
+		"Shadow.png"
 	};
 	public static final ImageIcon[] puzzleIcons = loadImages();
 	

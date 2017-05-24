@@ -15,6 +15,8 @@ public class TitleMenuPanel extends JPanel
 	private int numComponents;
 	
 	JButton levelButton;
+	JButton multiplayerButton;
+	JButton shadowButton;
 	JButton tutorialButton;
 	JButton quitButton;
 	
@@ -31,29 +33,44 @@ public class TitleMenuPanel extends JPanel
 		numComponents = 0;
 		
 		tutorialButton = new JButton("HOW TO PLAY");
-		tutorialButton.addActionListener(new ActionListener() {
-			public void actionPerformed (ActionEvent e) {
+		tutorialButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
 				g.showTutorialScreen(g);
 			}
 		});
 		addGridComponent(tutorialButton, 0, numComponents++);
-		
+
 		levelButton = new JButton("LEVEL SELECT");
-		levelButton.addActionListener(new ActionListener() {
-			public void actionPerformed (ActionEvent e) {
-				g.showLevelSelect(g);
+		levelButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				g.showLevelSelect();
 			}
 		});
 		addGridComponent(levelButton, 0, numComponents++);
 		
-		levelButton = new JButton("MULTIPLAYER");
-		levelButton.addActionListener(new ActionListener() {
+		multiplayerButton = new JButton("MULTIPLAYER");
+		multiplayerButton.addActionListener(new ActionListener() 
+		{
 			public void actionPerformed (ActionEvent e) 
 			{
 				g.showGameScreen(psg.getDefaultMultiplayerLevel());
 			}
 		});
-		addGridComponent(levelButton, 0, numComponents++);
+		addGridComponent(multiplayerButton, 0, numComponents++);
+		
+		shadowButton = new JButton("TRY THE SHADOW");
+		shadowButton.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed (ActionEvent e) 
+			{
+				g.showGameScreen(psg.getShadowLevel());			
+			}
+		});
+		addGridComponent(shadowButton, 0, numComponents++);
 		
 		quitButton = new JButton("QUIT");
 		quitButton.addActionListener(new ActionListener()

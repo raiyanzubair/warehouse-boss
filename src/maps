@@ -1,0 +1,849 @@
+	public PuzzleGrid getLevel_1()	
+	{
+		return new PuzzleGrid(8, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BOX, 	Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.EMPTY, Type.BOX, 	Type.MANDOWN,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_2()	
+	{
+		return new PuzzleGrid(8, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.MANDOWN,Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BOX, 	Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_3()	
+	{
+		return new PuzzleGrid(9, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.MANDOWN,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.BOX, 	Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+
+		});
+	}
+	public PuzzleGrid getLevel_4()	
+	{
+		return new PuzzleGrid(7, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BOX, 	Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.MANDOWN,Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.CROSS,Type.CROSS,Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+		});
+	}
+	public PuzzleGrid getLevel_5()	
+	{
+		return new PuzzleGrid(8, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK,Type.MANDOWN,Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.GREENBOX, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_6()	
+	{
+		return new PuzzleGrid(8, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.MANDOWN,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_7()	
+	{
+		return new PuzzleGrid(11, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.BRICK, Type.CROSS,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.GREENBOX, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.CROSS,Type.BRICK, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.MANDOWN,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_8()	
+	{
+		return new PuzzleGrid(8, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.MANDOWN,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_9()	
+	{
+		return new PuzzleGrid(7, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.EMPTY, Type.BOX, 	Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.MANDOWN,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_10()	
+	{
+		return new PuzzleGrid(9, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.MANDOWN,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK,
+		});
+	}
+	public PuzzleGrid getLevel_11()	
+	{
+		return new PuzzleGrid(7, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BOX, 	Type.BOX, 	Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.MANDOWN,Type.EMPTY, Type.BOX, 	Type.CROSS,Type.CROSS,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_12()	
+	{
+		return new PuzzleGrid(6, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.MANDOWN,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_13()	
+	{
+		return new PuzzleGrid(7, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.MANDOWN,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.CROSS,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.CROSS,Type.BOX, 	Type.CROSS,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.GREENBOX, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_14()	
+	{
+		return new PuzzleGrid(8, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BOX, 	Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.MANDOWN,Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_15()	
+	{
+		return new PuzzleGrid(7, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.CROSS,Type.CROSS,Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.MANDOWN,Type.BOX, 	Type.CROSS,Type.GREENBOX, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.CROSS,Type.CROSS,Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_16()	
+	{
+		return new PuzzleGrid(7, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.MANDOWN,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_17()	
+	{
+		return new PuzzleGrid(9, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.BOX, 	Type.BRICK, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.MANDOWN,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_18()	
+	{
+		return new PuzzleGrid(9, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.BOX, 	Type.BRICK, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.MANDOWN,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+		});
+	}
+	public PuzzleGrid getLevel_19()	
+	{
+		return new PuzzleGrid(9, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.CROSS,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.GREENBOX, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BOX, 	Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.MANDOWN,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_20()	
+	{
+		return new PuzzleGrid(8, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.BOX, 	Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.BRICK, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.MANDOWN,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_21()	
+	{
+		return new PuzzleGrid(8, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.BOX, 	Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.BRICK, Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.BOX, 	Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.BOX, 	Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.MANDOWN,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_22()	
+	{
+		return new PuzzleGrid(9, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.MANDOWN,Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_23()	
+	{
+		return new PuzzleGrid(9, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BOX, 	Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.MANDOWN,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_24()	
+	{
+		return new PuzzleGrid(8, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.MANDOWN,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BOX, 	Type.BOX, 	Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_25()	
+	{
+		return new PuzzleGrid(9, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.BOX, 	Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.MANDOWN,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.BRICK, Type.EMPTY, Type.EMPTY, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.BRICK, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_26()	
+	{
+		return new PuzzleGrid(10, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.CROSS,Type.CROSS,Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.CROSS,Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BOX, 	Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BOX, 	Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.MANDOWN,Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_27()	
+	{
+		return new PuzzleGrid(12, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BOX, 	Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.EMPTY, Type.GREENBOX, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.CROSS,Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.BRICK, Type.BRICK, Type.BRICK, Type.BOX, 	Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.MANDOWN,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BOX, 	Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_28()	
+	{
+		return new PuzzleGrid(12, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.MANDOWN,Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_29()	
+	{
+		return new PuzzleGrid(7, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.CROSS,Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.CROSS,Type.BOX, 	Type.CROSS,Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.GREENBOX, Type.BOX, 	Type.CROSS,Type.BOX, 	Type.CROSS,Type.MANDOWN,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.CROSS,Type.BOX, 	Type.CROSS,Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.CROSS,Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK
+		});
+	}
+	public PuzzleGrid getLevel_30()	
+	{
+		return new PuzzleGrid(9, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.GREENBOX, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.CROSS,Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.BOX, 	Type.BOX, 	Type.BOX, 	Type.GREENBOX, Type.GREENBOX, Type.GREENBOX, Type.GREENBOX, Type.BOX, 	Type.CROSS,Type.CROSS,Type.CROSS,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.MANDOWN,Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.GREENBOX, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_31()	
+	{
+		return new PuzzleGrid(12, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BOX, 	Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.MANDOWN,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.EMPTY, Type.GREENBOX, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.CROSS,Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BOX, 	Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_32()	
+	{
+		return new PuzzleGrid(10, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.MANDOWN,Type.BOX, 	Type.BOX, 	Type.BOX, 	Type.BOX, 	Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_33()	
+	{
+		return new PuzzleGrid(12, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.MANDOWN,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.CROSS,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.GREENBOX, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.GREENBOX, Type.GREENBOX, Type.GREENBOX, Type.GREENBOX, Type.GREENBOX, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.GREENBOX, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BOX, 	Type.GREENBOX, Type.BOX, 	Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.CROSS,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.GREENBOX, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.CROSS,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_34()	
+	{
+		return new PuzzleGrid(10, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BOX, 	Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.MANDOWN,Type.EMPTY, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_35()	
+	{
+		return new PuzzleGrid(13, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.MANDOWN,Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_36()	
+	{
+		return new PuzzleGrid(8, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.GREENBOX, Type.CROSS,Type.CROSS,Type.GREENBOX, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.GREENBOX, Type.CROSS,Type.CROSS,Type.GREENBOX, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.MANDOWN,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_37()	
+	{
+		return new PuzzleGrid(5, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.CROSS,Type.CROSS,Type.CROSS,Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.BOX, 	Type.BOX, 	Type.GREENBOX, Type.GREENBOX, Type.GREENBOX, Type.EMPTY, Type.BOX, 	Type.MANDOWN,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.CROSS,Type.CROSS,Type.CROSS,Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_38()	
+	{
+		return new PuzzleGrid(6, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BOX, 	Type.BRICK, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.CROSS,Type.BOX, 	Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.MANDOWN,Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_39()	
+	{
+		return new PuzzleGrid(14, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.EMPTY, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.MANDOWN,Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_40()	
+	{
+		return new PuzzleGrid(7, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.EMPTY, Type.CROSS,Type.EMPTY, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.BOX, 	Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.BOX, 	Type.MANDOWN,Type.BOX, 	Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.BOX, 	Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.EMPTY, Type.CROSS,Type.EMPTY, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+		});
+	}
+	public PuzzleGrid getLevel_41()	
+	{
+		return new PuzzleGrid(7, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.EMPTY, Type.CROSS,Type.EMPTY, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.BOX, 	Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.BOX, 	Type.MANDOWN,Type.BOX, 	Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.BOX, 	Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.EMPTY, Type.CROSS,Type.EMPTY, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+		});
+	}
+	public PuzzleGrid getLevel_42()	
+	{
+		return new PuzzleGrid(11, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.CROSS,Type.BRICK, Type.CROSS,Type.BRICK, Type.CROSS,Type.BRICK, Type.EMPTY, Type.BOX, 	Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.EMPTY, Type.MANDOWN,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BOX, 	Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+		});
+	}
+	public PuzzleGrid getLevel_43()	
+	{
+		return new PuzzleGrid(12, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.BRICK, Type.EMPTY, Type.EMPTY, Type.MANDOWN,Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.BRICK, Type.EMPTY, Type.BOX, 	Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BOX, 	Type.CROSS,Type.GREENBOX, Type.CROSS,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_44()	
+	{
+		return new PuzzleGrid(11, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.GREENBOX, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.GREENBOX, Type.EMPTY, Type.GREENBOX, Type.GREENBOX, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.GREENBOX, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.GREENBOX, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.CROSS,Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.MANDOWN,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.GREENBOX, Type.EMPTY, Type.CROSS,Type.EMPTY, Type.GREENBOX, Type.EMPTY, Type.EMPTY, Type.GREENBOX, Type.GREENBOX, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.GREENBOX, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.GREENBOX, Type.EMPTY, Type.BRICK, Type.BOX, 	Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+
+		});
+	}
+	public PuzzleGrid getLevel_45()	
+	{
+		return new PuzzleGrid(11, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.GREENBOX, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.GREENBOX, Type.EMPTY, Type.GREENBOX, Type.GREENBOX, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.GREENBOX, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.GREENBOX, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.CROSS,Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.MANDOWN,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.GREENBOX, Type.EMPTY, Type.CROSS,Type.EMPTY, Type.GREENBOX, Type.EMPTY, Type.EMPTY, Type.GREENBOX, Type.GREENBOX, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.GREENBOX, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.GREENBOX, Type.EMPTY, Type.BRICK, Type.BOX, 	Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+
+		});
+	}
+	public PuzzleGrid getLevel_46()	
+	{
+		return new PuzzleGrid(11, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.CROSS,Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.CROSS,Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.CROSS,Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.GREENBOX, Type.CROSS,Type.CROSS,Type.BRICK, Type.GREENBOX, Type.BRICK, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BOX, 	Type.BOX, 	Type.BRICK, Type.BOX, 	Type.BOX, 	Type.BOX, 	Type.CROSS,Type.EMPTY, Type.BOX, 	Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.CROSS,Type.BOX, 	Type.MANDOWN,Type.BOX, 	Type.CROSS,Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BOX, 	Type.EMPTY, Type.CROSS,Type.BOX, 	Type.BOX, 	Type.BOX, 	Type.BRICK, Type.BOX, 	Type.BOX, 	Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.BRICK, Type.GREENBOX, Type.BRICK, Type.CROSS,Type.CROSS,Type.GREENBOX, Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.CROSS,Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.CROSS,Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.CROSS,Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_47()	
+	{
+		return new PuzzleGrid(10, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.GREENBOX, Type.CROSS,Type.GREENBOX, Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.GREENBOX, Type.CROSS,Type.GREENBOX, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.MANDOWN,Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.GREENBOX, Type.CROSS,Type.GREENBOX, Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.GREENBOX, Type.CROSS,Type.GREENBOX, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_48()	
+	{
+		return new PuzzleGrid(9, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.BOX, 	Type.BOX, 	Type.BOX, 	Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.MANDOWN,Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_49()	
+	{
+		return new PuzzleGrid(12, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.CROSS,Type.GREENBOX, Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.GREENBOX, Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.CROSS,Type.GREENBOX, Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.GREENBOX, Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.CROSS,Type.GREENBOX, Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.GREENBOX, Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.CROSS,Type.GREENBOX, Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.GREENBOX, Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.CROSS,Type.GREENBOX, Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.MANDOWN,Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.GREENBOX, Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+		});
+	}
+	public PuzzleGrid getLevel_50()	
+	{
+		return new PuzzleGrid(14, 20, new Type[]
+		{
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.BOX, 	Type.EMPTY, Type.BRICK, Type.GREENBOX, Type.GREENBOX, Type.GREENBOX, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.CROSS,Type.CROSS,Type.GREENBOX, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.GREENBOX, Type.CROSS,Type.GREENBOX, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.CROSS,Type.GREENBOX, Type.CROSS,Type.GREENBOX, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.CROSS,Type.GREENBOX, Type.CROSS,Type.GREENBOX, Type.CROSS,Type.MANDOWN,Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BRICK, Type.GREENBOX, Type.CROSS,Type.GREENBOX, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.CROSS,Type.CROSS,Type.GREENBOX, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.EMPTY, Type.BOX, 	Type.BOX, 	Type.EMPTY, Type.BRICK, Type.GREENBOX, Type.GREENBOX, Type.GREENBOX, Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.BOX, 	Type.EMPTY, Type.EMPTY, Type.BRICK, Type.CROSS,Type.CROSS,Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.EMPTY, Type.EMPTY, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.CROSS,Type.CROSS,Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+				Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, Type.BRICK, 
+
+		});
+	}
+	public PuzzleGrid getLevel_supersuperhard_1()	
+	{
+		return new PuzzleGrid(23, 26, new Type[]
+		{
+				Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,
+				Type.BRICK,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.BRICK,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.BRICK,Type.BRICK,
+				Type.BRICK,Type.EMPTY,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.EMPTY,Type.BRICK,
+				Type.BRICK,Type.EMPTY,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.EMPTY,Type.BRICK,
+				Type.BRICK,Type.EMPTY,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.EMPTY,Type.BRICK,
+				Type.BRICK,Type.EMPTY,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.EMPTY,Type.BRICK,
+				Type.BRICK,Type.EMPTY,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.EMPTY,Type.BRICK,
+				Type.BRICK,Type.EMPTY,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.BRICK,Type.BRICK,
+				Type.BRICK,Type.BRICK,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.MANDOWN,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.EMPTY,Type.BRICK,
+				Type.BRICK,Type.EMPTY,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.EMPTY,Type.BRICK,
+				Type.BRICK,Type.EMPTY,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.EMPTY,Type.BRICK,
+				Type.BRICK,Type.EMPTY,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BRICK,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.BRICK,Type.BRICK,
+				Type.BRICK,Type.EMPTY,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.EMPTY,Type.BRICK,
+				Type.BRICK,Type.EMPTY,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.EMPTY,Type.BRICK,
+				Type.BRICK,Type.EMPTY,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.BRICK,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.EMPTY,Type.BRICK,
+				Type.BRICK,Type.BRICK,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.BRICK,Type.BRICK,
+				Type.BRICK,Type.EMPTY,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.EMPTY,Type.BRICK,
+				Type.BRICK,Type.EMPTY,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.EMPTY,Type.BRICK,
+				Type.BRICK,Type.EMPTY,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.EMPTY,Type.BRICK,
+				Type.BRICK,Type.EMPTY,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.EMPTY,Type.BRICK,
+				Type.BRICK,Type.BRICK,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BOX,Type.CROSS,Type.BRICK,Type.BRICK,
+				Type.BRICK,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.BRICK,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.BRICK,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.BRICK,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.BRICK,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.BRICK,
+				Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,
+	
+		});
+	}
+	public PuzzleGrid getLevel_supersuperhard_2()	
+	{
+		return new PuzzleGrid(9, 10, new Type[]
+		{
+				Type.EMPTY,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.EMPTY,Type.EMPTY,
+				Type.EMPTY,Type.BRICK,Type.EMPTY,Type.EMPTY,Type.BRICK,Type.EMPTY,Type.EMPTY,Type.BRICK,Type.BRICK,Type.BRICK,
+				Type.EMPTY,Type.BRICK,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.GREENBOX,Type.CROSS,Type.EMPTY,Type.EMPTY,Type.BRICK,
+				Type.EMPTY,Type.BRICK,Type.EMPTY,Type.CROSS,Type.BRICK,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.BRICK,
+				Type.BRICK,Type.BRICK,Type.EMPTY,Type.BRICK,Type.CROSS,Type.EMPTY,Type.BRICK,Type.BOX,Type.BRICK,Type.BRICK,
+				Type.BRICK,Type.EMPTY,Type.GREENBOX,Type.BOX,Type.CROSS,Type.BRICK,Type.EMPTY,Type.EMPTY,Type.BRICK,Type.EMPTY,
+				Type.BRICK,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.BOX,Type.MANDOWN,Type.BOX,Type.EMPTY,Type.BRICK,Type.EMPTY,
+				Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.EMPTY,Type.EMPTY,Type.BRICK,Type.EMPTY,
+				Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.EMPTY,Type.BRICK,Type.BRICK,Type.BRICK,Type.BRICK,Type.EMPTY,
+	
+		});
+	}
+	

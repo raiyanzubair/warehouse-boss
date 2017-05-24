@@ -93,7 +93,7 @@ public class PuzzleControlPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				g.showMenuScreen();
+				g.showLevelSelect();
 			}
 		});
 		addGridComponent(exitButton, 0, 2);
