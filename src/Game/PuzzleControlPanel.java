@@ -51,7 +51,7 @@ public class PuzzleControlPanel extends JPanel
 		highScore = new JLabel("High Score: " + nScore);
 		addGridComponent(highScore, 1, 3);
 		
-		leftButton = new JButton(Integer.toString(grid.getHighScore()));
+		leftButton = new JButton("←");
 		registerSyntheticKey(leftButton, KeyEvent.VK_LEFT);
 		addGridComponent(leftButton, 1, 1);
 		
