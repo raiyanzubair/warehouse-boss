@@ -62,10 +62,12 @@ public class Game
 		
 	}
 	
-	public void showLevelSelect (Game g) {
+	public void showLevelSelect () 
+	{
+		gameFrame.setVisible(false);
 		menuFrame.setVisible(false);
 		
-		LevelSelectPanel lsp = new LevelSelectPanel(g, psg);
+		LevelSelectPanel lsp = new LevelSelectPanel(this, psg);
 		setDefaultLayout(lsp, levelFrame);
 	}
 	
