@@ -79,7 +79,7 @@ public class PuzzleGrid
 		return levelID;
 	}
 	
-		public boolean isShadow()
+	public boolean isShadow()
 	{
 		return this.shadowMode;
 	}

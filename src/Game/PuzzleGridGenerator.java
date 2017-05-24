@@ -147,7 +147,7 @@ public class PuzzleGridGenerator
 	
 	public PuzzleGrid getShadowLevel()
 	{
-		PuzzleGrid pg = generatePuzzleGrid(1);
+		PuzzleGrid pg = getLevel(1);
 		pg.setShadow(true);
 		return pg;
 	}

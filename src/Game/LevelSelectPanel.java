@@ -4,9 +4,10 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.HashMap;
+
 
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -14,6 +15,7 @@ import javax.swing.JPanel;
 public class LevelSelectPanel extends JPanel 
 {	
 	private static final long serialVersionUID = 1L;
+	public boolean shadowMode;
 	
 	public LevelSelectPanel (Game g, PuzzleGridGenerator psg)
 	{
@@ -31,7 +33,7 @@ public class LevelSelectPanel extends JPanel
 		{
 			String level = numberToWord(i+1);
 			JButton newLevel = new JButton("LEVEL " + level);
-			registerLevelClickToLoadPuzzle(g, newLevel, psg.getLevel(i));
+			registerLevelClickToLoadPuzzle(g, newLevel, psg.getLevel(i), shadowMode);
 			
 			String highScoreValue;
 			if (psg.getLevel(i).getHighScore() >= 0) {
@@ -53,10 +55,23 @@ public class LevelSelectPanel extends JPanel
 			}
 		});
 		addGridComponent(returnButton, 0, i+1);
+		
+		JCheckBox checkBox = new JCheckBox(String.valueOf(shadowMode));
+		checkBox.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        if (checkBox.isSelected()) {
+		            shadowMode = true;
+		        } else {
+		        	shadowMode = false;
+		        }
+		    }
+		});
+		addGridComponent(checkBox, 1, i+1);
 	}
 	
-	private void registerLevelClickToLoadPuzzle(Game g, JButton button, PuzzleGrid level)
+	private void registerLevelClickToLoadPuzzle(Game g, JButton button, PuzzleGrid level, boolean shadowMode)
 	{
+		level.setShadow(shadowMode);
 		button.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)

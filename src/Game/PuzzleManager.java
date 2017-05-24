@@ -167,8 +167,9 @@ public class PuzzleManager
 	{
 		if(puzzleSolved())
 		{
-			grid.setHighScore(this.nMoves);
-			int hiscore = grid.getHighScore();
+			if (nMoves < grid.getHighScore()) {
+				grid.setHighScore(this.nMoves);
+			}
 			game.showWinScreen(level);
 		}
 	}
