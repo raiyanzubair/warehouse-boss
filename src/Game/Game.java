@@ -128,6 +128,7 @@ public class Game
 		{
 			public void actionPerformed(ActionEvent e)
 			{
+				gameFrame.setVisible(false);
 				showGameScreen(psg.getLevel(level+1));
 				winFrame.setVisible(false);
 			}
