@@ -1,7 +1,10 @@
 package Game;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -25,24 +28,32 @@ public class LevelSelectPanel extends JPanel
 		this.setLayout(new GridBagLayout());
 		this.shadowMode = false;
 		this.multiPlayer = multiPlayer;
+		
+		String titleText = (this.multiPlayer) ? "MULTIPLAYER":"SINGLE PLAYER";
+		JLabel title = new JLabel(titleText);
+		title.setFont(new Font("Tahoma", Font.BOLD, 22));
+		title.setForeground(Color.BLACK);
+		addGridComponent(title, 0, 0);
+		
 		populateComponents(g, psg);
 		
 	}
 	
 	private void populateComponents(Game g, PuzzleGridGenerator psg)
 	{
-		int i =0;
-		int numLevels = (this.multiPlayer==true) ? psg.getNumberOfMultiPlayerLevels():psg.getNumberOfSinglePlayerLevels();
-		for(i = 0; i < numLevels; i++)
+		int i;
+		int numLevels = (this.multiPlayer) ? psg.getNumberOfMultiPlayerLevels():psg.getNumberOfSinglePlayerLevels();
+		for(i=1; i < numLevels+1; i++)
 		{
-			String levelString = numberToWord(i+1);
+			String levelString = numberToWord(i);
 			JButton newLevel = new JButton("LEVEL " + levelString);
-			PuzzleGrid level = (this.multiPlayer==true) ? psg.getMultiLevel(i):psg.getLevel(i);
+			PuzzleGrid level = (this.multiPlayer) ? psg.getMultiLevel(i-1):psg.getLevel(i-1);
 			registerLevelClickToLoadPuzzle(g, newLevel, level);
 			addGridComponent(newLevel, 0, i);
 		}
 		
 		JButton returnButton = new JButton("RETURN");
+		returnButton.setFont(new Font("Tahoma", Font.BOLD, 12));
 		returnButton.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
@@ -85,6 +96,7 @@ public class LevelSelectPanel extends JPanel
 		GridBagConstraints gbc = new GridBagConstraints();
 		gbc.gridx = gridX;
 		gbc.gridy = gridY;
+		gbc.insets = new Insets (0,2,2,2);
 		this.add(component, gbc);
 	}
 	

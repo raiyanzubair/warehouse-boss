@@ -33,11 +33,11 @@ public class Game
 	
 	public Game()
 	{
-		gameFrame = new JFrame();
-		levelFrame = new JFrame();
-		menuFrame = new JFrame();
-		winFrame = new JFrame();
-		tutorialFrame = new JFrame();
+		this.gameFrame = new JFrame();
+		this.levelFrame = new JFrame();
+		this.menuFrame = new JFrame();
+		this.winFrame = new JFrame();
+		this.tutorialFrame = new JFrame();
 	}
 	
 	/**
@@ -66,14 +66,10 @@ public class Game
 	{
 		gameFrame.setVisible(false);
 		menuFrame.setVisible(false);
+		this.levelFrame = new JFrame();
 		
 		LevelSelectPanel lsp = new LevelSelectPanel(this, psg, multiPlayer);
-		setDefaultLayout(lsp, levelFrame);
-	}
-	
-	public void showMultiplayerScreen () {
-		gameFrame.setVisible(false);
-		menuFrame.setVisible(false);
+		setDefaultLayout(lsp, this.levelFrame);
 	}
 	
 	/**
@@ -206,13 +202,13 @@ public class Game
 		
 		targetFrame.add(wholePanel, BorderLayout.CENTER);
 	
-		targetFrame.pack();
 		targetFrame.setTitle("Warehouse Boss");
 		targetFrame.setSize(400, 560);
 		targetFrame.setResizable(false);
 		targetFrame.setLocationRelativeTo(null);
 		targetFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		targetFrame.setVisible(true);
+		targetFrame.pack();
 	}
 	
 	

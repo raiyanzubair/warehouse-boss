@@ -16,6 +16,7 @@ public class PuzzleControlPanel extends JPanel
 	private static final long serialVersionUID = 1L;
 	private PuzzleManager manager;
 	private PuzzleGrid grid;
+	private boolean multiPlayer;
 	
 	JLabel moveCounter;
 	JLabel highScore;
@@ -30,10 +31,11 @@ public class PuzzleControlPanel extends JPanel
 	public PuzzleControlPanel(PuzzleManager manager, PuzzleGrid grid, Game g) 
 	{	
 		this.manager = manager;
+		this.multiPlayer = grid.isMultiplayer();
 		this.grid = grid;
 		this.setBackground(ImageFactory.Colors.customOrange);	
 		this.setLayout(new GridBagLayout());
-		
+
 		populateComponents(g);
 	}
 	
@@ -66,6 +68,24 @@ public class PuzzleControlPanel extends JPanel
 		downButton = new JButton("↓");
 		registerSyntheticKey(downButton, KeyEvent.VK_DOWN);
 		addGridComponent(downButton, 2, 2);
+		
+		if (this.multiPlayer) {
+			JButton left2 = new JButton("A");
+			registerSyntheticKey(left2, KeyEvent.VK_W);
+			addGridComponent(left2, 1, 4);
+			
+			JButton right2 = new JButton("D");
+			registerSyntheticKey(right2, KeyEvent.VK_D);
+			addGridComponent(right2, 3, 4);
+			
+			JButton up2 = new JButton("W");
+			registerSyntheticKey(up2, KeyEvent.VK_W);
+			addGridComponent(up2, 2, 3);
+			
+			JButton down2 = new JButton("S");
+			registerSyntheticKey(down2, KeyEvent.VK_S);
+			addGridComponent(down2, 2, 5);
+		}
 		
 		undoButton = new JButton("Undo (U)");
 		undoButton.addActionListener(new ActionListener()
@@ -125,8 +145,8 @@ public class PuzzleControlPanel extends JPanel
 	public void updateMoves(int nMoves)
 	{
 		moveCounter.setText("Moves: " + Integer.toString(nMoves));
-		//moveCounter.updateUI();
-		//this.updateUI();
+		moveCounter.updateUI();
+		this.updateUI();
 	}
 }
 

@@ -17,6 +17,7 @@ import Game.ImageFactory.Type;
 public class PuzzleGrid
 {
 	private boolean shadowMode;
+	private boolean multiPlayer;
 	private int levelID;
 	private int rows;
 	private int columns;
@@ -27,8 +28,9 @@ public class PuzzleGrid
 
 	
 	public PuzzleGrid(boolean multiPlayer, int ID, int rows, int columns, Type[] startingLabelTypes)
-	{
+	{	
 		this.levelID = ID;
+		this.multiPlayer = multiPlayer;
 		this.rows = rows;
 		this.columns = columns;
 		this.labelSequence = initializeStartingLabels(startingLabelTypes);
@@ -82,6 +84,10 @@ public class PuzzleGrid
 	public void setShadow(boolean mode)
 	{
 		this.shadowMode = mode;
+	}
+	
+	public boolean isMultiplayer() {
+		return this.multiPlayer;
 	}
 
 	/**

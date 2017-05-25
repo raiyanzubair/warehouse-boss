@@ -132,11 +132,13 @@ public class PuzzleManager
 			validatePuzzleSolved(grid);
 		}	
 		
-		if(e.getKeyCode() == KeyEvent.VK_W || e.getKeyCode() == KeyEvent.VK_S || e.getKeyCode() == KeyEvent.VK_A || e.getKeyCode() == KeyEvent.VK_D)
-		{
-			registerMove(e, playerTwoPiece);
-			validatePuzzleSolved(grid);
-		}	
+		if (grid.isMultiplayer()) {	
+			if(e.getKeyCode() == KeyEvent.VK_W || e.getKeyCode() == KeyEvent.VK_S || e.getKeyCode() == KeyEvent.VK_A || e.getKeyCode() == KeyEvent.VK_D)
+			{
+				registerMove(e, playerTwoPiece);
+				validatePuzzleSolved(grid);
+			}
+		}
 	}
 	
 	public void registerMove(KeyEvent e, PuzzleLabel playerPiece)

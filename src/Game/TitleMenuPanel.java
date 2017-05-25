@@ -1,5 +1,6 @@
 package Game;
 
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
@@ -24,7 +25,7 @@ public class TitleMenuPanel extends JPanel
 	{
 		this.setBackground(ImageFactory.Colors.customOrange);
 		this.setLayout(new GridBagLayout());
-		
+		this.multiPlayer = false;
 		populateComponents(g, psg);
 	}
 	
@@ -32,17 +33,8 @@ public class TitleMenuPanel extends JPanel
 	{
 		numComponents = 0;
 		
-		tutorialButton = new JButton("HOW TO PLAY");
-		tutorialButton.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent e)
-			{
-				g.showTutorialScreen(g);
-			}
-		});
-		addGridComponent(tutorialButton, 0, numComponents++);
-
 		levelButton = new JButton("SINGLE PLAYER");
+		levelButton.setFont(new Font("Tahoma", Font.BOLD, 14));
 		levelButton.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
@@ -54,6 +46,7 @@ public class TitleMenuPanel extends JPanel
 		addGridComponent(levelButton, 0, numComponents++);
 		
 		multiplayerButton = new JButton("MULTIPLAYER");
+		multiplayerButton.setFont(new Font("Tahoma", Font.BOLD, 14));
 		multiplayerButton.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed (ActionEvent e) 
@@ -63,6 +56,16 @@ public class TitleMenuPanel extends JPanel
 			}
 		});
 		addGridComponent(multiplayerButton, 0, numComponents++);
+		
+		tutorialButton = new JButton("HOW TO PLAY");
+		tutorialButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				g.showTutorialScreen(g);
+			}
+		});
+		addGridComponent(tutorialButton, 0, numComponents++);
 		
 		quitButton = new JButton("QUIT");
 		quitButton.addActionListener(new ActionListener()
