@@ -31,8 +31,6 @@ public class PuzzleGrid
 		this.levelID = ID;
 		this.rows = rows;
 		this.columns = columns;
-		this.playerOne = new PuzzleLabel(Type.P1_RIGHT, Player.ONE);
-		this.playerTwo = multiPlayer ? new PuzzleLabel(Type.P2_RIGHT, Player.TWO) : null;
 		this.labelSequence = initializeStartingLabels(startingLabelTypes);
 		this.highScore = -1;
 	}
@@ -54,24 +52,21 @@ public class PuzzleGrid
 		{
 			switch(type) 
 			{
-				case P1_RIGHT:	addNextPlayer(labels);				break;
-				default:		labels.add(new PuzzleLabel(type, Player.NONE));	break;
+				case P2_RIGHT:
+				case P1_RIGHT:	labels.add(registerPlayer(type));					break;
+				default:		labels.add(new PuzzleLabel(type, Player.NONE));		break;
 			}
 		}
 		
 		return labels;
 	}
 	
-	private void addNextPlayer(ArrayList<PuzzleLabel> labels)
+	private PuzzleLabel registerPlayer(Type t)
 	{
-		if(!labels.contains(playerOne))
-		{
-			labels.add(playerOne);
-		}
-		else if(!labels.contains(playerTwo))
-		{
-			labels.add(playerTwo);
-		}
+		PuzzleLabel player = new PuzzleLabel(t, ImageFactory.getPlayerMap(t));
+		this.playerOne = t == Type.P1_RIGHT ? player : playerOne;
+		this.playerTwo = t == Type.P2_RIGHT ? player : playerTwo;
+		return player;
 	}
 	
 	public int getLevelID() 
