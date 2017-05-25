@@ -83,7 +83,7 @@ public class Game
 		gameFrame = new JFrame();
 		
 		PuzzleDisplayPanel panel = new PuzzleDisplayPanel(grid.getRows(), grid.getColumns());
-		PuzzleManager manager = new PuzzleManager(panel, grid, this);
+		PuzzleManager manager = !grid.isMultiplayer() ? new PuzzleManager(panel, grid, this) : new PuzzleManagerMultiplayer(panel, grid, this);
 		PuzzleControlPanel buttons = new PuzzleControlPanel(manager, grid, this);
 
 		panel.addKeyListener(new KeyAction()
