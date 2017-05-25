@@ -4,7 +4,8 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -15,7 +16,7 @@ import javax.swing.JPanel;
 public class LevelSelectPanel extends JPanel 
 {	
 	private static final long serialVersionUID = 1L;
-	public boolean shadowMode;
+	private boolean shadowMode;
 	
 	public LevelSelectPanel (Game g, PuzzleGridGenerator psg)
 	{
@@ -33,7 +34,7 @@ public class LevelSelectPanel extends JPanel
 		{
 			String level = numberToWord(i+1);
 			JButton newLevel = new JButton("LEVEL " + level);
-			registerLevelClickToLoadPuzzle(g, newLevel, psg.getLevel(i), shadowMode);
+			registerLevelClickToLoadPuzzle(g, newLevel, psg.getLevel(i));
 			
 			String highScoreValue;
 			if (psg.getLevel(i).getHighScore() >= 0) {
@@ -56,26 +57,28 @@ public class LevelSelectPanel extends JPanel
 		});
 		addGridComponent(returnButton, 0, i+1);
 		
-		JCheckBox checkBox = new JCheckBox(String.valueOf(shadowMode));
-		checkBox.addActionListener(new ActionListener() {
-		    public void actionPerformed(ActionEvent e) {
-		        if (checkBox.isSelected()) {
+		
+		JCheckBox checkBox = new JCheckBox("Shadow Mode");
+		checkBox.addItemListener(new ItemListener() {
+		    public void itemStateChanged(ItemEvent e) {
+		        if (e.getStateChange() == ItemEvent.SELECTED) {
 		            shadowMode = true;
 		        } else {
 		        	shadowMode = false;
 		        }
 		    }
 		});
+		checkBox.setFocusable(false);
 		addGridComponent(checkBox, 1, i+1);
 	}
 	
-	private void registerLevelClickToLoadPuzzle(Game g, JButton button, PuzzleGrid level, boolean shadowMode)
+	private void registerLevelClickToLoadPuzzle(Game g, JButton button, PuzzleGrid level)
 	{
-		level.setShadow(shadowMode);
 		button.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
 			{
+				level.setShadow(shadowMode);
 				g.showGameScreen(level);
 			}
 		});

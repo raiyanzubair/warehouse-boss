@@ -156,7 +156,9 @@ public class PuzzleManager
 	
 	public void validateNumMoves(int originalManIndex, PuzzleLabel playerPiece)
 	{
-		int manIndex = currentLabelSequence.indexOf(playerPiece);
+		int manIndex = playerPiece.getPlayer() == Player.ONE ? currentLabelSequence.indexOf(playerOnePiece) :
+					   playerPiece.getPlayer() == Player.TWO ? currentLabelSequence.indexOf(playerTwoPiece) : -1;
+				
 		if(manIndex != originalManIndex)
 		{
 			nMoves++;
@@ -165,9 +167,9 @@ public class PuzzleManager
 
 	public void validatePuzzleSolved(PuzzleGrid grid)
 	{
-		if(puzzleSolved())
+		if (puzzleSolved())
 		{
-			if (nMoves < grid.getHighScore()) {
+			if (nMoves < grid.getHighScore() || grid.getHighScore() == -1) {
 				grid.setHighScore(this.nMoves);
 			}
 			game.showWinScreen(level);
