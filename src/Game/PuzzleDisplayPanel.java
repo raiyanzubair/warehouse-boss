@@ -68,8 +68,7 @@ public class PuzzleDisplayPanel extends JPanel
 				}
 				
 				PuzzleLabel piece = list.get(listIndex);
-				Player type = piece.getPlayer();
-				if(type == Player.ONE || type == Player.TWO)
+				if(piece.isPlayer())
 				{
 					return true;
 				}
@@ -78,6 +77,8 @@ public class PuzzleDisplayPanel extends JPanel
 		return false;
 	}
 
+
 }
+
 
 
