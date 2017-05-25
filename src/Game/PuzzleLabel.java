@@ -18,16 +18,19 @@ public class PuzzleLabel extends JLabel
 	private Type image;
 	private Type type;
 	private Player player;
+	private boolean isPlayer;
 
 	public PuzzleLabel(Type type, Player player)
 	{
 		this.player = player;
+		this.isPlayer = isPlayer(type);
 		setTypeAndImage(type);
 	}
 	
-	public PuzzleLabel(Type type, Type img, Player player)
+	public PuzzleLabel(Type type, Type img, Player player, boolean isPlayer)
 	{
 		this.player = player;
+		this.isPlayer = isPlayer;
 		setType(type);
 		setImage(img);
 	}
@@ -77,7 +80,47 @@ public class PuzzleLabel extends JLabel
 	
 	public Player getPlayer()
 	{
-		return this.player;
+		switch(image)
+		{
+			case BOX:
+			case P1_BOX:
+			case P1_BOXED:
+			case P1_CROSS:
+			case P1_RIGHT:
+			case P1_LEFT:
+			case P1_UP:
+			case P1_DOWN:	return Player.ONE;
+			case P2_BOX:
+			case P2_BOXED:
+			case P2_CROSS:
+			case P2_RIGHT:
+			case P2_LEFT:
+			case P2_UP:
+			case P2_DOWN:	return Player.TWO;
+			default:	break;
+		}
+		return Player.NONE;
+	}
+	
+	public Type getType()
+	{
+		return this.type;
+	}
+	
+	public Type getGenericType(Type type)
+	{
+		switch(type)
+		{
+			case BOX:
+			case P1_BOX:
+			case P2_BOX: return Type.P1_BOX;
+			case P1_BOXED:
+			case P2_BOXED: return Type.P1_BOXED;
+			case P1_CROSS:
+			case P2_CROSS: return Type.P1_CROSS;
+			default:	break;
+		}
+		return this.type;
 	}
 	
 	/**
@@ -85,14 +128,34 @@ public class PuzzleLabel extends JLabel
 	 * @param type: The type to check
 	 * @return: True if it is that type or false otherwise
 	 */
-	public boolean isType(Type type, Player player)
+	public boolean isType(Type type)
 	{
-		return this.type == type && this.player == player;
+		return this.type == type;
 	}
 	
-	public Player otherPlayer()
+	public boolean hasGenericImageType(Type type)
 	{
-		return this.player == Player.ONE ? Player.TWO : Player.ONE;
+		return getGenericType(this.image) == type;
+	}
+	
+	public boolean isGenericType(Type type)
+	{
+		return getGenericType(this.type) == type;
+	}
+		
+	public boolean isPlayer(Type t)
+	{
+		if(t == Type.P1_UP || t == Type.P1_DOWN || t == Type.P1_LEFT || t == Type.P1_RIGHT || 
+		   t == Type.P2_UP || t == Type.P2_DOWN || t == Type.P2_LEFT || t == Type.P2_RIGHT	)
+		{
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean isPlayer()
+	{
+		return this.isPlayer;
 	}
 	
 	@Override
@@ -103,11 +166,11 @@ public class PuzzleLabel extends JLabel
 			return false;
 		}
 		PuzzleLabel pl = (PuzzleLabel)o;
-		return this.type == pl.type && this.image == pl.image && this.player == pl.player;
+		return this.type == pl.type && this.image == pl.image && pl.isPlayer == isPlayer;
 	}
 	
 	public PuzzleLabel Clone()
 	{
-		return new PuzzleLabel(this.type, this.image, this.player);
+		return new PuzzleLabel(this.type, this.image, this.player, this.isPlayer);
 	}
 }
