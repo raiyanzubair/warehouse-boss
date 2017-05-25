@@ -28,7 +28,6 @@ public class Game
 	private JFrame gameFrame;
 	private JFrame menuFrame;
 	private JFrame levelFrame;
-	private JFrame multiplayerFrame;
 	private JFrame winFrame;
 	private JFrame tutorialFrame;
 	
@@ -36,7 +35,6 @@ public class Game
 	{
 		gameFrame = new JFrame();
 		levelFrame = new JFrame();
-		multiplayerFrame = new JFrame();
 		menuFrame = new JFrame();
 		winFrame = new JFrame();
 		tutorialFrame = new JFrame();
@@ -64,21 +62,18 @@ public class Game
 		
 	}
 	
-	public void showLevelSelect () 
+	public void showLevelSelect (boolean multiPlayer) 
 	{
 		gameFrame.setVisible(false);
 		menuFrame.setVisible(false);
 		
-		LevelSelectPanel lsp = new LevelSelectPanel(this, psg);
+		LevelSelectPanel lsp = new LevelSelectPanel(this, psg, multiPlayer);
 		setDefaultLayout(lsp, levelFrame);
 	}
 	
 	public void showMultiplayerScreen () {
 		gameFrame.setVisible(false);
 		menuFrame.setVisible(false);
-		
-		MultiLevelPanel mlp = new MultiLevelPanel();
-		setDefaultLayout(mlp, levelFrame);
 	}
 	
 	/**

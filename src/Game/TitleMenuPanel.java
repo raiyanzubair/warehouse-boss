@@ -13,10 +13,10 @@ public class TitleMenuPanel extends JPanel
 {	
 	private static final long serialVersionUID = 1L;
 	private int numComponents;
+	private boolean multiPlayer;
 	
 	JButton levelButton;
 	JButton multiplayerButton;
-	JButton shadowButton;
 	JButton tutorialButton;
 	JButton quitButton;
 	
@@ -42,12 +42,13 @@ public class TitleMenuPanel extends JPanel
 		});
 		addGridComponent(tutorialButton, 0, numComponents++);
 
-		levelButton = new JButton("LEVEL SELECT");
+		levelButton = new JButton("SINGLE PLAYER");
 		levelButton.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				g.showLevelSelect();
+				multiPlayer = false;
+				g.showLevelSelect(multiPlayer);
 			}
 		});
 		addGridComponent(levelButton, 0, numComponents++);
@@ -57,20 +58,11 @@ public class TitleMenuPanel extends JPanel
 		{
 			public void actionPerformed (ActionEvent e) 
 			{
-				g.showGameScreen(psg.getDefaultMultiplayerLevel());
+				multiPlayer = true;
+				g.showLevelSelect(multiPlayer);
 			}
 		});
 		addGridComponent(multiplayerButton, 0, numComponents++);
-		
-		shadowButton = new JButton("TRY THE SHADOW");
-		shadowButton.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed (ActionEvent e) 
-			{
-				g.showGameScreen(psg.getShadowLevel());			
-			}
-		});
-		addGridComponent(shadowButton, 0, numComponents++);
 		
 		quitButton = new JButton("QUIT");
 		quitButton.addActionListener(new ActionListener()

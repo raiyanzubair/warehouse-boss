@@ -49,7 +49,7 @@ public class PuzzleControlPanel extends JPanel
 			nScore = "Not set yet";
 		}
 		highScore = new JLabel("High Score: " + nScore);
-		addGridComponent(highScore, 1, 3);
+		addGridComponent(highScore, 0, 4);
 		
 		leftButton = new JButton("←");
 		registerSyntheticKey(leftButton, KeyEvent.VK_LEFT);
@@ -93,7 +93,7 @@ public class PuzzleControlPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				g.showLevelSelect();
+				g.showMenuScreen();
 			}
 		});
 		addGridComponent(exitButton, 0, 2);

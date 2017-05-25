@@ -196,7 +196,7 @@ public class PuzzleGridGenerator
 	public void populateMultiPlayerLevels()
 	{
 		int numLevels = 0;
-		multiPlayerLevels.add(numLevels++, new PuzzleGrid(true, 3, 9, 11, new Type[]
+		multiPlayerLevels.add(numLevels++, new PuzzleGrid(true, 0, 9, 11, new Type[]
 		{
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,		Type.BRICK,  	Type.BRICK,	 
 			Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY,	 	Type.BRICK,  	Type.BRICK,	

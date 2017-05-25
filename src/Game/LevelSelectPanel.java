@@ -17,12 +17,14 @@ public class LevelSelectPanel extends JPanel
 {	
 	private static final long serialVersionUID = 1L;
 	private boolean shadowMode;
+	private boolean multiPlayer;
 	
-	public LevelSelectPanel (Game g, PuzzleGridGenerator psg)
+	public LevelSelectPanel (Game g, PuzzleGridGenerator psg, boolean multiPlayer)
 	{
 		this.setBackground(ImageFactory.Colors.customOrange);
 		this.setLayout(new GridBagLayout());
-		
+		this.shadowMode = false;
+		this.multiPlayer = multiPlayer;
 		populateComponents(g, psg);
 		
 	}
@@ -30,21 +32,14 @@ public class LevelSelectPanel extends JPanel
 	private void populateComponents(Game g, PuzzleGridGenerator psg)
 	{
 		int i =0;
-		for(i = 0; i < psg.getNumberOfSinglePlayerLevels(); i++)
+		int numLevels = (this.multiPlayer==true) ? psg.getNumberOfMultiPlayerLevels():psg.getNumberOfSinglePlayerLevels();
+		for(i = 0; i < numLevels; i++)
 		{
-			String level = numberToWord(i+1);
-			JButton newLevel = new JButton("LEVEL " + level);
-			registerLevelClickToLoadPuzzle(g, newLevel, psg.getLevel(i));
-			
-			String highScoreValue;
-			if (psg.getLevel(i).getHighScore() >= 0) {
-				highScoreValue = "High Score: " + Integer.toString(psg.getLevel(i).getHighScore());
-			} else {
-				highScoreValue = "Level not complete";
-			}
-			JLabel highScore = new JLabel(highScoreValue);
+			String levelString = numberToWord(i+1);
+			JButton newLevel = new JButton("LEVEL " + levelString);
+			PuzzleGrid level = (this.multiPlayer==true) ? psg.getMultiLevel(i):psg.getLevel(i);
+			registerLevelClickToLoadPuzzle(g, newLevel, level);
 			addGridComponent(newLevel, 0, i);
-			addGridComponent(highScore, 1, i);
 		}
 		
 		JButton returnButton = new JButton("RETURN");
@@ -69,7 +64,7 @@ public class LevelSelectPanel extends JPanel
 		    }
 		});
 		checkBox.setFocusable(false);
-		addGridComponent(checkBox, 1, i+1);
+		addGridComponent(checkBox, 0, i+2);
 	}
 	
 	private void registerLevelClickToLoadPuzzle(Game g, JButton button, PuzzleGrid level)
