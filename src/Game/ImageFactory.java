@@ -83,7 +83,6 @@ public class ImageFactory
 		"P2_Left.png",
 		"P2_Right.png",
 	};
-
 	public static final ImageIcon[] puzzleIcons = loadImages();
 	
 	//Images for the title menu panel
@@ -114,6 +113,11 @@ public class ImageFactory
 		}
 		return icons;
 	}
+ 	
+ 	public static Player getPlayerMap(Type type)
+ 	{
+ 		return playerMap[type.ordinal()];
+ 	}
 
  	/**
  	 * Converts an image file loaded from a filename into an ImageIcon
