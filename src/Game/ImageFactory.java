@@ -16,36 +16,74 @@ public class ImageFactory
 	private static final int DESIRED_HEIGHT = 50;
 	public static enum Player
 	{
+		NONE,
 		ONE,
-		TWO,
-		NONE
+		TWO
 	}
 	public static enum Type
 	{
 		EMPTY,
 		BRICK,
+		SHADOW,
 		BOX,
-		GREENBOX,
-		CROSS,
-		MANDOWN,
-		MANUP,
-		MANLEFT,
-		MANRIGHT,
-		SHADOW
+		P1_BOX,
+		P1_BOXED,
+		P1_CROSS,
+		P1_DOWN,
+		P1_UP,
+		P1_LEFT,
+		P1_RIGHT,
+		P2_BOX,
+		P2_BOXED,
+		P2_CROSS,
+		P2_DOWN,
+		P2_UP,
+		P2_LEFT,
+		P2_RIGHT,
 	}
+	private static Player[] playerMap = 
+	{
+		Player.NONE,
+		Player.NONE,
+		Player.NONE,
+		Player.NONE,
+		Player.ONE,
+		Player.ONE,
+		Player.ONE,
+		Player.ONE,
+		Player.ONE,
+		Player.ONE,
+		Player.ONE,
+		Player.TWO,
+		Player.TWO,
+		Player.TWO,
+		Player.TWO,
+		Player.TWO,
+		Player.TWO,
+		Player.TWO,
+	};
 	private static String[] images =
 	{
 		"Empty.png",
 		"Brick.png",
+		"Shadow.png",
 		"Box.png",
-		"GreenBox.png",
-		"Cross.png",
-		"ManDown.png",
-		"ManUp.png",
-		"ManLeft.png",
-		"ManRight.png",
-		"Shadow.png"
+		"P1_Box.png",
+		"P1_Boxed.png",
+		"P1_Cross.png",
+		"P1_Down.png",
+		"P1_Up.png",
+		"P1_Left.png",
+		"P1_Right.png",
+		"P2_Box.png",
+		"P2_Boxed.png",
+		"P2_Cross.png",
+		"P2_Down.png",
+		"P2_Up.png",
+		"P2_Left.png",
+		"P2_Right.png",
 	};
+
 	public static final ImageIcon[] puzzleIcons = loadImages();
 	
 	//Images for the title menu panel

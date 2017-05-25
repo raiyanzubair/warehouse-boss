@@ -205,10 +205,10 @@ public class PuzzleManager
 		int keyCode = translateKeyCode(e);	
 		switch(keyCode)
 		{
-			case KeyEvent.VK_UP: 	playerPiece.setImage(Type.MANUP); 		break;
-			case KeyEvent.VK_DOWN: 	playerPiece.setImage(Type.MANDOWN); 	break;
-			case KeyEvent.VK_LEFT: 	playerPiece.setImage(Type.MANLEFT); 	break;
-			case KeyEvent.VK_RIGHT: playerPiece.setImage(Type.MANRIGHT); 	break;
+			case KeyEvent.VK_UP: 	playerPiece.setImage(Type.P1_UP); 		break;
+			case KeyEvent.VK_DOWN: 	playerPiece.setImage(Type.P1_DOWN); 	break;
+			case KeyEvent.VK_LEFT: 	playerPiece.setImage(Type.P1_LEFT); 	break;
+			case KeyEvent.VK_RIGHT: playerPiece.setImage(Type.P1_RIGHT); 	break;
 		}
 	}
 
@@ -279,27 +279,27 @@ public class PuzzleManager
 	{
 		PuzzleLabel playerPiece = currentLabelSequence.get(playerIndex);
 		PuzzleLabel toSwap = currentLabelSequence.get(destinationIndex);
-		if(toSwap.isType(Type.BRICK, Player.NONE) || toSwap.isType(Type.MANRIGHT, playerPiece.otherPlayer()))
+		if(toSwap.isType(Type.BRICK, Player.NONE) || toSwap.isType(Type.P1_RIGHT, playerPiece.otherPlayer()))
 		{
 			return false;
 		}
 		else if(toSwap.isType(Type.EMPTY, Player.NONE))
 		{
-			if(playerPiece.isType(Type.CROSS, playerPiece.getPlayer()))
+			if(playerPiece.isType(Type.P1_CROSS, playerPiece.getPlayer()))
 			{
-				toSwap.setTypeAndImage(Type.CROSS);
+				toSwap.setTypeAndImage(Type.P1_CROSS);
 			}
-			playerPiece.setType(Type.MANRIGHT);
+			playerPiece.setType(Type.P1_RIGHT);
 		}
-		else if(toSwap.isType(Type.CROSS, Player.NONE))
+		else if(toSwap.isType(Type.P1_CROSS, Player.NONE))
 		{
-			if(!playerPiece.isType(Type.CROSS, playerPiece.getPlayer()))
+			if(!playerPiece.isType(Type.P1_CROSS, playerPiece.getPlayer()))
 			{
 				toSwap.setTypeAndImage(Type.EMPTY);
 			}
-			playerPiece.setType(Type.CROSS);
+			playerPiece.setType(Type.P1_CROSS);
 		}
-		else if(toSwap.isType(Type.BOX, Player.NONE) || toSwap.isType(Type.GREENBOX, Player.NONE))
+		else if(toSwap.isType(Type.BOX, Player.NONE) || toSwap.isType(Type.P1_BOXED, Player.NONE))
 		{
 			int toSwapSwapIndex = validateKeyArrowDirection(e, destinationIndex);
 			if(toSwapSwapIndex == -1)
@@ -310,33 +310,33 @@ public class PuzzleManager
 			
 			if(toSwapWithToSwap.isType(Type.EMPTY, Player.NONE))
 			{
-				if(playerPiece.isType(Type.CROSS, playerPiece.getPlayer()))
+				if(playerPiece.isType(Type.P1_CROSS, playerPiece.getPlayer()))
 				{
-					toSwapWithToSwap.setTypeAndImage(Type.CROSS);
-					playerPiece.setType(Type.MANRIGHT);
+					toSwapWithToSwap.setTypeAndImage(Type.P1_CROSS);
+					playerPiece.setType(Type.P1_RIGHT);
 				}
 
-				if(toSwap.isType(Type.GREENBOX, Player.NONE))
+				if(toSwap.isType(Type.P1_BOXED, Player.NONE))
 				{
 					toSwap.setTypeAndImage(Type.BOX);
-					playerPiece.setType(Type.CROSS);
+					playerPiece.setType(Type.P1_CROSS);
 				}
 			}
-			else if(toSwapWithToSwap.isType(Type.CROSS, Player.NONE))
+			else if(toSwapWithToSwap.isType(Type.P1_CROSS, Player.NONE))
 			{
-				if(!playerPiece.isType(Type.CROSS, playerPiece.getPlayer()))
+				if(!playerPiece.isType(Type.P1_CROSS, playerPiece.getPlayer()))
 				{
 					toSwapWithToSwap.setTypeAndImage(Type.EMPTY);
 				}
 
-				if(toSwap.isType(Type.GREENBOX, Player.NONE))
+				if(toSwap.isType(Type.P1_BOXED, Player.NONE))
 				{
-					playerPiece.setType(Type.CROSS);
+					playerPiece.setType(Type.P1_CROSS);
 				}
 				else if(toSwap.isType(Type.BOX, Player.NONE))
 				{
-					toSwap.setTypeAndImage(Type.GREENBOX);
-					playerPiece.setType(Type.MANRIGHT);
+					toSwap.setTypeAndImage(Type.P1_BOXED);
+					playerPiece.setType(Type.P1_RIGHT);
 				}			
 			}
 			else
