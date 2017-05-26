@@ -177,8 +177,8 @@ public class PuzzleManager
 		{
 			if (nMoves < grid.getHighScore() || grid.getHighScore() == -1) 
 			{
--				grid.setHighScore(this.nMoves);
--			}
+				grid.setHighScore(this.nMoves);
+			}
 			game.showWinScreen(level);
 		}
 	}
