@@ -23,7 +23,6 @@ import Game.ImageFactory.Type;
  */
 public class PuzzleManager
 {
-	private boolean shadowMode;
 	private final int level;
 	private final int ROWS;
 	private final int COLUMNS;
@@ -42,7 +41,6 @@ public class PuzzleManager
 		this.level = grid.getLevelID();
 		this.ROWS = grid.getRows();
 		this.COLUMNS = grid.getColumns();
-		this.shadowMode = grid.isShadow();
 		this.nMoves = 0;
 		this.game = g;
 		
@@ -52,7 +50,7 @@ public class PuzzleManager
 		this.previousStates = new Stack<PuzzleGrid>();
 		
 		this.panel = panel;
-		this.panel.reloadPanelLabels(currentLabelSequence, shadowMode);
+		this.panel.reloadPanelLabels(currentLabelSequence, PuzzleGridGenerator.shadowMode);
 	}
 	
 	public int getnMoves() 
@@ -76,7 +74,7 @@ public class PuzzleManager
 		playerOnePiece = newPlayerOne;
 		playerTwoPiece = newPlayerTwo;
 		
-		panel.reloadPanelLabels(currentLabelSequence, shadowMode);
+		panel.reloadPanelLabels(currentLabelSequence, PuzzleGridGenerator.shadowMode);
 	}
 	
 	public void reloadLastLabelState()
@@ -89,7 +87,7 @@ public class PuzzleManager
 			playerOnePiece = savedState.getPlayer(Player.ONE);
 			playerTwoPiece = savedState.getPlayer(Player.TWO);
 			
-			panel.reloadPanelLabels(currentLabelSequence, shadowMode);
+			panel.reloadPanelLabels(currentLabelSequence, PuzzleGridGenerator.shadowMode);
 		}
 	}
 	
@@ -103,7 +101,7 @@ public class PuzzleManager
 			playerTwoPiece = start.getPlayer(Player.TWO);
 			previousStates.clear();
 			nMoves = 0;
-			panel.reloadPanelLabels(currentLabelSequence, shadowMode);
+			panel.reloadPanelLabels(currentLabelSequence, PuzzleGridGenerator.shadowMode);
 		}
 	}
 	
@@ -143,7 +141,7 @@ public class PuzzleManager
 		{
 			setPlayerFacingDirection(e);
 			handleSwapObjectBehaviour(e, manIndex, swapIndex);
-			panel.reloadPanelLabels(currentLabelSequence, shadowMode);
+			panel.reloadPanelLabels(currentLabelSequence, PuzzleGridGenerator.shadowMode);
 			validateNumMoves(manIndex, playerPiece);
 		}
 	}
@@ -381,3 +379,4 @@ public class PuzzleManager
 	}
 
 }
+
