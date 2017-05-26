@@ -7,9 +7,6 @@ import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
-import Game.ImageFactory.Player;
-
-
 public class PuzzleDisplayPanel extends JPanel
 {
 	private static final long serialVersionUID = 1L;
@@ -77,8 +74,4 @@ public class PuzzleDisplayPanel extends JPanel
 		return false;
 	}
 
-
 }
-
-
-
