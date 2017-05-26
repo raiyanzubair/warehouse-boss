@@ -72,19 +72,19 @@ public class PuzzleControlPanel extends JPanel
 		highScore = new JLabel("High Score: " + nScore);
 		addGridComponent(highScore, 0, 4);
 		
-		leftButton = new JButton("←");
+		leftButton = new JButton("Left");
 		registerSyntheticKey(leftButton, KeyEvent.VK_LEFT);
 		addGridComponent(leftButton, 1, 1);
 		
-		rightButton = new JButton("→");
+		rightButton = new JButton("Right");
 		registerSyntheticKey(rightButton, KeyEvent.VK_RIGHT);
 		addGridComponent(rightButton, 3, 1);
 		
-		upButton = new JButton("↑");
+		upButton = new JButton("Up");
 		registerSyntheticKey(upButton, KeyEvent.VK_UP);
 		addGridComponent(upButton, 2, 0);
 		
-		downButton = new JButton("↓");
+		downButton = new JButton("Down");
 		registerSyntheticKey(downButton, KeyEvent.VK_DOWN);
 		addGridComponent(downButton, 2, 2);
 		
