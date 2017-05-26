@@ -23,8 +23,8 @@ public class PuzzleGridGenerator
 	{
 		this.singlePlayerLevels = new ArrayList<PuzzleGrid>();
 		this.multiPlayerLevels = new ArrayList<PuzzleGrid>();
-		this.populateSinglePlayerLevels();
-		this.populateMultiPlayerLevels();
+		populateSinglePlayerLevels();
+		populateMultiPlayerLevels();
 	}
 	
 	public int getNumberOfSinglePlayerLevels()
@@ -57,7 +57,7 @@ public class PuzzleGridGenerator
 	/**
 	 * @return: A default map layout
 	 */
-	public void populateSinglePlayerLevels()
+	private void populateSinglePlayerLevels()
 	{
 		int numLevels = 0;
 		singlePlayerLevels.add(numLevels++, new PuzzleGrid(false, 0, 8, 6, new Type[]
@@ -189,7 +189,7 @@ public class PuzzleGridGenerator
 		}));
 	}
 
-	public void populateMultiPlayerLevels()
+	private void populateMultiPlayerLevels()
 	{
 		int numLevels = 0;
 		multiPlayerLevels.add(numLevels++, new PuzzleGrid(true, 0, 9, 11, new Type[]
@@ -220,4 +220,3 @@ public class PuzzleGridGenerator
 		}));
 	}
 }
-
