@@ -70,9 +70,36 @@ public class PuzzleGrid
 		return player;
 	}
 	
+	/**
+	 * @return: The number of rows for this grid
+	 */
+	public int getRows()
+	{
+		return rows;
+	}
+	
+	/**
+	 * @return: The number of columns of this grid
+	 */
+	public int getColumns()
+	{
+		return columns;
+	}
+
+	
 	public int getLevelID() 
 	{
 		return levelID;
+	}
+	
+	public int getHighScore() 
+	{
+		return highScore;
+	}
+
+	public void setHighScore(int highScore) 
+	{
+		this.highScore = highScore;
 	}
 	
 	public boolean isMultiplayer()
@@ -90,22 +117,6 @@ public class PuzzleGrid
 		this.shadowMode = mode;
 	}
 
-	/**
-	 * @return: The number of rows for this grid
-	 */
-	public int getRows()
-	{
-		return rows;
-	}
-	
-	/**
-	 * @return: The number of columns of this grid
-	 */
-	public int getColumns()
-	{
-		return columns;
-	}
-	
 	/**
 	 * @return The reference for the player object
 	 */
@@ -126,13 +137,5 @@ public class PuzzleGrid
 		return labelSequence;
 	}
 
-	public int getHighScore() {
-		return highScore;
-	}
-
-	public void setHighScore(int highScore) {
-		this.highScore = highScore;
-	}
-	
-	
 }
+
