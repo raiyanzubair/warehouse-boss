@@ -12,6 +12,19 @@ public class PuzzleManagerMultiplayer extends PuzzleManager
 	{
 		super(panel, grid, g);
 	}
+	
+	
+	@Override
+	public void handleKeyPress(KeyEvent e, PuzzleGrid grid)
+	{	
+		super.handleKeyPress(e, grid);
+		
+		if(e.getKeyCode() == KeyEvent.VK_W || e.getKeyCode() == KeyEvent.VK_S || e.getKeyCode() == KeyEvent.VK_A || e.getKeyCode() == KeyEvent.VK_D)
+		{
+			registerMove(e, playerTwoPiece);
+			validatePuzzleSolved(grid);
+		}	
+	}
 
 	@Override
 	protected boolean handleSwapObjectBehaviour(KeyEvent e, int playerIndex, int destinationIndex)
