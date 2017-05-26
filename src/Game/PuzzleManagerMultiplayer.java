@@ -41,7 +41,7 @@ public class PuzzleManagerMultiplayer extends PuzzleManager
 			{
 				toSwap.setTypeAndImage(playerPiece.getType());
 			}
-			Type newPlayerType = getPlayer(playerPiece.getPlayer());
+			Type newPlayerType = getSpecificType("PLAYER", playerPiece.getPlayer());
 			playerPiece.setType(newPlayerType);
 		}
 		else if(toSwap.isGenericType(Type.P1_CROSS) && toSwap.hasGenericImageType(Type.P1_CROSS))
@@ -75,19 +75,19 @@ public class PuzzleManagerMultiplayer extends PuzzleManager
 
 				if(toSwap.isGenericType(Type.P1_BOX))
 				{
-					Type newPlayerType = getPlayer(playerPiece.getPlayer());
+					Type newPlayerType = getSpecificType("PLAYER", playerPiece.getPlayer());
 					playerPiece.setType(newPlayerType);
 				}
 				else if(toSwap.isGenericType(Type.P1_CROSS))
 				{
-					Type newBoxType = getBox(toSwap.getPlayer());
+					Type newBoxType = getSpecificType("BOX", toSwap.getPlayer());
 					playerPiece.setType(toSwap.getType());
 					toSwap.setType(newBoxType);
 				}
 				else if(toSwap.isGenericType(Type.P1_BOXED))
 				{
-					Type newCrossType = getCross(toSwap.getPlayer());
-					Type newBoxType = getBox(toSwap.getPlayer());
+					Type newCrossType = getSpecificType("CROSS", toSwap.getPlayer());
+					Type newBoxType = getSpecificType("BOX", toSwap.getPlayer());
 					toSwap.setTypeAndImage(newBoxType);
 					playerPiece.setType(newCrossType);
 				}
@@ -118,18 +118,18 @@ public class PuzzleManagerMultiplayer extends PuzzleManager
 					}
 					else if(oldToSwapWithToSwapPlayer == toSwap.getPlayer())
 					{
-						Type newBoxType = getBoxed(oldToSwapWithToSwapPlayer);
+						Type newBoxType = getSpecificType("BOXED", oldToSwapWithToSwapPlayer);
 						toSwap.setTypeAndImage(newBoxType);
 					}
 				}
 				else if(toSwap.isGenericType(Type.P1_BOXED))
 				{
-					Type newPlayerType = getCross(toSwap.getPlayer());
+					Type newPlayerType = getSpecificType("CROSS", toSwap.getPlayer());
 					playerPiece.setType(newPlayerType);	
 					
 					if(oldToSwapWithToSwapPlayer != toSwap.getPlayer())
 					{
-						Type newBoxImage = getBox(toSwap.getPlayer());					
+						Type newBoxImage = getSpecificType("BOX", toSwap.getPlayer());					
 						toSwap.setType(oldToSwapWithToSwapType);
 						toSwap.setImage(newBoxImage);
 					}
@@ -155,23 +155,16 @@ public class PuzzleManagerMultiplayer extends PuzzleManager
 		return true;
 	}
 	
-	public Type getCross(Player player)
+	private Type getSpecificType(String object, Player player)
 	{
-		return player == Player.ONE ? Type.P1_CROSS : player == Player.TWO ? Type.P2_CROSS : null;
-	}
-	
-	public Type getBox(Player player)
-	{
-		return player == Player.ONE ? Type.P1_BOX : player == Player.TWO ? Type.P2_BOX : null;
-	}
-	
-	public Type getBoxed(Player player)
-	{
-		return player == Player.ONE ? Type.P1_BOXED : player == Player.TWO ? Type.P2_BOXED : null;
-	}
-	
-	public Type getPlayer(Player player)
-	{
-		return player == Player.ONE ? Type.P1_RIGHT : player == Player.TWO ? Type.P2_RIGHT : null;
+		switch(object)
+		{
+		case "PLAYER":	return player == Player.ONE ? Type.P1_RIGHT : player == Player.TWO ? Type.P2_RIGHT : null;
+		case "BOX":		return player == Player.ONE ? Type.P1_BOX : player == Player.TWO ? Type.P2_BOX : null;
+		case "BOXED":	return player == Player.ONE ? Type.P1_BOXED : player == Player.TWO ? Type.P2_BOXED : null;
+		case "CROSS":	return player == Player.ONE ? Type.P1_CROSS : player == Player.TWO ? Type.P2_CROSS : null;
+		}
+		return null;
 	}
 }
+
