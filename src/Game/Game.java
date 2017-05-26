@@ -107,12 +107,16 @@ public class Game
 		gameFrame.validate();
 	}
 	
-	public void showWinScreen(int level)
+	public void showWinScreen(int level, PuzzleGrid grid)
 	{
 		winFrame = new JFrame();
 		JPanel container;
 		JButton menuButton;
 		JButton nextLevelButton;
+		int levelNumber = level+1;
+		int numLevels = (grid.isMultiplayer() ? psg.getNumberOfMultiPlayerLevels():psg.getNumberOfSinglePlayerLevels());
+		PuzzleGrid nextLevel = (grid.isMultiplayer() ? psg.getMultiLevel(levelNumber):psg.getLevel(levelNumber));
+
 		
 		menuButton = new JButton("Return to Main Menu");
 		menuButton.addActionListener(new ActionListener()
@@ -130,7 +134,7 @@ public class Game
 			public void actionPerformed(ActionEvent e)
 			{
 				gameFrame.setVisible(false);
-				showGameScreen(psg.getLevel(level+1));
+				showGameScreen(nextLevel);
 				winFrame.setVisible(false);
 			}
 		});
@@ -139,12 +143,11 @@ public class Game
 		container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
 		container.setBackground(ImageFactory.Colors.customOrange);
 		container.add(menuButton, BorderLayout.CENTER);
-		if (level+1 < psg.getNumberOfSinglePlayerLevels())
+		if (levelNumber < numLevels)
 		{
 			container.add(nextLevelButton, BorderLayout.CENTER);
 		}			
 		
-		int levelNumber = level+1;
 		winFrame.setTitle("Level " + levelNumber + " Complete");
 		winFrame.setResizable(false);
 		winFrame.setLocationRelativeTo(null);
