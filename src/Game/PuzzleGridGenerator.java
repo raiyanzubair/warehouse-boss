@@ -192,7 +192,19 @@ public class PuzzleGridGenerator
 	private void populateMultiPlayerLevels()
 	{
 		int numLevels = 0;
-		multiPlayerLevels.add(numLevels++, new PuzzleGrid(true, 0, 9, 11, new Type[]
+		multiPlayerLevels.add(numLevels++, new PuzzleGrid(true, 0, 8, 9, new Type[]
+		{
+			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,  
+			Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.P1_RIGHT,	Type.P1_CROSS,	Type.P1_CROSS,	Type.P1_CROSS,	Type.BRICK, 	Type.BRICK,  
+			Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.P2_BOX, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK,  
+			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.P2_BOX, 	Type.P1_BOX, 	Type.EMPTY, 	Type.P1_BOX, 	Type.EMPTY, 	Type.BRICK,  
+			Type.BRICK, 	Type.EMPTY, 	Type.P2_BOX, 	Type.EMPTY, 	Type.EMPTY, 	Type.P2_CROSS, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 
+			Type.BRICK, 	Type.P2_RIGHT, 	Type.P2_CROSS, 	Type.P2_CROSS, 	Type.EMPTY, 	Type.P1_BOX, 	Type.BRICK, 	Type.EMPTY, 	Type.BRICK,  
+			Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 
+			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK	
+		}));
+		
+		multiPlayerLevels.add(numLevels++, new PuzzleGrid(true, 1, 9, 11, new Type[]
 		{
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,		Type.BRICK,  	Type.BRICK,	 
 			Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY,	 	Type.BRICK,  	Type.BRICK,	
@@ -205,7 +217,7 @@ public class PuzzleGridGenerator
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,	 	Type.BRICK,			
 		}));
 		
-		multiPlayerLevels.add(numLevels++, new PuzzleGrid(true, 1, 10, 12, new Type[]
+		multiPlayerLevels.add(numLevels++, new PuzzleGrid(true, 2, 10, 12, new Type[]
 		{
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,		Type.BRICK,  	Type.BRICK,	 	Type.BRICK,
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY,	 	Type.BRICK,  	Type.BRICK,		Type.BRICK,
@@ -218,5 +230,6 @@ public class PuzzleGridGenerator
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY,	 	Type.EMPTY,		Type.BRICK,
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,	 	Type.BRICK,		Type.BRICK,
 		}));
+		
 	}
 }
