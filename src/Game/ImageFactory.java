@@ -75,6 +75,9 @@ public class ImageFactory
 	public static final ImageIcon shadowGif1 = new ImageIcon("src/tutorial/shadow1.gif");
 	public static final ImageIcon shadowGif2 = new ImageIcon("src/tutorial/shadow2.gif");
 	
+	//Images for multiplayer tutorial panel
+	public static final ImageIcon multiplayerGif = new ImageIcon("src/tutorial/multiplayer.gif");
+	
 	static class Colors
 	{
 		public static final Color customOrange = new Color(255, 165, 96);
