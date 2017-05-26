@@ -147,7 +147,19 @@ public class Game
 		if (levelNumber < numLevels)
 		{
 			container.add(nextLevelButton, BorderLayout.CENTER);
-		}			
+		}
+		
+		JCheckBox checkBox = new JCheckBox("Shadow Mode");
+		checkBox.setSelected(PuzzleGridGenerator.shadowMode);
+		checkBox.addItemListener(new ItemListener() 
+		{
+		    public void itemStateChanged(ItemEvent e) 
+		    {
+	            PuzzleGridGenerator.shadowMode = checkBox.isSelected();
+		    }
+		});
+		checkBox.setFocusable(false);
+		container.add(checkBox, BorderLayout.CENTER);
 		
 		winFrame.setTitle("Level " + levelNumber + " Complete");
 		winFrame.setResizable(false);
