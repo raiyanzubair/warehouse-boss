@@ -353,7 +353,7 @@ public class PuzzleManager
 			{
 				grid.setHighScore(this.nMoves);
 			}
-			game.showWinScreen(level, grid);
+			game.showWinScreen(level, grid.isMultiplayer());
 		}
 	}
 
