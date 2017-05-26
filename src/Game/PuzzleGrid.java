@@ -28,7 +28,7 @@ public class PuzzleGrid
 	
 	public PuzzleGrid(boolean multiPlayer, int ID, int rows, int columns, Type[] startingLabelTypes)
 	{
-		this.multiplayer = multiPlayerd;
+		this.multiplayer = multiPlayer;
 		this.levelID = ID;
 		this.rows = rows;
 		this.columns = columns;
