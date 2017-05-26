@@ -19,35 +19,32 @@ import javax.swing.JPanel;
 public class LevelSelectPanel extends JPanel 
 {	
 	private static final long serialVersionUID = 1L;
-	private boolean multiPlayer;
 	
 	public LevelSelectPanel (Game g, PuzzleGridGenerator psg, boolean multiPlayer)
 	{
 		this.setBackground(ImageFactory.Colors.customOrange);
 		this.setLayout(new GridBagLayout());
-		this.multiPlayer = multiPlayer;
 		
-		String titleText = (this.multiPlayer) ? "MULTIPLAYER":"SINGLE PLAYER";
+		String titleText = (multiPlayer) ? "MULTIPLAYER":"SINGLE PLAYER";
 		JLabel title = new JLabel(titleText);
 		title.setFont(new Font("Tahoma", Font.BOLD, 22));
 		title.setForeground(Color.BLACK);
 		addGridComponent(title, 0, 0);
 		
-		populateComponents(g, psg);
-		
+		populateComponents(g, psg, multiPlayer);
 	}
 	
-	private void populateComponents(Game g, PuzzleGridGenerator psg)
+	private void populateComponents(Game g, PuzzleGridGenerator psg, boolean multiPlayer)
 	{
-		int i;
-		int numLevels = (this.multiPlayer) ? psg.getNumberOfMultiPlayerLevels():psg.getNumberOfSinglePlayerLevels();
-		for(i=1; i < numLevels+1; i++)
+		int numLevels = (multiPlayer) ? psg.getNumberOfMultiPlayerLevels():psg.getNumberOfSinglePlayerLevels();
+		int components;
+		for(components = 1; components < numLevels+1; components++)
 		{
-			String levelString = numberToWord(i);
+			String levelString = numberToWord(components);
 			JButton newLevel = new JButton("LEVEL " + levelString);
-			PuzzleGrid level = (this.multiPlayer) ? psg.getMultiLevel(i-1):psg.getLevel(i-1);
+			PuzzleGrid level = (multiPlayer) ? psg.getMultiLevel(components-1):psg.getLevel(components-1);
 			registerLevelClickToLoadPuzzle(g, newLevel, level);
-			addGridComponent(newLevel, 0, i);
+			addGridComponent(newLevel, 0, components);
 		}
 		
 		JButton returnButton = new JButton("RETURN");
@@ -59,7 +56,7 @@ public class LevelSelectPanel extends JPanel
 				g.showMenuScreen();
 			}
 		});
-		addGridComponent(returnButton, 0, i+1);
+		addGridComponent(returnButton, 0, components++);
 		
 		
 		JCheckBox checkBox = new JCheckBox("Shadow Mode");
@@ -72,7 +69,7 @@ public class LevelSelectPanel extends JPanel
 		    }
 		});
 		checkBox.setFocusable(false);
-		addGridComponent(checkBox, 0, i+2);
+		addGridComponent(checkBox, 0, components++);
 	}
 	
 	private void registerLevelClickToLoadPuzzle(Game g, JButton button, PuzzleGrid level)
