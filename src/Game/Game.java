@@ -34,6 +34,7 @@ public class Game
 	private JFrame levelFrame;
 	private JFrame winFrame;
 	private JFrame tutorialFrame;
+	private JFrame multiTutorialFrame;
 	
 	public Game()
 	{
@@ -42,6 +43,7 @@ public class Game
 		this.menuFrame = new JFrame();
 		this.winFrame = new JFrame();
 		this.tutorialFrame = new JFrame();
+		this.multiTutorialFrame = new JFrame();
 	}
 	
 	/**
@@ -58,6 +60,7 @@ public class Game
 	public void showMenuScreen() 
 	{
 		tutorialFrame.setVisible(false);
+		multiTutorialFrame.setVisible(false);
 		levelFrame.setVisible(false);
 		gameFrame.setVisible(false);
 		
@@ -186,6 +189,8 @@ public class Game
 	
 	public void showTutorialScreen() 
 	{
+		menuFrame.setVisible(false);
+		multiTutorialFrame.setVisible(false);
 		tutorialFrame = new JFrame();
 		
 		JPanel tutorialPanel = new TutorialPanel(this);
@@ -199,6 +204,25 @@ public class Game
 		tutorialFrame.setVisible(true);
 		tutorialFrame.setSize(450, 560);
 		tutorialFrame.setLocationRelativeTo(null);
+	}
+	
+	public void showMultiTutorialScreen(Game g) 
+	{
+		tutorialFrame.setVisible(false);
+		
+		JPanel multiTutorialPanel = new MultiTutorialPanel(g);
+		
+		JScrollPane scrollPane = new JScrollPane(multiTutorialPanel);
+		scrollPane.setVerticalScrollBarPolicy(scrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(scrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		
+		multiTutorialFrame.add(scrollPane);
+		multiTutorialFrame.setTitle("Multiplayer Tutorial");
+		multiTutorialFrame.setResizable(false);
+		multiTutorialFrame.setVisible(true);
+		multiTutorialFrame.setSize(450, 560);
+		multiTutorialFrame.setLocationRelativeTo(null);
+		
 	}
 	
 	static void setDefaultLayout (JPanel targetPanel, JFrame targetFrame) 
