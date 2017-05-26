@@ -125,82 +125,26 @@ public class Game
 		gameFrame.validate();
 	}
 	
+
 	/**
 	 * Method that fills the winFrame with a panel to display the win screen and allow you to return
 	 * back to the main menu or continue on to complete the next level.
 	 * @param level: integer index of the level we just completed
 	 * @param grid: PuzzleGrid object of the completed level
 	 */
-	public void showWinScreen(int level, PuzzleGrid grid)
+	public void showWinScreen(int level, boolean multiplayer)
 	{
 		winFrame = new JFrame();
-		JPanel container;
-		JButton nextLevelButton;
-		JButton levelSelectButton;
-		JButton menuButton;
-		int levelNumber = level+1;
-		int numLevels = (grid.isMultiplayer() ? psg.getNumberOfMultiPlayerLevels():psg.getNumberOfSinglePlayerLevels());
-		PuzzleGrid nextLevel = (grid.isMultiplayer() ? psg.getMultiLevel(levelNumber):psg.getLevel(levelNumber));
+		
+		int numLevels = (multiplayer ? psg.getNumberOfMultiPlayerLevels():psg.getNumberOfSinglePlayerLevels());
+		PuzzleGrid nextLevel = (multiplayer ? psg.getMultiLevel(level+1):psg.getLevel(level+1));
+		JPanel winPanel = new WinPanel(this, level+1, numLevels, nextLevel, multiplayer);
 
-		nextLevelButton = new JButton("Next Level");
-		nextLevelButton.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent e)
-			{
-				gameFrame.setVisible(false);
-				showGameScreen(nextLevel);
-				winFrame.setVisible(false);
-			}
-		});
-		
-		levelSelectButton = new JButton("Return to Level Select");
-		levelSelectButton.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent e)
-			{
-				showLevelSelect(grid.isMultiplayer());
-				winFrame.setVisible(false);
-			}
-		});
-		
-		menuButton = new JButton("Return to Main Menu");
-		menuButton.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent e)
-			{
-				showMenuScreen();
-				winFrame.setVisible(false);
-			}
-		});
-		
-		JCheckBox checkBox = new JCheckBox("Shadow Mode");
-		checkBox.setSelected(PuzzleGridGenerator.shadowMode);
-		checkBox.addItemListener(new ItemListener() 
-		{
-		    public void itemStateChanged(ItemEvent e) 
-		    {
-	            PuzzleGridGenerator.shadowMode = checkBox.isSelected();
-		    }
-		});
-		checkBox.setFocusable(false);
-
-		container = new JPanel();
-		container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
-		container.setBackground(ImageFactory.Colors.customOrange);
-		if (levelNumber < numLevels)
-		{
-			container.add(nextLevelButton, BorderLayout.CENTER);
-		}
-		container.add(levelSelectButton, BorderLayout.CENTER);		
-		container.add(menuButton, BorderLayout.CENTER);
-		container.add(checkBox, BorderLayout.CENTER);
-		
-		
-		winFrame.setTitle("Level " + levelNumber + " Complete");
+		winFrame.setTitle("Level " + level + " Complete");
 		winFrame.setResizable(false);
 		winFrame.setLocationRelativeTo(null);
 		winFrame.setVisible(true);
-		winFrame.add(container);
+		winFrame.add(winPanel);
 		winFrame.pack();
 	}
 	

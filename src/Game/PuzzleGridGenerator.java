@@ -189,14 +189,10 @@ public class PuzzleGridGenerator
 		}));
 	}
 
-<<<<<<< HEAD
 	/**
 	 * Method that fills the ArrayList<PuzzleGrid> multiPlayerLevels with hard coded levels
 	 */
-	public void populateMultiPlayerLevels()
-=======
 	private void populateMultiPlayerLevels()
->>>>>>> bfd4f785aa8a06ee50e9bf012288743ea3587331
 	{
 		int numLevels = 0;
 		multiPlayerLevels.add(numLevels++, new PuzzleGrid(true, 0, 8, 9, new Type[]
@@ -258,9 +254,9 @@ public class PuzzleGridGenerator
 		{
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,
 			Type.BRICK, 	Type.BRICK, 	Type.P1_CROSS, 	Type.EMPTY, 	Type.P2_CROSS, 	Type.BRICK, 	Type.BRICK,
-			Type.BRICK, 	Type.EMPTY,	Type.EMPTY, 	Type.EMPTY, 	Type.P2_RIGHT, 	Type.EMPTY, 	Type.BRICK,
+			Type.BRICK, 	Type.EMPTY,		Type.EMPTY, 	Type.EMPTY, 	Type.P2_RIGHT, 	Type.EMPTY, 	Type.BRICK,
 			Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK,
-			Type.BRICK, 	Type.BRICK, 	Type.EMPTY,	Type.EMPTY, 	Type.P2_BOX, 	Type.P2_CROSS, 	Type.BRICK,
+			Type.BRICK, 	Type.BRICK, 	Type.P1_BOX,	Type.EMPTY, 	Type.P2_BOX, 	Type.P2_CROSS, 	Type.BRICK,
 			Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK,
 			Type.BRICK, 	Type.P1_CROSS, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.P1_CROSS, 	Type.BRICK,
 			Type.BRICK, 	Type.EMPTY, 	Type.P1_BOX, 	Type.P2_BOX, 	Type.P1_BOX, 	Type.EMPTY, 	Type.BRICK,
