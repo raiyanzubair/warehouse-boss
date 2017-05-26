@@ -66,7 +66,7 @@ public class Game
 		
 	}
 	
-	public void showLevelSelect (boolean multiPlayer) 
+	public void showLevelSelect(boolean multiPlayer) 
 	{
 		gameFrame.setVisible(false);
 		menuFrame.setVisible(false);
@@ -115,12 +115,33 @@ public class Game
 	{
 		winFrame = new JFrame();
 		JPanel container;
-		JButton menuButton;
 		JButton nextLevelButton;
+		JButton levelSelectButton;
+		JButton menuButton;
 		int levelNumber = level+1;
 		int numLevels = (grid.isMultiplayer() ? psg.getNumberOfMultiPlayerLevels():psg.getNumberOfSinglePlayerLevels());
 		PuzzleGrid nextLevel = (grid.isMultiplayer() ? psg.getMultiLevel(levelNumber):psg.getLevel(levelNumber));
 
+		nextLevelButton = new JButton("Next Level");
+		nextLevelButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				gameFrame.setVisible(false);
+				showGameScreen(nextLevel);
+				winFrame.setVisible(false);
+			}
+		});
+		
+		levelSelectButton = new JButton("Return to Level Select");
+		levelSelectButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				showLevelSelect(grid.isMultiplayer());
+				winFrame.setVisible(false);
+			}
+		});
 		
 		menuButton = new JButton("Return to Main Menu");
 		menuButton.addActionListener(new ActionListener()
@@ -132,26 +153,6 @@ public class Game
 			}
 		});
 		
-		nextLevelButton = new JButton("Next Level");
-		nextLevelButton.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent e)
-			{
-				gameFrame.setVisible(false);
-				showGameScreen(nextLevel);
-				winFrame.setVisible(false);
-			}
-		});
-
-		container = new JPanel();
-		container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
-		container.setBackground(ImageFactory.Colors.customOrange);
-		container.add(menuButton, BorderLayout.CENTER);
-		if (levelNumber < numLevels)
-		{
-			container.add(nextLevelButton, BorderLayout.CENTER);
-		}
-		
 		JCheckBox checkBox = new JCheckBox("Shadow Mode");
 		checkBox.setSelected(PuzzleGridGenerator.shadowMode);
 		checkBox.addItemListener(new ItemListener() 
@@ -162,7 +163,18 @@ public class Game
 		    }
 		});
 		checkBox.setFocusable(false);
+
+		container = new JPanel();
+		container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+		container.setBackground(ImageFactory.Colors.customOrange);
+		if (levelNumber < numLevels)
+		{
+			container.add(nextLevelButton, BorderLayout.CENTER);
+		}
+		container.add(levelSelectButton, BorderLayout.CENTER);		
+		container.add(menuButton, BorderLayout.CENTER);
 		container.add(checkBox, BorderLayout.CENTER);
+		
 		
 		winFrame.setTitle("Level " + levelNumber + " Complete");
 		winFrame.setResizable(false);
@@ -249,13 +261,6 @@ public class Game
 		public void keyReleased(KeyEvent e){}	
 	}
 }
-
-
-
-
-
-
-
 
 
 
