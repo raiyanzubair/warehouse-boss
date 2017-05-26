@@ -57,6 +57,9 @@ public class PuzzleManager
 		return nMoves;
 	}
 	
+	/**
+	 * Method that saves the current label state which is used to undo moves, and return to previous states
+	 */
 	private void saveLabelsState()
 	{
 		PuzzleLabel newPlayerOne = playerOnePiece.Clone();
@@ -76,6 +79,9 @@ public class PuzzleManager
 		panel.reloadPanelLabels(currentLabelSequence, PuzzleGridGenerator.shadowMode);
 	}
 	
+	/**
+	 * Sets the current panel to display the previous label state. Used in undoing of moves.
+	 */
 	public void reloadLastLabelState()
 	{
 		if(previousStates.size() > 0)
@@ -90,6 +96,9 @@ public class PuzzleManager
 		}
 	}
 	
+	/**
+	 * Resets the PuzzleGrid to its initial state, resets move counters, and makes the PuzzlePanel display the start.
+	 */
 	public void resetGame()
 	{
 		if(previousStates.size() > 0)
@@ -105,10 +114,9 @@ public class PuzzleManager
 	}
 	
 	/**
-	 * Checks the location of the player piece and if the destination piece is valid (within the 
-	 * grid), then the event is passed to the method to check whether the piece that the player
-	 * piece is being moved to can be moved (box) or moved to (empty space, cross)
+	 * Performs various actions based upon incoming keyEvents
 	 * @param e: The event from a key press
+	 * @param grid: the puzzlegrid level that is being passed through and being acted on
 	 */
 	public void handleKeyPress(KeyEvent e, PuzzleGrid grid)
 	{	
@@ -129,6 +137,11 @@ public class PuzzleManager
 		}	
 	}
 	
+	/**
+	 * Method that registers that a move action has been made
+	 * @param e: Keyevent that is passed through and determines what move is made
+	 * @param playerPiece: reference to the player piece
+	 */
 	public void registerMove(KeyEvent e, PuzzleLabel playerPiece)
 	{
 		saveLabelsState();
@@ -210,6 +223,11 @@ public class PuzzleManager
 		return 0;
 	}
 	
+	/**
+	 * Converts key events from player 1 and 2s controls into one easy to use key code that can be passed elsewhere
+	 * @param e: passed through key code
+	 * @return keyCode that can be passed elsewhere
+	 */
 	private int translateKeyCode(KeyEvent e)
 	{
 		int keyCode = e.getKeyCode();
@@ -335,7 +353,11 @@ public class PuzzleManager
 		return true;
 	}
 
-
+	/**
+	 * ensures move counter is being incremented properly only when the player actually moves
+	 * @param originalManIndex: Index of the player
+	 * @param playerPiece: PuzzleLabel of the player
+	 */
 	public void validateNumMoves(int originalManIndex, PuzzleLabel playerPiece)
 	{
 		int manIndex = getPlayerIndex(playerPiece);	
@@ -344,7 +366,11 @@ public class PuzzleManager
 			nMoves++;
 		}
 	}
-
+	
+	/**
+	 * Checks if the PuzzleGrid has been solved, and if it has it opens the win screen
+	 * @param grid: PuzzleGrid that is being passed through
+	 */
 	public void validatePuzzleSolved(PuzzleGrid grid)
 	{
 		if(puzzleSolved())
@@ -361,7 +387,7 @@ public class PuzzleManager
 	 * Checks if the puzzle has been solved by looking for any puzzle pieces in the labels array
 	 * for any objects of type 'box' which indicate that there are still pieces left to move onto
 	 * a cross to turn into a type 'greenbox'
-	 * @return
+	 * @return boolean that tells if puzzle is solved or not
 	 */
 	private boolean puzzleSolved()
 	{
