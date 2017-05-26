@@ -63,6 +63,7 @@ public class Game
 		tutorialFrame.setVisible(false);
 		levelFrame.setVisible(false);
 		gameFrame.setVisible(false);
+		winFrame.setVisible(false);
 		
 		menuFrame.setVisible(true);
 	}
@@ -76,6 +77,7 @@ public class Game
 	{
 		gameFrame.setVisible(false);
 		menuFrame.setVisible(false);
+		winFrame.setVisible(false);
 		
 		levelFrame = new JFrame();
 		LevelSelectPanel lsp = new LevelSelectPanel(this, psg, multiPlayer);
@@ -90,8 +92,10 @@ public class Game
 	 */
 	public void showGameScreen(PuzzleGrid grid)
 	{
+		gameFrame.setVisible(false);
 		levelFrame.setVisible(false);
 		menuFrame.setVisible(false);
+		winFrame.setVisible(false);
 		gameFrame = new JFrame();
 		
 		PuzzleDisplayPanel panel = new PuzzleDisplayPanel(grid.getRows(), grid.getColumns());
