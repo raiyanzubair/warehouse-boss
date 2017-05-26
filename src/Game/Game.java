@@ -208,26 +208,7 @@ public class Game
 	{
 		tutorialFrame.pack();		
 	}
-	
-	public void showMultiTutorialScreen(Game g) 
-	{
-		tutorialFrame.setVisible(false);
-		
-		JPanel multiTutorialPanel = new MultiTutorialPanel(g);
-		
-		JScrollPane scrollPane = new JScrollPane(multiTutorialPanel);
-		scrollPane.setVerticalScrollBarPolicy(scrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane.setHorizontalScrollBarPolicy(scrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-		
-		multiTutorialFrame.add(scrollPane);
-		multiTutorialFrame.setTitle("Multiplayer Tutorial");
-		multiTutorialFrame.setResizable(false);
-		multiTutorialFrame.setVisible(true);
-		multiTutorialFrame.setSize(450, 560);
-		multiTutorialFrame.setLocationRelativeTo(null);
-		
-	}
-	
+
 	static void setDefaultLayout (JPanel targetPanel, JFrame targetFrame) 
 	{
 		JPanel topWall = new JPanel(new BorderLayout());
