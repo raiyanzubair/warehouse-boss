@@ -209,7 +209,7 @@ public class TutorialPanel extends JPanel
 				removeAll();
 				populateComponents(g, pageTo);
 				updateUI();
-				g.packTutorial();
+				//g.packTutorial();
 			}
 		});
 	}
@@ -241,3 +241,5 @@ public class TutorialPanel extends JPanel
 	}
 	
 }
+
+
