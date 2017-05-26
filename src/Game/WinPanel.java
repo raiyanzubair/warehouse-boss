@@ -16,11 +16,25 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * JPanel class for displaying the win panel screen. Populates the panel with various JComponents
+ * The win panel is displayed after the level has been completed and allows players to progress to the next screen,
+ * return to the level select menu, or the main menu
+ *
+ */
 public class WinPanel extends JPanel
 {
 	private static final long serialVersionUID = 1L;
 	private int components;
 
+	/**
+	 * Constructor for creating the win panel
+	 * @param g a Game that has been passed in so that it knows which panel to display/hide when buttons are clicked
+	 * @param levelNumber the number of the level that has just been completed 
+	 * @param numLevels the number of levels 
+	 * @param nextLevel generates the next level if the user chooses to progress (levelNumber++)
+	 * @param isMultiplayer either true or false depending if the player is in multiplayer mode 
+	 */
 	public WinPanel(Game g, int levelNumber, int numLevels, PuzzleGrid nextLevel, boolean isMultiplayer) 
 	{	
 		this.setBackground(ImageFactory.Colors.customOrange);
@@ -29,6 +43,14 @@ public class WinPanel extends JPanel
 		populateComponents(g, levelNumber, numLevels, nextLevel, isMultiplayer);
 	}
 	
+	/**
+	 * Fills the JPanel with components
+	 * @param g a Game that has been passed in so that it knows which panel to display/hide when buttons are clicked
+	 * @param levelNumber the current level number
+	 * @param numLevels the number of levels
+	 * @param grid a puzzle grid to populate the next level on the game screen
+	 * @param multiplayer true of false depending if the player is in multiplayer mode
+	 */
 	private void populateComponents(Game g, int levelNumber, int numLevels, PuzzleGrid grid, boolean multiplayer)
 	{
 		JPanel topWall = new JPanel(new BorderLayout());
@@ -104,6 +126,10 @@ public class WinPanel extends JPanel
 		addGridComponent(bottomWall, 0, components++);
 	}
 	
+	/**
+	 * Fills in a new blank panel (helps with the spacing and appearance of the screen)
+	 * @return a new blank JPanel
+	 */
 	private JPanel blankPanel()
 	{
 		JPanel panel = new JPanel();
@@ -113,6 +139,12 @@ public class WinPanel extends JPanel
 		return panel;
 	}
 	
+	/**
+	 * Adds a component to the panel using Grid Bag Constraints 
+	 * @param component the component that we want to add to the panel
+	 * @param gridX the gridx value where we want to add the component
+	 * @param gridY the gridy value where we want to add the component
+	 */
 	private void addGridComponent(JComponent component, int gridX, int gridY)
 	{
 		component.setFocusable(false);
