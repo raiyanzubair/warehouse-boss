@@ -57,7 +57,7 @@ public class PuzzleManager
 		return nMoves;
 	}
 	
-	public void saveLabelsState()
+	private void saveLabelsState()
 	{
 		PuzzleLabel newPlayerOne = playerOnePiece.Clone();
 		PuzzleLabel newPlayerTwo = playerTwoPiece != null ? playerTwoPiece.Clone() : null;
@@ -228,7 +228,7 @@ public class PuzzleManager
 	 * arrow key pressed in the key event
 	 * @param e: The key event passed
 	 */
-	public void setPlayerFacingDirection(KeyEvent e)
+	private void setPlayerFacingDirection(KeyEvent e)
 	{
 		switch(e.getKeyCode())
 		{
