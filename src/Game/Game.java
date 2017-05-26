@@ -14,6 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 
 /**
  * This is an example of a single GUI window that just has a panel with the puzzle
@@ -153,14 +154,15 @@ public class Game
 		winFrame.pack();
 	}
 	
-	public void showTutorialScreen(Game g) {
+	public void showTutorialScreen(Game g) 
+	{
 		menuFrame.setVisible(false);
 		tutorialFrame = new JFrame();
 		
 		JPanel tutorialPanel = new TutorialPanel(g);
 		JScrollPane scrollPane = new JScrollPane(tutorialPanel);
-		scrollPane.setVerticalScrollBarPolicy(scrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane.setHorizontalScrollBarPolicy(scrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		
 		tutorialFrame.add(scrollPane);
 		tutorialFrame.setTitle("Tutorial");
@@ -170,7 +172,8 @@ public class Game
 		tutorialFrame.setLocationRelativeTo(null);
 	}
 	
-	static void setDefaultLayout (JPanel targetPanel, JFrame targetFrame) {
+	static void setDefaultLayout (JPanel targetPanel, JFrame targetFrame) 
+	{
 		JPanel topWall = new JPanel(new BorderLayout());
 		JLabel topWallLabel = new JLabel(ImageFactory.topWall, JLabel.CENTER);
 		topWall.setBackground(ImageFactory.Colors.customOrange);
@@ -229,6 +232,9 @@ public class Game
 		public void keyReleased(KeyEvent e){}	
 	}
 }
+
+
+
 
 
 
