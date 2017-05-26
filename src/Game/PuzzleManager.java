@@ -37,7 +37,6 @@ public class PuzzleManager
 	
 	public PuzzleManager(PuzzleDisplayPanel panel, PuzzleGrid grid, Game g)
 	{	
-	
 		this.level = grid.getLevelID();
 		this.ROWS = grid.getRows();
 		this.COLUMNS = grid.getColumns();
@@ -105,7 +104,6 @@ public class PuzzleManager
 		}
 	}
 	
-
 	/**
 	 * Checks the location of the player piece and if the destination piece is valid (within the 
 	 * grid), then the event is passed to the method to check whether the piece that the player
@@ -146,35 +144,14 @@ public class PuzzleManager
 		}
 	}
 	
-	public void validateNumMoves(int originalManIndex, PuzzleLabel playerPiece)
-	{
-		int manIndex = getPlayerIndex(playerPiece);	
-		if(manIndex != originalManIndex)
-		{
-			nMoves++;
-		}
-	}
-
 	private int getPlayerIndex(PuzzleLabel playerPiece)
 	{
 		Player p = playerPiece.getPlayer();
 		int manIndex = p == Player.ONE ? currentLabelSequence.indexOf(playerOnePiece) : 
-					   p == Player.TWO ? currentLabelSequence.indexOf(playerTwoPiece) : -1;
-		return manIndex;
+			p == Player.TWO ? currentLabelSequence.indexOf(playerTwoPiece) : -1;
+			return manIndex;
 	}
-
-	public void validatePuzzleSolved(PuzzleGrid grid)
-	{
-		if(puzzleSolved())
-		{
-			if (nMoves < grid.getHighScore() || grid.getHighScore() == -1) 
-			{
-				grid.setHighScore(this.nMoves);
-			}
-			game.showWinScreen(level, grid);
-		}
-	}
-
+	
 	/**
 	 * Updates the direction of the player to face in the direction of the arrow key pressed
 	 * and then verifies if the destination cell is valid, then calculates the index of the 
@@ -194,26 +171,6 @@ public class PuzzleManager
 		return swapIndex;
 	}
 	
-	/**
-	 * Sets the image of the player piece to the one corresponding to the direction of the
-	 * arrow key pressed in the key event
-	 * @param e: The key event passed
-	 */
-	public void setPlayerFacingDirection(KeyEvent e)
-	{
-		switch(e.getKeyCode())
-		{
-			case KeyEvent.VK_UP: 	playerOnePiece.setImage(Type.P1_UP); 		break;
-			case KeyEvent.VK_DOWN: 	playerOnePiece.setImage(Type.P1_DOWN); 		break;
-			case KeyEvent.VK_LEFT: 	playerOnePiece.setImage(Type.P1_LEFT); 		break;
-			case KeyEvent.VK_RIGHT: playerOnePiece.setImage(Type.P1_RIGHT); 	break;
-			case KeyEvent.VK_W: 	playerTwoPiece.setImage(Type.P2_UP); 		break;
-			case KeyEvent.VK_S: 	playerTwoPiece.setImage(Type.P2_DOWN); 		break;
-			case KeyEvent.VK_A: 	playerTwoPiece.setImage(Type.P2_LEFT); 		break;
-			case KeyEvent.VK_D:	 	playerTwoPiece.setImage(Type.P2_RIGHT); 	break;
-		}
-	}
-
 	/**
 	 * Checks the index of the player piece in the array and returns true if the player is
 	 * at least 1 puzzle piece away from the border of the panel in the direction of movement
@@ -266,6 +223,26 @@ public class PuzzleManager
 		return keyCode;
 	}
 	
+	/**
+	 * Sets the image of the player piece to the one corresponding to the direction of the
+	 * arrow key pressed in the key event
+	 * @param e: The key event passed
+	 */
+	public void setPlayerFacingDirection(KeyEvent e)
+	{
+		switch(e.getKeyCode())
+		{
+			case KeyEvent.VK_UP: 	playerOnePiece.setImage(Type.P1_UP); 		break;
+			case KeyEvent.VK_DOWN: 	playerOnePiece.setImage(Type.P1_DOWN); 		break;
+			case KeyEvent.VK_LEFT: 	playerOnePiece.setImage(Type.P1_LEFT); 		break;
+			case KeyEvent.VK_RIGHT: playerOnePiece.setImage(Type.P1_RIGHT); 	break;
+			case KeyEvent.VK_W: 	playerTwoPiece.setImage(Type.P2_UP); 		break;
+			case KeyEvent.VK_S: 	playerTwoPiece.setImage(Type.P2_DOWN); 		break;
+			case KeyEvent.VK_A: 	playerTwoPiece.setImage(Type.P2_LEFT); 		break;
+			case KeyEvent.VK_D:	 	playerTwoPiece.setImage(Type.P2_RIGHT); 	break;
+		}
+	}
+
 	/**
 	 * Assumes that the move from the player index to the destination index is valid and checks
 	 * what object is at the destination index and either checks if it can move it in the same 
@@ -358,6 +335,28 @@ public class PuzzleManager
 		return true;
 	}
 
+
+	public void validateNumMoves(int originalManIndex, PuzzleLabel playerPiece)
+	{
+		int manIndex = getPlayerIndex(playerPiece);	
+		if(manIndex != originalManIndex)
+		{
+			nMoves++;
+		}
+	}
+
+	public void validatePuzzleSolved(PuzzleGrid grid)
+	{
+		if(puzzleSolved())
+		{
+			if (nMoves < grid.getHighScore() || grid.getHighScore() == -1) 
+			{
+				grid.setHighScore(this.nMoves);
+			}
+			game.showWinScreen(level, grid);
+		}
+	}
+
 	/**
 	 * Checks if the puzzle has been solved by looking for any puzzle pieces in the labels array
 	 * for any objects of type 'box' which indicate that there are still pieces left to move onto
@@ -379,4 +378,3 @@ public class PuzzleManager
 	}
 
 }
-
