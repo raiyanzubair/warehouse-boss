@@ -37,11 +37,6 @@ public class PuzzleGridGenerator
 		return multiPlayerLevels.size();
 	}
 	
-	public PuzzleGrid getDefaultMultiplayerLevel()
-	{
-		return multiPlayerLevels.get(0);
-	}
-	
 	/**
 	 * Creates a puzzle grid object with an array of image types to place in the
 	 * puzzle and the dimensions to arrange the images in a grid of the form
@@ -225,3 +220,4 @@ public class PuzzleGridGenerator
 		}));
 	}
 }
+
