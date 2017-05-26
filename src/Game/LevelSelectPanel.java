@@ -111,10 +111,10 @@ public class LevelSelectPanel extends JPanel
 	 * @param num: the level number that is passed
 	 * @return String of the number level in a readable form
 	 */
-	public static String numberToWord(int num) 
+	private String numberToWord(int num) 
 	{
-        String ones[] = {" ", " ONE", " TWO", " THREE", " FOUR", " FIVE", " SIX", " SEVEN", " EIGHT", " NINE", " TEN", " ELEVEN", " TWELVE", " THIRTEEN", " FOURTEEN", " FIFTEEN", " SIXTEEN", " SEVENTEEN", " EIGHTEEN", " NINETEEN"};
-        String tens[] = {" ", " ", " TWENTY", " THIRTY", " FOURTY", " FIFTY", " SIXTY", " SEVENTY", " EIGHTY", " NINETY"};
-        return (num < 20) ? ones[num] : tens[num / 10] + " " + ones[num % 10];
-    }
+        	String ones[] = {" ", " ONE", " TWO", " THREE", " FOUR", " FIVE", " SIX", " SEVEN", " EIGHT", " NINE", " TEN", " ELEVEN", " TWELVE", " THIRTEEN", " FOURTEEN", " FIFTEEN", " SIXTEEN", " SEVENTEEN", " EIGHTEEN", " NINETEEN"};
+        	String tens[] = {" ", " ", " TWENTY", " THIRTY", " FOURTY", " FIFTY", " SIXTY", " SEVENTY", " EIGHTY", " NINETY"};
+        	return (num < 20) ? ones[num] : tens[num / 10] + " " + ones[num % 10];
+    	}
 }

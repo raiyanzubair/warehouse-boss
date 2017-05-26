@@ -68,6 +68,7 @@ public class Game
 		levelFrame.setVisible(false);
 		gameFrame.setVisible(false);
 		
+		menuFrame = new JFrame();
 		TitleMenuPanel menuPanel = new TitleMenuPanel(this, psg);
 		setDefaultLayout(menuPanel, menuFrame);	
 	}
@@ -81,8 +82,8 @@ public class Game
 	{
 		gameFrame.setVisible(false);
 		menuFrame.setVisible(false);
-		this.levelFrame = new JFrame();
 		
+		levelFrame = new JFrame();
 		LevelSelectPanel lsp = new LevelSelectPanel(this, psg, multiPlayer);
 		setDefaultLayout(lsp, this.levelFrame);
 	}
