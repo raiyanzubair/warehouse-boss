@@ -142,10 +142,10 @@ public class Game
 
 		winFrame.setTitle("Level " + level + " Complete");
 		winFrame.setResizable(false);
-		winFrame.setLocationRelativeTo(null);
 		winFrame.setVisible(true);
 		winFrame.add(winPanel);
 		winFrame.pack();
+		winFrame.setLocationRelativeTo(null);
 	}
 	
 	/**
