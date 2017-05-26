@@ -154,12 +154,11 @@ public class Game
 		winFrame.pack();
 	}
 	
-	public void showTutorialScreen(Game g) 
+	public void showTutorialScreen() 
 	{
-		menuFrame.setVisible(false);
 		tutorialFrame = new JFrame();
 		
-		JPanel tutorialPanel = new TutorialPanel(g);
+		JPanel tutorialPanel = new TutorialPanel(this);
 		JScrollPane scrollPane = new JScrollPane(tutorialPanel);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -232,6 +231,10 @@ public class Game
 		public void keyReleased(KeyEvent e){}	
 	}
 }
+
+
+
+
 
 
 
