@@ -14,6 +14,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EtchedBorder;
 
+/**
+ * JPanel class for displaying the Tutorial section
+ * @field serialVersionID: needed to prevent bugs when extending JComponents
+ * @field numPages: number of pages in the tutorial section
+ * @field html1: String used in formatting of tutorial
+ * @field html2: String used in formatting of tutorial 
+ * @field components: number of components 
+ */
 public class TutorialPanel extends JPanel 
 {	
 	private static final long serialVersionUID = 1L;
@@ -78,6 +86,11 @@ public class TutorialPanel extends JPanel
 		addGridComponent(bottomWall, 0, components++);
 	}
 	
+	/**
+	 * Hard coding of a bunch of pages for a tutorial screen lol
+	 * @param g: game object being passed through
+	 * @param page: the current page of the tutorial
+	 */
 	private void loadPage(Game g, int page)
 	{	
 		if(page == 1)
@@ -200,6 +213,12 @@ public class TutorialPanel extends JPanel
 		}
 	}
 	
+	/**
+	 * Method for assigning actionlisteners to buttons to navigate through tutorial
+	 * @param g: Game being passed through
+	 * @param b: Button being assigned
+	 * @param pageTo: page number that the button will go to
+	 */
 	public void registerTutorialNavigationButton(Game g, JButton b, int pageTo)
 	{
 		b.addActionListener(new ActionListener()
@@ -222,6 +241,10 @@ public class TutorialPanel extends JPanel
 		return newLabel;
 	}
 	
+	/**
+	 * Method for creating blank Jpanels used to help formatting and layout of the tutorial
+	 * @return a blank JPanel
+	 */
 	private JPanel blankPanel()
 	{
 		JPanel panel = new JPanel();

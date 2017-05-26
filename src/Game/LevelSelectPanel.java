@@ -16,6 +16,13 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * JPanel class that is used to display JButtons to select what level to play.
+ * Displays different levels dependent upon whether multiplayer was selected or not.
+ * Also has a checkbox to enable "shadow mode" for the levels.
+ * @field serialVersionID: needed to prevent bugs when extending JComponents
+ *
+ */
 public class LevelSelectPanel extends JPanel 
 {	
 	private static final long serialVersionUID = 1L;
@@ -72,6 +79,12 @@ public class LevelSelectPanel extends JPanel
 		addGridComponent(checkBox, 0, components++);
 	}
 	
+	/**
+	 * Method for assigning actionevents for a button 
+	 * @param g: Game that will be used to show the game screen
+	 * @param button: Jbutton that will be passed through and be assigned action listener
+	 * @param level: PuzzleGrid level that will be assigned to the button
+	 */
 	private void registerLevelClickToLoadPuzzle(Game g, JButton button, PuzzleGrid level)
 	{
 		button.addActionListener(new ActionListener()
@@ -93,6 +106,11 @@ public class LevelSelectPanel extends JPanel
 		this.add(component, gbc);
 	}
 	
+	/**
+	 * Creates a string that will be used to name the level buttons
+	 * @param num: the level number that is passed
+	 * @return String of the number level in a readable form
+	 */
 	public static String numberToWord(int num) 
 	{
         String ones[] = {" ", " ONE", " TWO", " THREE", " FOUR", " FIVE", " SIX", " SEVEN", " EIGHT", " NINE", " TEN", " ELEVEN", " TWELVE", " THIRTEEN", " FOURTEEN", " FIFTEEN", " SIXTEEN", " SEVENTEEN", " EIGHTEEN", " NINETEEN"};

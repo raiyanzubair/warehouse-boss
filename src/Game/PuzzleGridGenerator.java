@@ -5,13 +5,11 @@ import java.util.ArrayList;
 import Game.ImageFactory.Type;
 
 /**
- * This class manages the generation of puzzles defined as an array of 'Type' enums
- * that represent each different type of object in the game. Each object type is also
- * linked to an image filename which is loaded at the start, and then an array of
- * ImageIcons is initialized that can be accessed by index from Type.Ordinal()
- * @field DESIRED_HEIGHT: The preset height of images loaded
- * @field images: An array of the names of the image filenames
- * @field icons: An array of the icon images for each image filename
+ * This class stores PuzzleGrid objects which are essentially puzzles defined as an array of 'Type' enums
+ * that represent each different type of object in the game. 
+ * @field shadowMode: boolean to signal if shadowMode is enabled
+ * @field singlePlayerLevels: ArrayList of single player PuzzleGrid objects
+ * @field multiPlayerLevels:  ArrayList of multiplayer PuzzleGrid objects
  */
 public class PuzzleGridGenerator
 {
@@ -38,10 +36,8 @@ public class PuzzleGridGenerator
 	}
 	
 	/**
-	 * Creates a puzzle grid object with an array of image types to place in the
-	 * puzzle and the dimensions to arrange the images in a grid of the form
-	 * rows x columns.
-	 * @return: The puzzle grid with the puzzle starting state properties
+	 * Returns a single player PuzzleGrid object with a given level ID
+	 * @return: PuzzleGrid of the single player level
 	 */
 	public PuzzleGrid getLevel(int ID)
 	{
@@ -49,13 +45,17 @@ public class PuzzleGridGenerator
 		return level;
 	}
 	
+	/**
+	 * Returns a multiplayer PuzzleGrid object with a given level ID
+	 * @return: PuzzleGrid of the multiplayer level
+	 */
 	public PuzzleGrid getMultiLevel(int ID) {
 		PuzzleGrid level = multiPlayerLevels.stream().filter(l -> l.getLevelID() == ID).findFirst().orElse(null);
 		return level;
 	}
 	
 	/**
-	 * @return: A default map layout
+	 * Method that fills the ArrayList<PuzzleGrid> singlePlayerLevels with hard coded levels
 	 */
 	public void populateSinglePlayerLevels()
 	{
@@ -189,6 +189,9 @@ public class PuzzleGridGenerator
 		}));
 	}
 
+	/**
+	 * Method that fills the ArrayList<PuzzleGrid> multiPlayerLevels with hard coded levels
+	 */
 	public void populateMultiPlayerLevels()
 	{
 		int numLevels = 0;

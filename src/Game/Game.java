@@ -20,11 +20,14 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 
 /**
- * This is an example of a single GUI window that just has a panel with the puzzle
- * for now. It also has a puzzle grid generator that creates a puzzle starting grid
- * for the panel to display
- * @field panel: The single game panel being added
+ * Main class that stores the various JFrames used in navigation and playing of the game. 
+ * Handles the construction of these JFrames and the methods to display them. 
  * @field psg: The puzzle generator object for making puzzles
+ * @field gameFrame: JFrame that holds the actual puzzle game screen and its associated JPanels
+ * @field menuFrame: JFrame that holds the main menu screen
+ * @field levelFrame: JFrame that holds the level select screen
+ * @field winFrame: JFrame that holds the win screen
+ * @field tutorialFrame: JFrame that holds the tutorial screen
  */
 public class Game
 {
@@ -45,8 +48,8 @@ public class Game
 	}
 	
 	/**
-	 * The main method which just creates a GameFrame frame window and sets its
-	 * properties to display for the user
+	 * The main method which creates a game object and from there
+	 * shows the menu screen and allows the user to open more screens.
 	 * @param args: Any command line arguments
 	 */
 	public static void main(String[] args)
@@ -55,6 +58,10 @@ public class Game
 		g.showMenuScreen();
 	}
 	
+	/**
+	 * Method that fills the menuFrame with a TitleMenuPanel, displaying a title menu
+	 * which allows the user to select single player, mutltiplayer, tutorial, or exit
+	 */
 	public void showMenuScreen() 
 	{
 		tutorialFrame.setVisible(false);
@@ -65,6 +72,11 @@ public class Game
 		setDefaultLayout(menuPanel, menuFrame);	
 	}
 	
+	/**
+	 * Method that fills the levelFrame with a LevelSelectPanel and allows the user to select levels.
+	 * Shows a different level select screen depending on if multiplayer was selected.
+	 * @param multiPlayer: boolean value that determines if multiplayer is enabled or not
+	 */
 	public void showLevelSelect(boolean multiPlayer) 
 	{
 		gameFrame.setVisible(false);
@@ -76,8 +88,10 @@ public class Game
 	}
 	
 	/**
-	 * This method initializes a JFrame with just the puzzle in a panel and 
-	 * displays it to the user with a key event listener for the controls
+	 * Method that fills the gameFrame with a PuzzleDisplayPanel to display the puzzle grid,
+	 * and a PuzzleControlPanel which displays information and has access buttons.
+	 * Also either creates a PuzzleManager that handles the backend of the actual game logic. 
+	 * @param grid: PuzzleGrid object that is the specified level puzzle that will be used
 	 */
 	public void showGameScreen(PuzzleGrid grid)
 	{
@@ -110,6 +124,12 @@ public class Game
 		gameFrame.validate();
 	}
 	
+	/**
+	 * Method that fills the winFrame with a panel to display the win screen and allow you to return
+	 * back to the main menu or continue on to complete the next level.
+	 * @param level: integer index of the level we just completed
+	 * @param grid: PuzzleGrid object of the completed level
+	 */
 	public void showWinScreen(int level, PuzzleGrid grid)
 	{
 		winFrame = new JFrame();
@@ -183,6 +203,10 @@ public class Game
 		winFrame.pack();
 	}
 	
+	/**
+	 * Method that fills the tutorialFrame with a TutorialPanel that gives the user
+	 * instructions on how to play single and multiplayer.
+	 */
 	public void showTutorialScreen() 
 	{
 		tutorialFrame = new JFrame();
@@ -198,14 +222,14 @@ public class Game
 		tutorialFrame.setVisible(true);
 		tutorialFrame.setSize(460, 600);
 		tutorialFrame.setLocationRelativeTo(null);
-		//packTutorial();
 	}
 	
-	public void packTutorial()
-	{
-		tutorialFrame.pack();		
-	}
-	
+	/**
+	 * Fills a JFrame with a specified JPanel in our default style. Standardizes colours, fonts,
+	 * images, spacing etc. Used mainly for menu panels.
+	 * @param targetPanel: JPanel that will be placed inside the target JFrame
+	 * @param targetFrame: JFrame that will be used and set to a default layout/look
+	 */
 	private void setDefaultLayout (JPanel targetPanel, JFrame targetFrame) 
 	{
 		JPanel topWall = new JPanel(new BorderLayout());
@@ -250,9 +274,7 @@ public class Game
 	
 	
 	/**
-	 * This class handles the incoming key events from the GameFram object and
-	 * delegates the event to event handler which is the panel in this case
-	 * to check or arrow key presses
+	 * KeyListener that is used to register keys.
 	 */
 	private class KeyAction implements KeyListener
 	{

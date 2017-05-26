@@ -11,6 +11,25 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * JPanel class that holds information regarding the move counter, high scores, 
+ * as well contains the buttons for navigation in the game and between menus
+ * @field serialVersionID: needed to prevent bugs when extending JPanels
+ * @field manager: PUzzleManager object that is used to obtain back end data
+ * @field grid: PuzzleGrid object that is the level being operated on
+ * @field multiPlayer: boolean signifying if multiplayer is enabled
+ * 
+ * @field moveCounter: JLabel that displays the current amount of moves taken 
+ * @field highScore: JLabel that displays the highscore for the level
+ * @field leftButton: JButton that moves the player left
+ * @field rightButton:JButton that moves the player right
+ * @field upButton: JButton that moves the player up
+ * @field downButton: JButton that moves the player down
+ * @field resetButton: JButton that resets the game to initial state
+ * @field undoButton: JButton that returns the game to the previous state. Undoes the move. 
+ * @field exitButton: JButton that returns to the level select screen
+ *
+ */
 public class PuzzleControlPanel extends JPanel 
 {
 	private static final long serialVersionUID = 1L;
@@ -18,15 +37,15 @@ public class PuzzleControlPanel extends JPanel
 	private PuzzleGrid grid;
 	private boolean multiPlayer;
 	
-	JLabel moveCounter;
-	JLabel highScore;
-	JButton leftButton;
-	JButton rightButton;
-	JButton upButton;
-	JButton downButton;
-	JButton undoButton;
-	JButton resetButton;
-	JButton exitButton;
+	private JLabel moveCounter;
+	private JLabel highScore;
+	private JButton leftButton;
+	private JButton rightButton;
+	private JButton upButton;
+	private JButton downButton;
+	private JButton undoButton;
+	private JButton resetButton;
+	private JButton exitButton;
 	
 	public PuzzleControlPanel(PuzzleManager manager, PuzzleGrid grid, Game g) 
 	{	
@@ -119,6 +138,12 @@ public class PuzzleControlPanel extends JPanel
 		addGridComponent(exitButton, 0, 2);
 	}
 	
+	/**
+	 * Adds a JComponent to this frame, using a GridBagLayout based on a GridBagConstraints
+	 * @param component: JComponent we wish to add
+	 * @param gridX: x position of where it will be added
+	 * @param gridY: y position of where it will be added
+	 */
 	private void addGridComponent(JComponent component, int gridX, int gridY)
 	{
 		component.setFocusable(false);
@@ -128,6 +153,12 @@ public class PuzzleControlPanel extends JPanel
 		this.add(component, gbc);
 	}
 	
+	/**
+	 * Method for when a button is pressed, it simply creates a KeyEvent and passes it on
+	 * to the key handler in the PuzzleManager
+	 * @param button: JButton that will have the key event assigned to
+	 * @param keyCode: KeyCode that will be assigned to the button
+	 */
 	private void registerSyntheticKey(JButton button, int keyCode)
 	{
 		JPanel panel = this;

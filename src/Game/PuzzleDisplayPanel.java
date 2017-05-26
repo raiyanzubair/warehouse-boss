@@ -7,17 +7,18 @@ import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
+/**
+ * 
+ * @field serialVersionID: needed to prevent bugs when extending JPanels
+ * @field grid: JPanel object that displays the map
+ * @field cols: number of columns
+ */
 public class PuzzleDisplayPanel extends JPanel
 {
 	private static final long serialVersionUID = 1L;
 	private JPanel grid;
 	private int cols;
 	
-	/**
-	 * Creates a JPanel object with an empty grid structure with the specified rows and columns
-	 * @param grid: PuzzleGrid object that holds information on rows and columns in the puzzle
-	 * @return panel: The JPanel with the grid
-	 */
 	public PuzzleDisplayPanel(int rows, int columns)
 	{
 		this.cols = columns;
@@ -34,6 +35,8 @@ public class PuzzleDisplayPanel extends JPanel
 	/**
 	 * Reloads the puzzle squares from the labels array so that the ordering of the labels in the
 	 * panel matches the new order of puzzle squares in the labels array list.
+	 * @param grid: ArrayList of PuzzleLabels that represents the grid
+	 * @param shadowMode: boolean for if shadowmode is enabled
 	 */
 	public void reloadPanelLabels(ArrayList<PuzzleLabel> grid, boolean shadowMode)
 	{
@@ -52,6 +55,12 @@ public class PuzzleDisplayPanel extends JPanel
 		this.updateUI();
 	}
 	
+	/**
+	 * Method used in shadowMode to only display grids which are within a certain sight radius of the player
+	 * @param list: ArrayList of PuzzleLabels that represents the grid
+	 * @param index: number used in displaying shadowmode
+	 * @return boolean value for if a PuzzleLabel is within the sight radius of the player
+	 */
 	private boolean isWithinSight(ArrayList<PuzzleLabel> list, int index)
 	{
 		for(int j = -cols; j <= cols; j+= cols)

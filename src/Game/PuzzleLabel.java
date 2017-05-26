@@ -9,8 +9,10 @@ import Game.ImageFactory.Type;
 /**
  * Represents a single puzzle square which shows a single image according to its type (defined
  * in the PuzzleGridGenerator)
- * @field icon: The ImageIcon that this puzzle label is to display
+ * @field serialVersionID: needed to prevent bugs when extending JComponents
+ * @field image: The ImageIcon that this puzzle label is to display
  * @field type: The type of this puzzle label
+ * @field isPlayer: boolean to check if the PuzzleLabel is a player or not
  */
 public class PuzzleLabel extends JLabel
 {
@@ -19,12 +21,22 @@ public class PuzzleLabel extends JLabel
 	private Type type;
 	private boolean isPlayer;
 
+	/**
+	 * Constructs a PuzzleLabel from a basic Type enum and assigns it an image
+	 * @param type Type enum
+	 */
 	public PuzzleLabel(Type type)
 	{
 		this.isPlayer = isPlayer(type);
 		setTypeAndImage(type);
 	}
 	
+	/**
+	 * Constructor for cloning a puzzle label
+	 * @param type: Type enum to be cloned
+	 * @param img: Image to be cloned
+	 * @param isPlayer: if clone is player or not
+	 */
 	public PuzzleLabel(Type type, Type img, boolean isPlayer)
 	{
 		this.isPlayer = isPlayer;
@@ -69,12 +81,19 @@ public class PuzzleLabel extends JLabel
 		}
 	}
 	
+	/**
+	 * Sets a PuzzleLable to a shadow tile
+	 */
 	public void setToShadow()
 	{
 		ImageIcon icon = ImageFactory.puzzleIcons[Type.SHADOW.ordinal()];
 		this.setIcon(icon);
 	}
 	
+	/**
+	 * Returns Player enum from the puzzlelabel
+	 * @return: the return player enum
+	 */
 	public Player getPlayer()
 	{
 		switch(image)
@@ -104,6 +123,11 @@ public class PuzzleLabel extends JLabel
 		return this.type;
 	}
 	
+	/**
+	 * gets the generic type of the current PuzzleLabel, not differentiating between players
+	 * @param type: The type being passed
+	 * @return Type enum of the PuzzleLabel
+	 */
 	public Type getGenericType(Type type)
 	{
 		switch(type)
@@ -156,6 +180,11 @@ public class PuzzleLabel extends JLabel
 	}
 	
 	@Override
+	/**
+	 * Overriding of equals method for comparing puzzlepanels
+	 * @param o: PuzzleLabel object we are comparing to this
+	 * @return equals boolean
+	 */
 	public boolean equals(Object o)
 	{
 		if(o == null)

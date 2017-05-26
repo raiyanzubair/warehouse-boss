@@ -10,6 +10,16 @@ import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 
+/**
+ * JPanel class that displays the main title menu and allows traversal to other screens 
+ * @field serialVersionID: needed to prevent bugs when extending JPanels
+ * @field numComponents: integer representing the number of components in the panel
+ * 
+ * @field levelButton: JButton that takes you to the level select screen for single player
+ * @field multiPlayerButton: JButton that takes you to the level select screen for multiplayer
+ * @field tutorialButton: JButton that takes you to the tutorial
+ * @field quitButton: JButton that exits the game *
+ */
 public class TitleMenuPanel extends JPanel 
 {	
 	private static final long serialVersionUID = 1L;
