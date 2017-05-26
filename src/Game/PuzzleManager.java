@@ -31,7 +31,7 @@ public class PuzzleManager
 	private Game game;
 	protected ArrayList<PuzzleLabel> currentLabelSequence;
 	private Stack<PuzzleGrid> previousStates;
-	protected PuzzleLabel playerOnePiece;
+	private PuzzleLabel playerOnePiece;
 	protected PuzzleLabel playerTwoPiece;
 
 	private PuzzleDisplayPanel panel;
@@ -129,12 +129,6 @@ public class PuzzleManager
 		if(e.getKeyCode() == KeyEvent.VK_UP || e.getKeyCode() == KeyEvent.VK_DOWN || e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode() == KeyEvent.VK_RIGHT)
 		{
 			registerMove(e, playerOnePiece);
-			validatePuzzleSolved(grid);
-		}	
-		
-		if(e.getKeyCode() == KeyEvent.VK_W || e.getKeyCode() == KeyEvent.VK_S || e.getKeyCode() == KeyEvent.VK_A || e.getKeyCode() == KeyEvent.VK_D)
-		{
-			registerMove(e, playerTwoPiece);
 			validatePuzzleSolved(grid);
 		}	
 	}
