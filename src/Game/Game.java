@@ -14,6 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 
 /**
  * This is an example of a single GUI window that just has a panel with the puzzle
@@ -83,7 +84,7 @@ public class Game
 		gameFrame = new JFrame();
 		
 		PuzzleDisplayPanel panel = new PuzzleDisplayPanel(grid.getRows(), grid.getColumns());
-		PuzzleManager manager = new PuzzleManager(panel, grid, this);
+		PuzzleManager manager = !grid.isMultiplayer() ? new PuzzleManager(panel, grid, this) : new PuzzleManagerMultiplayer(panel, grid, this);
 		PuzzleControlPanel buttons = new PuzzleControlPanel(manager, grid, this);
 
 		panel.addKeyListener(new KeyAction()
@@ -156,14 +157,14 @@ public class Game
 		winFrame.pack();
 	}
 	
-	public void showTutorialScreen(Game g) {
-		menuFrame.setVisible(false);
+	public void showTutorialScreen() 
+	{
 		tutorialFrame = new JFrame();
 		
-		JPanel tutorialPanel = new TutorialPanel(g);
+		JPanel tutorialPanel = new TutorialPanel(this);
 		JScrollPane scrollPane = new JScrollPane(tutorialPanel);
-		scrollPane.setVerticalScrollBarPolicy(scrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane.setHorizontalScrollBarPolicy(scrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		
 		tutorialFrame.add(scrollPane);
 		tutorialFrame.setTitle("Tutorial");
@@ -173,7 +174,8 @@ public class Game
 		tutorialFrame.setLocationRelativeTo(null);
 	}
 	
-	static void setDefaultLayout (JPanel targetPanel, JFrame targetFrame) {
+	static void setDefaultLayout (JPanel targetPanel, JFrame targetFrame) 
+	{
 		JPanel topWall = new JPanel(new BorderLayout());
 		JLabel topWallLabel = new JLabel(ImageFactory.topWall, JLabel.CENTER);
 		topWall.setBackground(ImageFactory.Colors.customOrange);
@@ -232,6 +234,13 @@ public class Game
 		public void keyReleased(KeyEvent e){}	
 	}
 }
+
+
+
+
+
+
+
 
 
 

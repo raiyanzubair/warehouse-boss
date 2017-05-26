@@ -17,7 +17,7 @@ import Game.ImageFactory.Type;
 public class PuzzleGrid
 {
 	private boolean shadowMode;
-	private boolean multiPlayer;
+	private boolean multiplayer;
 	private int levelID;
 	private int rows;
 	private int columns;
@@ -25,12 +25,11 @@ public class PuzzleGrid
 	private PuzzleLabel playerTwo;
 	private ArrayList<PuzzleLabel> labelSequence;
 	private int highScore;
-
 	
 	public PuzzleGrid(boolean multiPlayer, int ID, int rows, int columns, Type[] startingLabelTypes)
-	{	
+	{
+		this.multiplayer = multiPlayer;
 		this.levelID = ID;
-		this.multiPlayer = multiPlayer;
 		this.rows = rows;
 		this.columns = columns;
 		this.labelSequence = initializeStartingLabels(startingLabelTypes);
@@ -55,8 +54,8 @@ public class PuzzleGrid
 			switch(type) 
 			{
 				case P2_RIGHT:
-				case P1_RIGHT:	labels.add(registerPlayer(type));					break;
-				default:		labels.add(new PuzzleLabel(type, Player.NONE));		break;
+				case P1_RIGHT:	labels.add(registerPlayer(type));										break;
+				default:		labels.add(new PuzzleLabel(type));		break;
 			}
 		}
 		
@@ -65,7 +64,7 @@ public class PuzzleGrid
 	
 	private PuzzleLabel registerPlayer(Type t)
 	{
-		PuzzleLabel player = new PuzzleLabel(t, ImageFactory.getPlayerMap(t));
+		PuzzleLabel player = new PuzzleLabel(t);
 		this.playerOne = t == Type.P1_RIGHT ? player : playerOne;
 		this.playerTwo = t == Type.P2_RIGHT ? player : playerTwo;
 		return player;
@@ -76,6 +75,11 @@ public class PuzzleGrid
 		return levelID;
 	}
 	
+	public boolean isMultiplayer()
+	{
+		return this.multiplayer;
+	}
+	
 	public boolean isShadow()
 	{
 		return this.shadowMode;
@@ -84,10 +88,6 @@ public class PuzzleGrid
 	public void setShadow(boolean mode)
 	{
 		this.shadowMode = mode;
-	}
-	
-	public boolean isMultiplayer() {
-		return this.multiPlayer;
 	}
 
 	/**

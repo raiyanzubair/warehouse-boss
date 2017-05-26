@@ -41,27 +41,6 @@ public class ImageFactory
 		P2_LEFT,
 		P2_RIGHT,
 	}
-	private static Player[] playerMap = 
-	{
-		Player.NONE,
-		Player.NONE,
-		Player.NONE,
-		Player.NONE,
-		Player.ONE,
-		Player.ONE,
-		Player.ONE,
-		Player.ONE,
-		Player.ONE,
-		Player.ONE,
-		Player.ONE,
-		Player.TWO,
-		Player.TWO,
-		Player.TWO,
-		Player.TWO,
-		Player.TWO,
-		Player.TWO,
-		Player.TWO,
-	};
 	private static String[] images =
 	{
 		"Empty.png",
@@ -90,10 +69,11 @@ public class ImageFactory
 	public static final ImageIcon bottomWall = new ImageIcon("src/menu/bottomwall.jpg");
 
 	//Images for the tutorial panel
-	
 	public static final ImageIcon tutorialGif = new ImageIcon("src/tutorial/tutorial.gif");
 	public static final ImageIcon undoGif = new ImageIcon("src/tutorial/UndoButton.gif");
 	public static final ImageIcon resetGif = new ImageIcon("src/tutorial/ResetButton.gif");
+	public static final ImageIcon shadowGif1 = new ImageIcon("src/tutorial/shadow1.gif");
+	public static final ImageIcon shadowGif2 = new ImageIcon("src/tutorial/shadow2.gif");
 	
 	static class Colors
 	{
@@ -113,11 +93,6 @@ public class ImageFactory
 		}
 		return icons;
 	}
- 	
- 	public static Player getPlayerMap(Type type)
- 	{
- 		return playerMap[type.ordinal()];
- 	}
 
  	/**
  	 * Converts an image file loaded from a filename into an ImageIcon

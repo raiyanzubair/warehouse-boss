@@ -14,7 +14,6 @@ public class TitleMenuPanel extends JPanel
 {	
 	private static final long serialVersionUID = 1L;
 	private int numComponents;
-	private boolean multiPlayer;
 	
 	JButton levelButton;
 	JButton multiplayerButton;
@@ -25,7 +24,6 @@ public class TitleMenuPanel extends JPanel
 	{
 		this.setBackground(ImageFactory.Colors.customOrange);
 		this.setLayout(new GridBagLayout());
-		this.multiPlayer = false;
 		populateComponents(g, psg);
 	}
 	
@@ -39,8 +37,7 @@ public class TitleMenuPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				multiPlayer = false;
-				g.showLevelSelect(multiPlayer);
+				g.showLevelSelect(false);
 			}
 		});
 		addGridComponent(levelButton, 0, numComponents++);
@@ -51,8 +48,7 @@ public class TitleMenuPanel extends JPanel
 		{
 			public void actionPerformed (ActionEvent e) 
 			{
-				multiPlayer = true;
-				g.showLevelSelect(multiPlayer);
+				g.showLevelSelect(true);
 			}
 		});
 		addGridComponent(multiplayerButton, 0, numComponents++);
@@ -62,7 +58,7 @@ public class TitleMenuPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				g.showTutorialScreen(g);
+				g.showTutorialScreen();
 			}
 		});
 		addGridComponent(tutorialButton, 0, numComponents++);

@@ -29,10 +29,10 @@ public class PuzzleManager
 	private final int COLUMNS;
 	private int nMoves;
 	private Game game;
-	private ArrayList<PuzzleLabel> currentLabelSequence;
+	protected ArrayList<PuzzleLabel> currentLabelSequence;
 	private Stack<PuzzleGrid> previousStates;
 	private PuzzleLabel playerOnePiece;
-	private PuzzleLabel playerTwoPiece;
+	protected PuzzleLabel playerTwoPiece;
 
 	private PuzzleDisplayPanel panel;
 	
@@ -131,25 +131,17 @@ public class PuzzleManager
 			registerMove(e, playerOnePiece);
 			validatePuzzleSolved(grid);
 		}	
-		
-		if (grid.isMultiplayer()) {	
-			if(e.getKeyCode() == KeyEvent.VK_W || e.getKeyCode() == KeyEvent.VK_S || e.getKeyCode() == KeyEvent.VK_A || e.getKeyCode() == KeyEvent.VK_D)
-			{
-				registerMove(e, playerTwoPiece);
-				validatePuzzleSolved(grid);
-			}
-		}
 	}
 	
 	public void registerMove(KeyEvent e, PuzzleLabel playerPiece)
 	{
 		saveLabelsState();
 		
-		int manIndex = currentLabelSequence.indexOf(playerPiece);
+		int manIndex = getPlayerIndex(playerPiece);
 		int swapIndex = validateKeyArrowDirection(e, manIndex);
 		if(swapIndex != -1)
 		{
-			setPlayerFacingDirection(e, currentLabelSequence.get(manIndex));
+			setPlayerFacingDirection(e);
 			handleSwapObjectBehaviour(e, manIndex, swapIndex);
 			panel.reloadPanelLabels(currentLabelSequence, shadowMode);
 			validateNumMoves(manIndex, playerPiece);
@@ -158,20 +150,27 @@ public class PuzzleManager
 	
 	public void validateNumMoves(int originalManIndex, PuzzleLabel playerPiece)
 	{
-		int manIndex = playerPiece.getPlayer() == Player.ONE ? currentLabelSequence.indexOf(playerOnePiece) :
-					   playerPiece.getPlayer() == Player.TWO ? currentLabelSequence.indexOf(playerTwoPiece) : -1;
-				
+		int manIndex = getPlayerIndex(playerPiece);	
 		if(manIndex != originalManIndex)
 		{
 			nMoves++;
 		}
 	}
 
+	private int getPlayerIndex(PuzzleLabel playerPiece)
+	{
+		Player p = playerPiece.getPlayer();
+		int manIndex = p == Player.ONE ? currentLabelSequence.indexOf(playerOnePiece) : 
+					   p == Player.TWO ? currentLabelSequence.indexOf(playerTwoPiece) : -1;
+		return manIndex;
+	}
+
 	public void validatePuzzleSolved(PuzzleGrid grid)
 	{
-		if (puzzleSolved())
+		if(puzzleSolved())
 		{
-			if (nMoves < grid.getHighScore() || grid.getHighScore() == -1) {
+			if (nMoves < grid.getHighScore() || grid.getHighScore() == -1) 
+			{
 				grid.setHighScore(this.nMoves);
 			}
 			game.showWinScreen(level, grid);
@@ -202,15 +201,18 @@ public class PuzzleManager
 	 * arrow key pressed in the key event
 	 * @param e: The key event passed
 	 */
-	public void setPlayerFacingDirection(KeyEvent e, PuzzleLabel playerPiece)
+	public void setPlayerFacingDirection(KeyEvent e)
 	{
-		int keyCode = translateKeyCode(e);	
-		switch(keyCode)
+		switch(e.getKeyCode())
 		{
-			case KeyEvent.VK_UP: 	playerPiece.setImage(Type.P1_UP); 		break;
-			case KeyEvent.VK_DOWN: 	playerPiece.setImage(Type.P1_DOWN); 	break;
-			case KeyEvent.VK_LEFT: 	playerPiece.setImage(Type.P1_LEFT); 	break;
-			case KeyEvent.VK_RIGHT: playerPiece.setImage(Type.P1_RIGHT); 	break;
+			case KeyEvent.VK_UP: 	playerOnePiece.setImage(Type.P1_UP); 		break;
+			case KeyEvent.VK_DOWN: 	playerOnePiece.setImage(Type.P1_DOWN); 		break;
+			case KeyEvent.VK_LEFT: 	playerOnePiece.setImage(Type.P1_LEFT); 		break;
+			case KeyEvent.VK_RIGHT: playerOnePiece.setImage(Type.P1_RIGHT); 	break;
+			case KeyEvent.VK_W: 	playerTwoPiece.setImage(Type.P2_UP); 		break;
+			case KeyEvent.VK_S: 	playerTwoPiece.setImage(Type.P2_DOWN); 		break;
+			case KeyEvent.VK_A: 	playerTwoPiece.setImage(Type.P2_LEFT); 		break;
+			case KeyEvent.VK_D:	 	playerTwoPiece.setImage(Type.P2_RIGHT); 	break;
 		}
 	}
 
@@ -277,31 +279,31 @@ public class PuzzleManager
 	 * @return 
 	 * @precondition: player to destination is a valid move
 	 */
-	private boolean handleSwapObjectBehaviour(KeyEvent e, int playerIndex, int destinationIndex)
+	protected boolean handleSwapObjectBehaviour(KeyEvent e, int playerIndex, int destinationIndex)
 	{
 		PuzzleLabel playerPiece = currentLabelSequence.get(playerIndex);
 		PuzzleLabel toSwap = currentLabelSequence.get(destinationIndex);
-		if(toSwap.isType(Type.BRICK, Player.NONE) || toSwap.isType(Type.P1_RIGHT, playerPiece.otherPlayer()))
+		if(toSwap.isType(Type.BRICK))
 		{
 			return false;
 		}
-		else if(toSwap.isType(Type.EMPTY, Player.NONE))
+		else if(toSwap.isType(Type.EMPTY))
 		{
-			if(playerPiece.isType(Type.P1_CROSS, playerPiece.getPlayer()))
+			if(playerPiece.isType(Type.P1_CROSS))
 			{
 				toSwap.setTypeAndImage(Type.P1_CROSS);
 			}
 			playerPiece.setType(Type.P1_RIGHT);
 		}
-		else if(toSwap.isType(Type.P1_CROSS, Player.NONE))
+		else if(toSwap.isType(Type.P1_CROSS))
 		{
-			if(!playerPiece.isType(Type.P1_CROSS, playerPiece.getPlayer()))
+			if(!playerPiece.isType(Type.P1_CROSS))
 			{
 				toSwap.setTypeAndImage(Type.EMPTY);
 			}
 			playerPiece.setType(Type.P1_CROSS);
 		}
-		else if(toSwap.isType(Type.BOX, Player.NONE) || toSwap.isType(Type.P1_BOXED, Player.NONE))
+		else if(toSwap.isType(Type.BOX) || toSwap.isType(Type.P1_BOXED))
 		{
 			int toSwapSwapIndex = validateKeyArrowDirection(e, destinationIndex);
 			if(toSwapSwapIndex == -1)
@@ -310,32 +312,32 @@ public class PuzzleManager
 			}
 			PuzzleLabel toSwapWithToSwap = currentLabelSequence.get(toSwapSwapIndex);
 			
-			if(toSwapWithToSwap.isType(Type.EMPTY, Player.NONE))
+			if(toSwapWithToSwap.isType(Type.EMPTY))
 			{
-				if(playerPiece.isType(Type.P1_CROSS, playerPiece.getPlayer()))
+				if(playerPiece.isType(Type.P1_CROSS))
 				{
 					toSwapWithToSwap.setTypeAndImage(Type.P1_CROSS);
 					playerPiece.setType(Type.P1_RIGHT);
 				}
 
-				if(toSwap.isType(Type.P1_BOXED, Player.NONE))
+				if(toSwap.isType(Type.P1_BOXED))
 				{
 					toSwap.setTypeAndImage(Type.BOX);
 					playerPiece.setType(Type.P1_CROSS);
 				}
 			}
-			else if(toSwapWithToSwap.isType(Type.P1_CROSS, Player.NONE))
+			else if(toSwapWithToSwap.isType(Type.P1_CROSS))
 			{
-				if(!playerPiece.isType(Type.P1_CROSS, playerPiece.getPlayer()))
+				if(!playerPiece.isType(Type.P1_CROSS))
 				{
 					toSwapWithToSwap.setTypeAndImage(Type.EMPTY);
 				}
 
-				if(toSwap.isType(Type.P1_BOXED, Player.NONE))
+				if(toSwap.isType(Type.P1_BOXED))
 				{
 					playerPiece.setType(Type.P1_CROSS);
 				}
-				else if(toSwap.isType(Type.BOX, Player.NONE))
+				else if(toSwap.isType(Type.BOX))
 				{
 					toSwap.setTypeAndImage(Type.P1_BOXED);
 					playerPiece.setType(Type.P1_RIGHT);
@@ -369,7 +371,7 @@ public class PuzzleManager
 		boolean solved = true;
 		for(PuzzleLabel ps : currentLabelSequence)
 		{
-			if(ps.isType(Type.BOX, Player.NONE))
+			if(ps.isType(Type.BOX) || ps.isType(Type.P1_BOX) || ps.isType(Type.P2_BOX))
 			{
 				solved = false;
 				break;
