@@ -55,7 +55,7 @@ public class PuzzleGrid
 			{
 				case P2_RIGHT:
 				case P1_RIGHT:	labels.add(registerPlayer(type));										break;
-				default:		labels.add(new PuzzleLabel(type, ImageFactory.getPlayerMap(type)));		break;
+				default:		labels.add(new PuzzleLabel(type));		break;
 			}
 		}
 		
@@ -64,7 +64,7 @@ public class PuzzleGrid
 	
 	private PuzzleLabel registerPlayer(Type t)
 	{
-		PuzzleLabel player = new PuzzleLabel(t, ImageFactory.getPlayerMap(t));
+		PuzzleLabel player = new PuzzleLabel(t);
 		this.playerOne = t == Type.P1_RIGHT ? player : playerOne;
 		this.playerTwo = t == Type.P2_RIGHT ? player : playerTwo;
 		return player;
