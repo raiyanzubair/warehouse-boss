@@ -67,6 +67,8 @@ public class PuzzleGrid
 	
 	/**
 	 * Converts an array of type enums into an arraylist of puzzlepanels
+	 * @precondition: Single player grids contain exactly one Type.P1_RIGHT and multiplayer grids contain exactly 
+	 * one Type.P1_RIGHT and one Type.P2_RIGHT
 	 * @param startingLabelTypes: Array of Type enums that specify what goes in each tile of the grid initially 
 	 * @return ArrayList of PuzzlePanels
 	 */
