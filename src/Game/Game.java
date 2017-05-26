@@ -3,16 +3,10 @@ package Game;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -42,9 +36,11 @@ public class Game
 	{
 		this.gameFrame = new JFrame();
 		this.levelFrame = new JFrame();
-		this.menuFrame = new JFrame();
 		this.winFrame = new JFrame();
 		this.tutorialFrame = new JFrame();
+		this.menuFrame = new JFrame();
+		TitleMenuPanel menuPanel = new TitleMenuPanel(this, psg);
+		setDefaultLayout(menuPanel, menuFrame);	
 	}
 	
 	/**
@@ -68,9 +64,7 @@ public class Game
 		levelFrame.setVisible(false);
 		gameFrame.setVisible(false);
 		
-		menuFrame = new JFrame();
-		TitleMenuPanel menuPanel = new TitleMenuPanel(this, psg);
-		setDefaultLayout(menuPanel, menuFrame);	
+		menuFrame.setVisible(true);
 	}
 	
 	/**
