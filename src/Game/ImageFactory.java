@@ -11,6 +11,23 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
+/**
+ * Class used for storing fixed values, enums, as well as images. 
+ * @field DESIRED_HEIGHT: desired height of images
+ * @field Player: enum for the player
+ * @field Type: enum for the tiles type
+ * @field images: array of strings corresponding to the file names of images
+ * @field puzzleIcons: array of ImageIcons
+ * @field topWall: image used for the top section of menus
+ * @field bottomWall: image used for the bottom section of menus
+ * @field tutorialGif: gif used in the tutorial section
+ * @field undoGif: gif showing the undo functionality in tutorial
+ * @field resetGif: gif showing the reset functionality in tutorial
+ * @field shadowGif1: first gif showing off shadow feature
+ * @field shadowGif2: second gif showing off shadow feature
+ * @field multiPlayerGif: gif showing how multiplayer works
+ *
+ */
 public class ImageFactory
 {
 	private static final int DESIRED_HEIGHT = 50;
@@ -85,6 +102,7 @@ public class ImageFactory
 
 	/**
 	 * Initializes the images array with the ImageIcons from the filenames
+	 * @return an array of ImageIcons from the type enums
 	 */
  	private static ImageIcon[] loadImages()
 	{
