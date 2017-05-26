@@ -140,7 +140,7 @@ public class PuzzleLabel extends JLabel
 		return getGenericType(this.type) == type;
 	}
 		
-	public boolean isPlayer(Type t)
+	private boolean isPlayer(Type t)
 	{
 		if(t == Type.P1_UP || t == Type.P1_DOWN || t == Type.P1_LEFT || t == Type.P1_RIGHT || 
 		   t == Type.P2_UP || t == Type.P2_DOWN || t == Type.P2_LEFT || t == Type.P2_RIGHT	)
@@ -171,3 +171,4 @@ public class PuzzleLabel extends JLabel
 		return new PuzzleLabel(this.type, this.image, this.isPlayer);
 	}
 }
+
