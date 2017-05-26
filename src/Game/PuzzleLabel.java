@@ -17,19 +17,16 @@ public class PuzzleLabel extends JLabel
 	private static final long serialVersionUID = 1L;
 	private Type image;
 	private Type type;
-	private Player player;
 	private boolean isPlayer;
 
-	public PuzzleLabel(Type type, Player player)
+	public PuzzleLabel(Type type)
 	{
-		this.player = player;
 		this.isPlayer = isPlayer(type);
 		setTypeAndImage(type);
 	}
 	
-	public PuzzleLabel(Type type, Type img, Player player, boolean isPlayer)
+	public PuzzleLabel(Type type, Type img, boolean isPlayer)
 	{
-		this.player = player;
 		this.isPlayer = isPlayer;
 		setType(type);
 		setImage(img);
@@ -171,6 +168,6 @@ public class PuzzleLabel extends JLabel
 	
 	public PuzzleLabel Clone()
 	{
-		return new PuzzleLabel(this.type, this.image, this.player, this.isPlayer);
+		return new PuzzleLabel(this.type, this.image, this.isPlayer);
 	}
 }
