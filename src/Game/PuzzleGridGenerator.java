@@ -15,7 +15,7 @@ import Game.ImageFactory.Type;
  */
 public class PuzzleGridGenerator
 {
-	private static boolean shadowMode;
+	public static boolean shadowMode;
 	private ArrayList<PuzzleGrid> singlePlayerLevels;
 	private ArrayList<PuzzleGrid> multiPlayerLevels;
 
@@ -25,16 +25,6 @@ public class PuzzleGridGenerator
 		this.multiPlayerLevels = new ArrayList<PuzzleGrid>();
 		this.populateSinglePlayerLevels();
 		this.populateMultiPlayerLevels();
-	}
-	
-	public void setShadowMode(boolean mode)
-	{
-		shadowMode = mode;
-	}
-	
-	public boolean isShadowMode()
-	{
-		return shadowMode;
 	}
 	
 	public int getNumberOfSinglePlayerLevels()
@@ -234,6 +224,4 @@ public class PuzzleGridGenerator
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,	 	Type.BRICK,		Type.BRICK,
 		}));
 	}
-
 }
-
