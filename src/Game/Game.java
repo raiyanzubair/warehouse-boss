@@ -189,8 +189,6 @@ public class Game
 	
 	public void showTutorialScreen() 
 	{
-		menuFrame.setVisible(false);
-		multiTutorialFrame.setVisible(false);
 		tutorialFrame = new JFrame();
 		
 		JPanel tutorialPanel = new TutorialPanel(this);
@@ -202,8 +200,13 @@ public class Game
 		tutorialFrame.setTitle("Tutorial");
 		tutorialFrame.setResizable(false);
 		tutorialFrame.setVisible(true);
-		tutorialFrame.setSize(450, 560);
 		tutorialFrame.setLocationRelativeTo(null);
+		packTutorial();
+	}
+	
+	public void packTutorial()
+	{
+		tutorialFrame.pack();		
 	}
 	
 	public void showMultiTutorialScreen(Game g) 
