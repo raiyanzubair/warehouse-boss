@@ -41,27 +41,6 @@ public class ImageFactory
 		P2_LEFT,
 		P2_RIGHT,
 	}
-	private static Player[] playerMap = 
-	{
-		Player.NONE,
-		Player.NONE,
-		Player.NONE,
-		Player.NONE,
-		Player.ONE,
-		Player.ONE,
-		Player.ONE,
-		Player.ONE,
-		Player.ONE,
-		Player.ONE,
-		Player.ONE,
-		Player.TWO,
-		Player.TWO,
-		Player.TWO,
-		Player.TWO,
-		Player.TWO,
-		Player.TWO,
-		Player.TWO,
-	};
 	private static String[] images =
 	{
 		"Empty.png",
@@ -114,11 +93,6 @@ public class ImageFactory
 		}
 		return icons;
 	}
- 	
- 	public static Player getPlayerMap(Type type)
- 	{
- 		return playerMap[type.ordinal()];
- 	}
 
  	/**
  	 * Converts an image file loaded from a filename into an ImageIcon
