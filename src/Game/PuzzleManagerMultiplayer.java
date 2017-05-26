@@ -12,8 +12,7 @@ public class PuzzleManagerMultiplayer extends PuzzleManager
 	{
 		super(panel, grid, g);
 	}
-	
-	
+		
 	@Override
 	public void handleKeyPress(KeyEvent e, PuzzleGrid grid)
 	{	
