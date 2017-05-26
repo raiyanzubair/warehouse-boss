@@ -19,14 +19,12 @@ import javax.swing.JPanel;
 public class LevelSelectPanel extends JPanel 
 {	
 	private static final long serialVersionUID = 1L;
-	private boolean shadowMode;
 	private boolean multiPlayer;
 	
 	public LevelSelectPanel (Game g, PuzzleGridGenerator psg, boolean multiPlayer)
 	{
 		this.setBackground(ImageFactory.Colors.customOrange);
 		this.setLayout(new GridBagLayout());
-		this.shadowMode = false;
 		this.multiPlayer = multiPlayer;
 		
 		String titleText = (this.multiPlayer) ? "MULTIPLAYER":"SINGLE PLAYER";
@@ -65,13 +63,12 @@ public class LevelSelectPanel extends JPanel
 		
 		
 		JCheckBox checkBox = new JCheckBox("Shadow Mode");
-		checkBox.addItemListener(new ItemListener() {
-		    public void itemStateChanged(ItemEvent e) {
-		        if (e.getStateChange() == ItemEvent.SELECTED) {
-		            shadowMode = true;
-		        } else {
-		        	shadowMode = false;
-		        }
+		checkBox.setSelected(PuzzleGridGenerator.shadowMode);
+		checkBox.addItemListener(new ItemListener() 
+		{
+		    public void itemStateChanged(ItemEvent e) 
+		    {
+	            PuzzleGridGenerator.shadowMode = checkBox.isSelected();
 		    }
 		});
 		checkBox.setFocusable(false);
@@ -84,7 +81,6 @@ public class LevelSelectPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				level.setShadow(shadowMode);
 				g.showGameScreen(level);
 			}
 		});
@@ -107,4 +103,3 @@ public class LevelSelectPanel extends JPanel
         return (num < 20) ? ones[num] : tens[num / 10] + " " + ones[num % 10];
     }
 }
-	
