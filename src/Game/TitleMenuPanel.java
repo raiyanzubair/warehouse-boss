@@ -50,7 +50,6 @@ public class TitleMenuPanel extends JPanel
 				g.showLevelSelect(false);
 			}
 		});
-		addGridComponent(levelButton, 0, numComponents++);
 		
 		multiplayerButton = new JButton("MULTIPLAYER");
 		multiplayerButton.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -61,7 +60,6 @@ public class TitleMenuPanel extends JPanel
 				g.showLevelSelect(true);
 			}
 		});
-		addGridComponent(multiplayerButton, 0, numComponents++);
 		
 		tutorialButton = new JButton("HOW TO PLAY");
 		tutorialButton.addActionListener(new ActionListener()
@@ -71,7 +69,6 @@ public class TitleMenuPanel extends JPanel
 				g.showTutorialScreen();
 			}
 		});
-		addGridComponent(tutorialButton, 0, numComponents++);
 		
 		quitButton = new JButton("QUIT");
 		quitButton.addActionListener(new ActionListener()
@@ -81,7 +78,22 @@ public class TitleMenuPanel extends JPanel
 				System.exit(0);
 			}
 		});
+
+		addGridComponent(blankPanel(), 0, numComponents++);
+		addGridComponent(levelButton, 0, numComponents++);
+		addGridComponent(multiplayerButton, 0, numComponents++);
+		addGridComponent(tutorialButton, 0, numComponents++);
 		addGridComponent(quitButton, 0, numComponents++);
+		addGridComponent(blankPanel(), 0, numComponents++);
+	}
+
+	private JPanel blankPanel()
+	{
+		JPanel panel = new JPanel();
+		panel.setBackground(ImageFactory.Colors.customOrange);
+		JLabel blank = new JLabel(" ");
+		panel.add(blank);
+		return panel;
 	}
 	
 	private void addGridComponent(JComponent component, int gridX, int gridY)
