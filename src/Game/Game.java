@@ -34,7 +34,6 @@ public class Game
 	private JFrame levelFrame;
 	private JFrame winFrame;
 	private JFrame tutorialFrame;
-	private JFrame multiTutorialFrame;
 	
 	public Game()
 	{
@@ -43,7 +42,6 @@ public class Game
 		this.menuFrame = new JFrame();
 		this.winFrame = new JFrame();
 		this.tutorialFrame = new JFrame();
-		this.multiTutorialFrame = new JFrame();
 	}
 	
 	/**
@@ -60,13 +58,11 @@ public class Game
 	public void showMenuScreen() 
 	{
 		tutorialFrame.setVisible(false);
-		multiTutorialFrame.setVisible(false);
 		levelFrame.setVisible(false);
 		gameFrame.setVisible(false);
 		
 		TitleMenuPanel menuPanel = new TitleMenuPanel(this, psg);
-		setDefaultLayout(menuPanel, menuFrame);
-		
+		setDefaultLayout(menuPanel, menuFrame);	
 	}
 	
 	public void showLevelSelect(boolean multiPlayer) 
@@ -208,8 +204,8 @@ public class Game
 	{
 		tutorialFrame.pack();		
 	}
-
-	static void setDefaultLayout (JPanel targetPanel, JFrame targetFrame) 
+	
+	private void setDefaultLayout (JPanel targetPanel, JFrame targetFrame) 
 	{
 		JPanel topWall = new JPanel(new BorderLayout());
 		JLabel topWallLabel = new JLabel(ImageFactory.topWall, JLabel.CENTER);
@@ -269,6 +265,4 @@ public class Game
 		public void keyReleased(KeyEvent e){}	
 	}
 }
-
-
 
