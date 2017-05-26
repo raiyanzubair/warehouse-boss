@@ -37,7 +37,20 @@ public class Game
 		this.gameFrame = new JFrame();
 		this.levelFrame = new JFrame();
 		this.winFrame = new JFrame();
+		
 		this.tutorialFrame = new JFrame();
+		JPanel tutorialPanel = new TutorialPanel(this);
+		JScrollPane scrollPane = new JScrollPane(tutorialPanel);
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		
+		tutorialFrame.add(scrollPane);
+		tutorialFrame.setTitle("Tutorial");
+		tutorialFrame.setResizable(true);
+		tutorialFrame.setVisible(true);
+		tutorialFrame.setSize(460, 600);
+		tutorialFrame.setLocationRelativeTo(null);
+		
 		this.menuFrame = new JFrame();
 		TitleMenuPanel menuPanel = new TitleMenuPanel(this, psg);
 		setDefaultLayout(menuPanel, menuFrame);	
@@ -141,9 +154,9 @@ public class Game
 		winFrame.setTitle("Level " + level + " Complete");
 		winFrame.setResizable(false);
 		winFrame.setLocationRelativeTo(null);
-		winFrame.setVisible(true);
 		winFrame.add(winPanel);
 		winFrame.pack();
+		winFrame.setVisible(true);
 	}
 	
 	/**
@@ -152,19 +165,7 @@ public class Game
 	 */
 	public void showTutorialScreen() 
 	{
-		tutorialFrame = new JFrame();
-		
-		JPanel tutorialPanel = new TutorialPanel(this);
-		JScrollPane scrollPane = new JScrollPane(tutorialPanel);
-		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		
-		tutorialFrame.add(scrollPane);
-		tutorialFrame.setTitle("Tutorial");
-		tutorialFrame.setResizable(true);
 		tutorialFrame.setVisible(true);
-		tutorialFrame.setSize(460, 600);
-		tutorialFrame.setLocationRelativeTo(null);
 	}
 	
 	/**
@@ -211,8 +212,8 @@ public class Game
 		targetFrame.setResizable(false);
 		targetFrame.setLocationRelativeTo(null);
 		targetFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		targetFrame.setVisible(true);
 		targetFrame.pack();
+		targetFrame.setVisible(true);
 	}
 	
 	
