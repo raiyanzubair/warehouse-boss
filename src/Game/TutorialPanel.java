@@ -35,102 +35,114 @@ public class TutorialPanel extends JPanel {
 		blank = blankPanel();
 		addGridComponent(blank, 0, 1);
 		
+		JButton multiplayerRules = new JButton("Multiplayer Rules");
+		multiplayerRules.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				
+				g.showMultiTutorialScreen(g);
+			}
+		});
+		addGridComponent(multiplayerRules, 0, 2);
+		
 		JLabel title = new JLabel("TUTORIAL");
 		title.setFont(new Font("Tahoma", Font.BOLD, 32));
 		title.setForeground(Color.WHITE);
-		addGridComponent(title, 0, 2);
+		addGridComponent(title, 0, 3);
 		
 		blank = blankPanel();
-		addGridComponent(blank, 0, 3);
+		addGridComponent(blank, 0, 4);
 		
 		String rulesString = "AIM : Move the character to push the wooden boxes onto the green crosses. " +
 				"Use the arrow keys or the on-screen buttons to push the character around.";
 		JLabel rules = addText(rulesString);
-		addGridComponent(rules, 0, 4);
+		addGridComponent(rules, 0, 5);
 		
 		blank = blankPanel();
-		addGridComponent(blank, 0, 5);
+		addGridComponent(blank, 0, 6);
 				
 		JPanel gamePlay = new JPanel(new BorderLayout());
 		JLabel gamePlayLabel = new JLabel(ImageFactory.tutorialGif, JLabel.CENTER);
 		gamePlayLabel.setBorder(new EtchedBorder(EtchedBorder.RAISED));
 		gamePlay.setBackground(ImageFactory.Colors.customOrange);
 		gamePlay.add(gamePlayLabel);
-		addGridComponent(gamePlay, 0, 6);
+		addGridComponent(gamePlay, 0, 7);
 		
 		blank = blankPanel();
-		addGridComponent(blank, 0, 7);
+		addGridComponent(blank, 0, 8);
 		
 		String undoRules = "If you make a mistake and want to undo a move, simply press the on-screen undo "
 				+ " button or hit the 'U' key on your keyboard: ";
 		JLabel undo = addText(undoRules);
-		addGridComponent(undo, 0, 8);
+		addGridComponent(undo, 0, 9);
 		
 		blank = blankPanel();
-		addGridComponent(blank, 0, 9);
+		addGridComponent(blank, 0, 10);
 		
 		JPanel undoEx = new JPanel(new BorderLayout());
 		JLabel undoExample = new JLabel(ImageFactory.undoGif, JLabel.CENTER);
 		undoExample.setBorder(new EtchedBorder(EtchedBorder.RAISED));
 		undoEx.setBackground(ImageFactory.Colors.customOrange);
 		undoEx.add(undoExample);
-		addGridComponent(undoEx, 0, 10);
+		addGridComponent(undoEx, 0, 11);
 		
 		blank = blankPanel();
-		addGridComponent(blank, 0, 11);
+		addGridComponent(blank, 0, 12);
 		
 		String resetRules = "If you want to restart the game, press the on-screen reset button or hit the"
 				+ " 'R' key on your keyboard: ";
 		JLabel reset = addText(resetRules);
-		addGridComponent(reset, 0, 12);
+		addGridComponent(reset, 0, 13);
 		
 		blank = blankPanel();
-		addGridComponent(blank, 0, 13);
+		addGridComponent(blank, 0, 14);
 		
 		JPanel resetEx = new JPanel(new BorderLayout());
 		JLabel resetExample = new JLabel(ImageFactory.resetGif, JLabel.CENTER);
 		resetExample.setBorder(new EtchedBorder(EtchedBorder.RAISED));
 		resetEx.setBackground(ImageFactory.Colors.customOrange);
 		resetEx.add(resetExample);
-		addGridComponent(resetEx, 0, 14);
+		addGridComponent(resetEx, 0, 15);
 		
 		blank = blankPanel();
-		addGridComponent(blank, 0, 15);
+		addGridComponent(blank, 0, 16);
 		
 		String shadowRules1 = "Want a challenge? Use shadow mode to limit your on-screen visibility and try to move the boxes to their goal state. " +
 				"To activate shadow mode, go to either Single Player or Multiplayer and check the 'Shadow Mode' checkbox at the bottom.";
 		JLabel shadow1 = addText(shadowRules1);
-		addGridComponent(shadow1, 0, 16);
+		addGridComponent(shadow1, 0, 17);
 		
 		blank = blankPanel();
-		addGridComponent(blank, 0, 17);
+		addGridComponent(blank, 0, 18);
 		
 		JPanel shadowEx1 = new JPanel(new BorderLayout());
 		JLabel shadowExample1 = new JLabel(ImageFactory.shadowGif1, JLabel.CENTER);
 		shadowExample1.setBorder(new EtchedBorder(EtchedBorder.RAISED));
 		shadowEx1.setBackground(ImageFactory.Colors.customOrange);
 		shadowEx1.add(shadowExample1);
-		addGridComponent(shadowEx1, 0, 18);
+		addGridComponent(shadowEx1, 0, 19);
 		
 		blank = blankPanel();
-		addGridComponent(blank, 0, 19);
+		addGridComponent(blank, 0, 20);
 		
 		String shadowRules2 = "Game play will look like this: ";
 		JLabel shadow2 = addText(shadowRules2);
-		addGridComponent(shadow2, 0, 20);
+		addGridComponent(shadow2, 0, 21);
 		
 		blank = blankPanel();
-		addGridComponent(blank, 0, 21);
+		addGridComponent(blank, 0, 22);
 		
 		JPanel shadowEx2 = new JPanel(new BorderLayout());
 		JLabel shadowExample2 = new JLabel(ImageFactory.shadowGif2, JLabel.CENTER);
 		shadowExample2.setBorder(new EtchedBorder(EtchedBorder.RAISED));
 		shadowEx2.setBackground(ImageFactory.Colors.customOrange);
 		shadowEx2.add(shadowExample2);
-		addGridComponent(shadowEx2, 0, 22);
+		addGridComponent(shadowEx2, 0, 23);
 		
 		blank = blankPanel();
-		addGridComponent(blank, 0, 23);
+		addGridComponent(blank, 0, 24);
+		
 		
 		JButton returnButton = new JButton("Main Menu");
 		returnButton.addActionListener(new ActionListener()
@@ -140,28 +152,17 @@ public class TutorialPanel extends JPanel {
 				g.showMenuScreen();
 			}
 		});
-		addGridComponent(returnButton, 0, 24);
-		
-		JButton multiplayerRules = new JButton("Multiplayer Rules");
-		multiplayerRules.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent e)
-			{
-				g.showMenuScreen();
-				//Implement function to show tutorial for multiplayer
-			}
-		});
-		addGridComponent(multiplayerRules, 1, 13);
+		addGridComponent(returnButton, 0, 25);
 		
 		blank = blankPanel();
-		addGridComponent(blank, 0, 25);
+		addGridComponent(blank, 0, 26);
 		
 		JPanel bottomWall = new JPanel(new BorderLayout());
 		JLabel bottomWallLabel = new JLabel("", ImageFactory.bottomWall, JLabel.CENTER);
 		bottomWall.setBackground(ImageFactory.Colors.customOrange);
 		bottomWall.add(bottomWallLabel);
 		bottomWall.setVisible(true);
-		addGridComponent(bottomWall, 0, 26);
+		addGridComponent(bottomWall, 0, 28);
 	}
 	
 	private JLabel addText (String string) 
