@@ -92,7 +92,7 @@ public class PuzzleManagerMultiplayer extends PuzzleManager
 					playerPiece.setType(newCrossType);
 				}
 			}
-			else if(toSwapWithToSwap.isGenericType(Type.P1_CROSS) && !toSwapWithToSwap.isPlayer())
+			else if(toSwapWithToSwap.isGenericType(Type.P1_CROSS) && !toSwapWithToSwap.isPlayer() && !toSwapWithToSwap.hasGenericImageType(Type.P1_BOX))
 			{
 				Type oldToSwapWithToSwapType = toSwapWithToSwap.getType();
 				Player oldToSwapWithToSwapPlayer = toSwapWithToSwap.getPlayer();
