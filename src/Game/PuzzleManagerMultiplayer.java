@@ -47,7 +47,7 @@ public class PuzzleManagerMultiplayer extends PuzzleManager
 		else if(toSwap.isGenericType(Type.P1_CROSS) && toSwap.hasGenericImageType(Type.P1_CROSS))
 		{
 			Type toSwapOldType = toSwap.getType();
-			if(playerPiece.isType(Type.P1_CROSS) || playerPiece.isType(Type.P2_CROSS))
+			if(playerPiece.isGenericType(Type.P1_CROSS))
 			{
 				toSwap.setTypeAndImage(playerPiece.getType());
 			}
