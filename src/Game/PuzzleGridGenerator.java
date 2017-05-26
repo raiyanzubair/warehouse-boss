@@ -206,29 +206,29 @@ public class PuzzleGridGenerator
 		
 		multiPlayerLevels.add(numLevels++, new PuzzleGrid(true, 1, 9, 11, new Type[]
 		{
-			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,	Type.BRICK,  	Type.BRICK,	 
-			Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY,	 Type.BRICK,  	Type.BRICK,	
+			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,		Type.BRICK,  	Type.BRICK,	 
+			Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY,	 	Type.BRICK,  	Type.BRICK,	
 			Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.P1_BOX, 	Type.P1_BOX, 	Type.P1_BOX, 	Type.P2_BOX, 	Type.P1_BOX, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK, 
 			Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.P2_BOX, 	Type.EMPTY, 	Type.P2_BOX, 	Type.EMPTY, 	Type.P2_BOX, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK,
 			Type.BRICK, 	Type.EMPTY, 	Type.P1_BOX, 	Type.EMPTY, 	Type.P1_RIGHT, 	Type.EMPTY, 	Type.P2_RIGHT, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK,
 			Type.BRICK, 	Type.EMPTY, 	Type.P2_BOX,	Type.EMPTY, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK,	
-			Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.P1_CROSS, 	Type.P1_CROSS, 	Type.P1_CROSS, 	Type.P1_CROSS, 	Type.P1_CROSS, 	Type.BRICK,	Type.BRICK,	
-			Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.P2_CROSS, 	Type.P2_CROSS, 	Type.P2_CROSS, 	Type.P2_CROSS, 	Type.P2_CROSS, 	Type.BRICK,	Type.BRICK,			
-			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,	Type.BRICK,			
+			Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.P1_CROSS, 	Type.P1_CROSS, 	Type.P1_CROSS, 	Type.P1_CROSS, 	Type.P1_CROSS, 	Type.BRICK,		Type.BRICK,	
+			Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.P2_CROSS, 	Type.P2_CROSS, 	Type.P2_CROSS, 	Type.P2_CROSS, 	Type.P2_CROSS, 	Type.BRICK,		Type.BRICK,			
+			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,		Type.BRICK,			
 		}));
 		
 		multiPlayerLevels.add(numLevels++, new PuzzleGrid(true, 2, 10, 12, new Type[]
 		{
-			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,	Type.BRICK,  	 Type.BRICK,	 	Type.BRICK,
-			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY,	 Type.BRICK,  	 Type.BRICK,		Type.BRICK,
+			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,		Type.BRICK,  	 Type.BRICK,	 	Type.BRICK,
+			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY,		Type.BRICK,  	 Type.BRICK,		Type.BRICK,
 			Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	 Type.BRICK, 		Type.BRICK,
 			Type.BRICK, 	Type.EMPTY, 	Type.P1_BOX, 	Type.EMPTY, 	Type.P1_CROSS, 	Type.P1_CROSS, 	Type.P1_CROSS, 	Type.P1_CROSS, 	Type.BRICK, 	Type.EMPTY, 	 Type.BRICK,		Type.BRICK,
 			Type.BRICK, 	Type.P1_RIGHT, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK, 	Type.P2_CROSS, 	Type.P2_CROSS, 	Type.P2_BOXED, 	Type.P2_CROSS, 	Type.EMPTY, 	 Type.EMPTY,		Type.BRICK,
 			Type.BRICK, 	Type.EMPTY, 	Type.P2_BOX,	Type.EMPTY, 	Type.EMPTY, 	Type.P2_BOX, 	Type.BRICK, 	Type.BRICK, 	Type.P1_BOX, 	Type.BRICK, 	 Type.EMPTY,		Type.BRICK,
-			Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.P1_BOX, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.P2_BOX, 	Type.EMPTY,	 Type.P2_RIGHT,		Type.BRICK,
-			Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.P1_BOX, 	Type.BRICK,	 Type.EMPTY,		Type.BRICK,	
-			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY,	 Type.EMPTY,		Type.BRICK,
-			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,	 Type.BRICK,		Type.BRICK,
+			Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.P1_BOX, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.P2_BOX, 	Type.EMPTY,		 Type.P2_RIGHT,		Type.BRICK,
+			Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.P1_BOX, 	Type.BRICK,	 	 Type.EMPTY,		Type.BRICK,	
+			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY,	 	 Type.EMPTY,		Type.BRICK,
+			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,		 Type.BRICK,		Type.BRICK,
 		}));
 		
 		multiPlayerLevels.add(numLevels++, new PuzzleGrid(true, 3, 12, 12, new Type[]
@@ -238,10 +238,10 @@ public class PuzzleGridGenerator
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.P1_CROSS, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK,
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.P2_BOX, 	Type.EMPTY, 	Type.P1_BOX, 	Type.EMPTY, 	Type.P1_CROSS, 	Type.BRICK,
-			Type.BRICK, 	Type.BRICK, 	Type.BRICK,	Type.BRICK, 	Type.P1_CROSS, 	Type.P1_BOX, 	Type.P2_CROSS, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK,
+			Type.BRICK, 	Type.BRICK, 	Type.BRICK,		Type.BRICK, 	Type.P1_CROSS, 	Type.P1_BOX, 	Type.P2_CROSS, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK,
 			Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.P1_CROSS, 	Type.EMPTY, 	Type.P1_BOX, 	Type.EMPTY, 	Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK,
 			Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.P2_BOX, 	Type.EMPTY, 	Type.EMPTY, 	Type.P2_CROSS, 	Type.BRICK,
-			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.EMPTY, 	Type.P1_BOX, 	Type.P2_BOX, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK,
+			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.P2_BOX, 	Type.P1_BOX, 	Type.P2_BOX, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK,
 			Type.BRICK, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,
 			Type.BRICK, 	Type.P2_CROSS, 	Type.EMPTY, 	Type.P1_RIGHT, 	Type.EMPTY, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK,
 			Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK, 	Type.BRICK 
