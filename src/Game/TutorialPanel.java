@@ -53,10 +53,7 @@ public class TutorialPanel extends JPanel
 				g.showMenuScreen();
 			}
 		});
-		
-		JButton multiplayerButton = new JButton("Multiplayer Rules");
-		registerTutorialNavigationButton(g, multiplayerButton, 0);
-		
+			
 		JPanel bottomWall = new JPanel(new BorderLayout());
 		JLabel bottomWallLabel = new JLabel("", ImageFactory.bottomWall, JLabel.CENTER);
 		bottomWall.setBackground(ImageFactory.Colors.customOrange);
@@ -65,10 +62,6 @@ public class TutorialPanel extends JPanel
 
 		addGridComponent(topWall, 0, components++);
 		addGridComponent(blankPanel(), 0, components++);
-		if(page != 0)
-		{
-			addGridComponent(multiplayerButton, 0, components++);
-		}
 		
 		loadPage(g, page);
 
@@ -86,9 +79,12 @@ public class TutorialPanel extends JPanel
 	}
 	
 	private void loadPage(Game g, int page)
-	{
+	{	
 		if(page == 1)
 		{	
+			JButton multiplayerButton = new JButton("Multiplayer Rules");
+			registerTutorialNavigationButton(g, multiplayerButton, 0);
+			
 			JLabel title = new JLabel("TUTORIAL");
 			title.setFont(new Font("Tahoma", Font.BOLD, 32));
 			title.setForeground(Color.WHITE);
@@ -103,6 +99,7 @@ public class TutorialPanel extends JPanel
 			gamePlay.setBackground(ImageFactory.Colors.customOrange);
 			gamePlay.add(gamePlayLabel);
 
+			addGridComponent(multiplayerButton, 0, components++);
 			addGridComponent(title, 0, components++);
 			addGridComponent(blankPanel(), 0, components++);
 			addGridComponent(rules, 0, components++);
@@ -244,5 +241,3 @@ public class TutorialPanel extends JPanel
 	}
 	
 }
-
-
