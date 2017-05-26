@@ -194,10 +194,11 @@ public class Game
 		
 		tutorialFrame.add(scrollPane);
 		tutorialFrame.setTitle("Tutorial");
-		tutorialFrame.setResizable(false);
+		tutorialFrame.setResizable(true);
 		tutorialFrame.setVisible(true);
+		tutorialFrame.setSize(460, 600);
 		tutorialFrame.setLocationRelativeTo(null);
-		packTutorial();
+		//packTutorial();
 	}
 	
 	public void packTutorial()
@@ -265,4 +266,6 @@ public class Game
 		public void keyReleased(KeyEvent e){}	
 	}
 }
+
+
 
