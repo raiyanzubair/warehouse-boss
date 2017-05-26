@@ -16,7 +16,6 @@ import Game.ImageFactory.Type;
  */
 public class PuzzleGrid
 {
-	private boolean shadowMode;
 	private boolean multiplayer;
 	private int levelID;
 	private int rows;
@@ -106,16 +105,6 @@ public class PuzzleGrid
 	{
 		return this.multiplayer;
 	}
-	
-	public boolean isShadow()
-	{
-		return this.shadowMode;
-	}
-	
-	public void setShadow(boolean mode)
-	{
-		this.shadowMode = mode;
-	}
 
 	/**
 	 * @return The reference for the player object
@@ -138,4 +127,3 @@ public class PuzzleGrid
 	}
 
 }
-
