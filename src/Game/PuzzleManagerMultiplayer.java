@@ -6,6 +6,11 @@ import java.util.Collections;
 import Game.ImageFactory.Player;
 import Game.ImageFactory.Type;
 
+/**
+ * Class that controls the backend for the game in Multiplayer mode.
+ * Basically same as single player version but,
+ * with modified methods for multiplayer mode
+ */
 public class PuzzleManagerMultiplayer extends PuzzleManager
 {
 	public PuzzleManagerMultiplayer(PuzzleDisplayPanel panel, PuzzleGrid grid, Game g)

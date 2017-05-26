@@ -9,17 +9,18 @@ import Game.ImageFactory.Player;
 import Game.ImageFactory.Type;
 
 /**
- * This class is a custom JPanel object that has properties for the puzzle dimensions
- * and the puzzle labels to load into the panel and reshuffle when the player changes
- * the puzzle state with the arrow keys which send a key event which is handled by this
- * panel as well
+ * Class controls the backend and logic for the game.
+ * Only used for singlePlayer.
+ * @field level: the current level number
  * @field ROWS: the number of rows of puzzle labels to add to the panel
  * @field COLUMNS: The number of columns of puzzle labels
- * @field nMoves
- * @field labels: The ordered list of puzzle labels to add to the panel from the top row
- * and wrapping to the next rows until the last column of the last row
- * @field: playerPiece: The reference to the player square that is to be moved around
- * when any arrow keys are pressed.
+ * @field nMoves: number of moves taken so far in the game
+ * @field game: Game object that will be used to call on methods in game
+ * @field currentLabelSequence: The ordered list of puzzle labels to add to the panel from the top row
+ * @field previousStates: Stack of PuzzleGrids to be used as previous states in undoing of moves 
+ * @field playerOnePiece: PuzzleLabel for the position of Player one
+ * @field playerTwoPiece: PuzzleLabel for the position of Player two
+ * @field panel: PuzzleDisplayPanel object that will be used to display the current game state
  */
 public class PuzzleManager
 {
